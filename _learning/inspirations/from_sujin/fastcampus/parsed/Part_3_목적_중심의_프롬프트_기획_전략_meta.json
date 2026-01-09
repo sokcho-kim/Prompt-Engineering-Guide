@@ -1,0 +1,408 @@
+{
+  "source": "Part 3. 목적 중심의 프롬프트 기획 전략.pdf",
+  "parsed_at": "2026-01-09T17:57:48.323964",
+  "total_pages": 49,
+  "pages_with_text": 44,
+  "pages_needing_ocr": 5,
+  "ocr_page_numbers": [
+    6,
+    8,
+    10,
+    32,
+    41
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering",
+      "char_count": 59,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Prompt Engineering A to Z\nChapter 01. LLM 차별화의 열쇠\n01.프롬프트 엔지니어 핵심 역량 및 주요 업무\n02.프롬프트 엔지니어링 학습해야 하는 이유\nChapter 02. 프롬프트의 이해\n1. 프롬프트 유형 탐구\n2. 효과적인 프롬프트 분석 기법\nØ Chapter 03. 실무 프롬프트 엔지니어링 A to Z\n1. 목적 중심의 프롬프트 기획 전략\n2. 프롬프트 제작의 기초: 핵심 원리와 방법론\nChapter 04. 프롬프트 엔지니어링 파이널 프로젝트\n3. 프롬프트 품질 관리: 테스트 방법론\n(cid:13247) 생성형 AI 프롬프트 프로젝트\n4. 프롬프트 성능 평가\n5. 프롬프트 기록과 버전 관리\nChapter 05. 프롬프트 엔지니어링 현재와 미래",
+      "char_count": 384,
+      "word_count": 89,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Prompt EngineeringA to Z\n생성형 AI 사용자 세그먼테이션(cid:13205) 정의와 특징\n프롬프트 엔지니어링 A to Z\n개인 맞춤형 AI 제품 설계(cid:13205) 세그먼트별 프롬프트 기획\nChapter 03\nPart 01. 목적 중심 프롬프트 기획 전략\n효과적인 프롬프트 기획 방법 (cid:13205) 연역적 (cid:13704) 귀납적 접근\n사용자 중심 프롬프트 기획: 사례 기반 학습",
+      "char_count": 232,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 4,
+      "text": "Course Objectives & Learning Outcomes\n학습 목표\n01\nü 생성형 AI 사용자 세그먼테이션의 개념을 이해하고, 각 세그먼트의 특징을 명확히 파악할 수 있다.\n02\n각 사용자 세그먼트에 맞춤형 AI경험을 설계하고 프롬프트를 효과적으로 기획할 수 있다.\n03\n연역적 및 귀납적 접근 방식을 통해 프롬프트 기획의 효과적인 방법론을 습득하고, 이를 실제 적용할 수 있다.\n04\n실제 사례를 기반으로 사용자 중심의 프롬프트 기획을 학습하고, 다양한 상황에 적용할 수 있다.",
+      "char_count": 275,
+      "word_count": 65,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 5,
+      "text": "Course Objectives & Learning Outcomes\n기대 학습 성과\n01\nü AI 기술을 효과적으로 활용하여 사용자 경험을 최적화할 수 있는 고급 기획 전략을 개발하고 적용하는 능력을 향상 시킨다\n02\n사용자 세그먼테이션과 맞춤형 경험 설계를 통해 다양한 문제를 분석하고, 적절한 해결책을 도출하는 능력을 강화한다.\n이론적 지식을 실제 상황에 적용하여 실질적인 성과를 도출할 수 있는 능력을 배양하며,\n03\n사례 기반 학습을 통해 실용적인 기획 능력을 향상 한다.",
+      "char_count": 268,
+      "word_count": 64,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter 3 \n목적 중심의 프롬프트 기획 전략 \nFast campus",
+      "char_count": 41,
+      "word_count": 9,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 3\n📌 프롬프트 기획을 해야 하는 세 가지 이유\n1⃣ 사용자를 위한 기능 개발 (cid:13205) 프롬프트 연구\n2⃣ 초기 기능 명세 아웃라인\n3⃣ 협업을 위한 기능 문서화",
+      "char_count": 105,
+      "word_count": 28,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 3 \n01. 생성형 AI 사용자 Segmentation: 정의와 특징 \nFast campus",
+      "char_count": 59,
+      "word_count": 11,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter03. 생성형AI 사용자Segmentation: 정의와특징\n대화 분석 네 가지 기준\nTurn\n싱글턴 vs. 멀티턴\nAction 정보 검색 유형 vs. 다른 행위 유형\nStructure 선호 구조 vs. 비선호 구조\nStance 감정적 태도 vs. 비감정적 태도",
+      "char_count": 152,
+      "word_count": 33,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter 3 \n사용자 세그먼트 \nTurn Stance \n싱글턴 발견되지 않음 SI so \n만족 MISP MOSP \n감정있음 불만족 MISD MOSD \n알수없음 MISU MOSU \n멀티턴 \n만족 MINP MONP \n감정없음 불만족 MIND MOND \n알수없음 MINU MONU \nFastcampus",
+      "char_count": 168,
+      "word_count": 33,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 1. Single-Turn, Information Seeking SI\n1⃣ 정보 검색형 사용자\n2⃣ 즉흥적으로 문제를 해결하는 경향",
+      "char_count": 122,
+      "word_count": 20,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 12,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 2. Multi-Turn, Stance, Preferred MISP, MOSP\n1⃣ AI와 친화적이고, 사교적인 경향\n2⃣ 긍정적인 대화 선호함",
+      "char_count": 129,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 3. Multi-Turn, Stance, Unobserved: MISU, MOSU\n1⃣ 새로운 아이디어에 대해 고민하는 사용자 유형\n2⃣ 여러 턴의 대화로 새로운 가능성을 탐구하는 유형",
+      "char_count": 152,
+      "word_count": 27,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 활용법\n1⃣ 사용자 발화 데이터 정량화(cid:13205) 프롬프트 (cid:14097) LLM 분류\n2⃣ 서비스의 Heavy User\n3⃣ 세그먼트별 A/B Test : 어떤 프롬프트를 기획할 것인지 아이디에이션\n4⃣ Low Retention 그룹 원인 분석\n5⃣ 초개인화 맞춤형 AI 응답/경험 설계",
+      "char_count": 218,
+      "word_count": 42,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 3\n02. 개인 맞춤형 AI 경험 설계(cid:13205)\nSegment 별 프롬프트 기획/ Ideation",
+      "char_count": 68,
+      "word_count": 13,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 1. Single-Turn, Information Seeking SI\n1⃣ 정보 검색형 사용자\n2⃣ 즉흥적으로 문제를 해결하는 경향\n프롬프트 FAQs\n💡 (1) 정보 검색형 - 실시간 정보 검색 엔진 연동\n정적인 인터페이스\n(2) Retention을 위한 멀티턴 유도 장치\n(cid:13249)(cid:13967) 동적으로 변환",
+      "char_count": 232,
+      "word_count": 43,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 17,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample 1⃣: 정보 검색을 위한 perplexity",
+      "char_count": 73,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 18,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample 1⃣ : 정보 검색을 위한 perplexity",
+      "char_count": 74,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 19,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample : 멀티턴 유도 & 사용자 만족을 위한 질문 생성\n1⃣\n2⃣",
+      "char_count": 82,
+      "word_count": 17,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 20,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample : 멀티턴 유도 & 사용자 만족을 위한 질문 생성\n3⃣",
+      "char_count": 79,
+      "word_count": 16,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 21,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 2. Multi-Turn, Stance, Preferred MISP, MOSP\n1⃣ AI와 친화적이고, 사교적인 경향\n2⃣ 긍정적인 대화 선호함\n💡 (1) AI와 Affiliation을 형성할 수 있도록 하기: Gamification\n(2) 페르소나 만들기\n프롬프트 게임\n캐릭터 챗봇",
+      "char_count": 207,
+      "word_count": 37,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 22,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample 1⃣ 비밀번호를 맞춰야 하는, LAKERA Gandalf 게임\n> Prompt Injection Attack\n• 사용자는 간달프에게 각 레벨의 암호를 물어보고 알아내는 것이 목표인 게임.\n• 레벨이 올라갈수록 암호가 복잡해짐, 이를 우회하는 프롬프트가 필요함.\n• 생성형 AI 보안 스타트업인 라케라 Lakera.ai에서 진행하는\n프롬프트 주입 공격에 대한 연구의 일환.",
+      "char_count": 256,
+      "word_count": 51,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 23,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nExample 2⃣ 캐릭터 챗봇 character.ai",
+      "char_count": 71,
+      "word_count": 10,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 24,
+      "text": "Chapter 03. 생성형AI 사용자Segmentation: 정의와특징\nSegment 1 to 4 공통\n1⃣ 범용적 목적의 사용자\n2⃣ 사용자 경험 개선\n💡 챗봇 시스템 프롬프트 기존 프롬프트 개선 작업",
+      "char_count": 114,
+      "word_count": 26,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 25,
+      "text": "Chapter 3\n사용자 세그먼트 분석 (cid:14097) 기획 1⃣ 프롬프트 질문 생성기\n2⃣ 프롬프트 자동 완성기\n3⃣ 시스템 프롬프트 개선 작업",
+      "char_count": 84,
+      "word_count": 20,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 26,
+      "text": "Chapter 3\n03. 효과적인 프롬프트 기획 방법론(cid:13205)\n연역적 (cid:13704) 귀납적 접근",
+      "char_count": 64,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 27,
+      "text": "Chapter 03. 효과적인프롬프트기획방법론:연역적&귀납적접근\n연역적 접근 방법\n가설 설정 – 관찰 및 실험을 통한 검증",
+      "char_count": 68,
+      "word_count": 14,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 28,
+      "text": "Chapter 03. 효과적인프롬프트기획방법론:연역적&귀납적접근\n귀납적 접근 방법\n관찰 및 실험 – 결론/일반화",
+      "char_count": 62,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 29,
+      "text": "Chapter 3\nQ. SO/SI유형이 왜 많을까?\n사용자 프롬프트\n연역적 가설1: 사용자는 생성형 AI를 어려워한다. 사용할 줄 모른다.\n접근\n가설 2: 사용자는 질문을 귀찮아 하거나, 프롬프트 쓰는것을 귀찮아 한다.\n가설 3: 사용자의 현재 생성형 AI 사용 가장 큰 동기는 정보 검색이다\n귀납적 관찰 1: 사용자 발화 데이터를 보니, 정보 검색 유형이 가장 많았다.\n접근\n관찰 2: 사용자가 정보 검색을 위해 쓰는 프롬프트 길이가 짧고, 좋은\n답변을 받기에 내용이 충분치 않았다.\n관찰 3: 사용자가 AI와 대화를 한 번 하고 서비스를 이탈했다.",
+      "char_count": 308,
+      "word_count": 79,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 30,
+      "text": "Chapter 3\n귀납적 방식 장단점\n장점 실사용 데이터를 분석하여 패턴과 트렌드를 파악\n실제 데이터를 기반으로 하므로 사용자의 실제 행동과 요구를 더 잘\n반영함\n용자들의 피드백을 분석하여 기능을 개선하고 발전\n단점 데이터를 수집하고 분석하는 데 시간이 많이 걸림\n수집된 데이터가 특정 사용자 그룹이나 특정 상황에 편향\n거 데이터에 기반한 예측은 새로운 상황이나 트렌드 변화를 완전히\n반영하지 못할 수 있음\no 사용자 데이터 분석: 사용자들이 어떤 키워드나 질문을 주로 입력하는지 데이터 수집 및 분석\no 피드백 반영: 사용자 피드백을 바탕으로 프롬프트 기능을 개선하고 새로운 기능 추가\no A/B 테스트: 다양한 프롬프트 방식을 실험하여 가장 효과적인 방식을 찾기",
+      "char_count": 372,
+      "word_count": 95,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 31,
+      "text": "Chapter 3\n연역적 방식 장단점\n장점 논리적인 접근 방식을 통해 체계적으로 문제를 해결\n명확한 가정을 설정하고 이에 따라 기능을 기획\n시간 효율적: 이론적 모델을 통해 빠르게 기능을 설계함\n단점 실제와의 괴리: 이론이 실제 사용자 행동과 일치하지 않을 수 있음\n제한된 유연성: 설정한 가정과 이론에 너무 의존하면 유연성이 떨어짐\n사용자 피드백 반영 어려움: 이론적 접근이므로 실제 사용자 피드백을\n반영하기 어려울 수 있음\no 이론적 모델 수립: 사용자가 어떤 정보를 필요로 할지 이론적으로 분석하고 가설 세우기.\no 기능 설계: 설정한 가설을 바탕으로 프롬프트 기능을 설계.\no 규칙 기반 시스템: 특정 규칙이나 알고리즘에 따라 프롬프트를 제공하는 시스템을 구축.",
+      "char_count": 374,
+      "word_count": 95,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 32,
+      "text": "Chapter 3 \n04. 사용자 중심 프롬프트 기획: 사례 기반 학습 \nFast campus",
+      "char_count": 52,
+      "word_count": 12,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 33,
+      "text": "Chapter 3\n사용자 세그먼트 분석 (cid:14097) 기획 1⃣ 프롬프트 질문 생성기\n2⃣ 프롬프트 자동 완성기\n3⃣ 시스템 프롬프트 개선 작업",
+      "char_count": 84,
+      "word_count": 20,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 34,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n📢 프롬프트 기획 실습\n- 총 세 개의 프롬프트 기획 & PoC(Proof of Concept) 제작하기\n1⃣ 프롬프트 질문 생성기\n2⃣ 프롬프트 자동 완성기\n3⃣ 시스템 프롬프트 개선 작업 or 범용적 목적의 시스템 프롬프트 제작",
+      "char_count": 160,
+      "word_count": 37,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 35,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\nPractice : 사용자 세그먼트를 토대로 하여, 사용자 문제 개선을\n위한 프롬프트를 기획해보세요.",
+      "char_count": 87,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 36,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n1⃣ 프롬프트 질문 생성기\n사용자 문제\n📝\n프롬프트 구현 아이디어/구현 노트\n사용자 서비스 이용 시간이 짧다.\n문제\n멀티턴 사용자의 비율이 적다.\no Static to Dynamic Question Generator\n- 귀납적\no FAQs : Prediction Probability\n접근\no 행동 경제학, Nudge Theory\n해결 방법 멀티턴을 유도하는 방법을 고안하여\nUser Interface 개선으로 해결해본다.\n사용자의 질문에 기반한 후속 질문을\n제공한다.",
+      "char_count": 293,
+      "word_count": 59,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 37,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n1⃣ 프롬프트 질문 생성기 (cid:13205) Nudge Theory\no 행동 경제학 개념\no 사람들의 선택을 유도하되 강제하지 않는 방식\n(cid:13258) 선택의 자유 (cid:13205) 개인의 선택권을 제한하지 않음\n(cid:13258) 작은 개입(cid:13205) 사소하고 저렴한 변화로 큰 영향을 줌\n(cid:13258) 예측 가능한 비합리성(cid:13205) 인간의 비합리적 행동 패턴 이용\n(cid:13258) 선택 설계(cid:13205) 환경을 조정하여 더 나은 선택 유도\n-> 프롬프트 후속 질문 제작 시, 질문 별로 넛지를 줄 수 있음\nNudge: Improving Decisions About Health, Wealth, and Happiness, Richard Thaler & Cass Sunstein(2008)",
+      "char_count": 447,
+      "word_count": 81,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 38,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n1⃣ 프롬프트 질문 생성기 (cid:13205) Theory of Mind (cid:13273)마음 이론(cid:13274)\no 정의(cid:13205) 다른 사람의 정신 상태를 이해하고 추론하는 능력\no 핵심 개념(cid:13205) 타인이 자신과 다른 생각, 믿음, 욕구, 의도를 가질 수 있음을 인식\n타인의 행동을 예측하고 설명하는 데 이론 사용\nü 데이비드 프레머크(David Premack) & 가이 우드러프(Guy Woodruff), 1978\n-침팬지는마음을가지고있는가?\nü 하인츠 빔머(Heinz Wimmer)& 요셉 페너(Josef Perner), 1983\n- '틀린 믿음 과제'를 개발하여 아동의 마음 이론 발달을 연구\nü 사이먼 배런-코헨(Simon Baron-Cohen), 앨런 레슬리(Alan Leslie), 우타 프리스(Uta Frith), 1985\n- 자폐증과 마음 이론의 결핍 사이의 연관성을 제안",
+      "char_count": 492,
+      "word_count": 90,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 39,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n2⃣ 프롬프트 자동 완성기 (cid:13273)Prompt Generator(cid:13274)\n사용자 문제\n사용자 문제 사용자의 프롬프트가 구체적이지\n귀납적 접근 못하고 불완전하다\n현재, 사용자가 프롬프트를 잘 쓸 수\n있도록 안내하거나, 보조하는 제품 내\n장치가 없다.\n해결 방법 AI와의 대활를 원활하게 진행하고\n사용가치와 효율성을 극대화할 수\n있는 프롬프트 자동 완성기를\n제작한다.",
+      "char_count": 247,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 40,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n2⃣ 프롬프트 자동 완성기 (cid:13205) 전제 설정 및 논리적 추론\n가정(cid:13205) 프롬프트 자동 완성기를 구현하면, 사용자는 이런 행동을 할 것이다.\no 사용자 만족도가 증가한다\no 사용자 리텐션이 올라간다\no AI 사용 효용을 느낀 사용자는 더 복잡하고 정교한 질문을 한다\no 서비스에 대한 의존도가 높아진다",
+      "char_count": 214,
+      "word_count": 47,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 41,
+      "text": "Chapter 03. 사용자 중심 프롬프트 기획: 사례 기반 학습 \nIntent → User Prompt \nFast campus",
+      "char_count": 71,
+      "word_count": 15,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 42,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\nPractice : 사용자 문제 개선을 위한 프롬프트 자동 완성기를\n제작하기 위한 아이디에이션을 해보세요. 그리고 프롬프트 초안을\n작성해보세요. LLM과 프롬프트 자동완성기의 작동 구조를\n그림으로 그려보세요.",
+      "char_count": 147,
+      "word_count": 27,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 43,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n3⃣ 시스템 프롬프트 개선\n사용자 문제\n📝\n사용자 특정 세그먼트의 비율이 높다. 프롬프트 구현 아이디어/구현 노트\n문제\n현 시스템 프롬프트에 여러 문제가 존재한다 o 글로벌과 로컬 범위로 나누어 현상 이해하기\n-\no 세그먼트 분포 불균형 문제 해결하기\n귀납적\n방법\n해결 모든 세그먼트 사용자를 위한 범용적 목적의\n방법 시스템 프롬프트를 제작한다",
+      "char_count": 223,
+      "word_count": 53,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 44,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n3⃣ 시스템 프롬프트 개선\n카테고리 행위 형성 및 동기\n글로벌 • 시스템 프롬프트가 일반적이다.\n• 사용자에게 이렇다 할 특징이 있는 답변을 제공하지 못한다.\n• 회사의 색깔과 정체성이 드러나지 않는다.\n로컬 - 실시간 정보(날짜, 날씨) 제공하지 못한다.\n- AI 답변 텍스트의 가독성이 떨어진다\n- AI 한국어 답변이 번역체 같다.\n- 부정확한 정보 제공이나, 거짓 정보에 대한 지침이 없다.\n해결 방법 - 팔레토의 법칙 (20: 80). Heavy User 20% 가 무엇을 하고 있는가?\n- 사용자 경험 최적화 (답변 속도 개선, 지연 이유 안내 등)\n- 다양한 사용자 요구 수용",
+      "char_count": 359,
+      "word_count": 90,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 45,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\nPractice : 범용적 목적의 프롬프트를 제작하기 위한\n아이디에이션을 하고, PoC 의 프롬프트를 작성해보세요.",
+      "char_count": 95,
+      "word_count": 16,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 46,
+      "text": "Chapter 03. 사용자중심프롬프트기획:사례기반학습\n📢 프롬프트 제작물\n- 제작/기획한 프롬프트는 Chapter 4. 프롬프트 테스트에서\n테스트를 하며 다시 작업 할 거예요. 프롬프트를 잘 저장해주세요.",
+      "char_count": 115,
+      "word_count": 22,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 47,
+      "text": "Prompt EngineeringA to Z\n생성형 AI 사용자 세그먼테이션: 정의와 특징\n개인 맞춤형 AI 경험 설계: 세그먼트별 프롬프트 기획\n프롬프트 엔지니어링 A to Z\n효과적인 프롬프트 기획 방법 (cid:13205) 연역적 (cid:13704) 귀납적 접근\nChapter 03\nPart 01. 목적 중심 프롬프트 기획 전략\n사용자 중심 프롬프트 기획: 사례 기반 학습",
+      "char_count": 212,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 48,
+      "text": "Course Objectives & Learning Outcomes\n학습 목표\n01\nü 생성형 AI 사용자 세그먼테이션의 개념을 이해하고, 각 세그먼트의 특징을 명확히 파악할 수 있다.\n02\n각 사용자 세그먼트에 맞춤형 AI경험을 설계하고 프롬프트를 효과적으로 기획할 수 있다.\n03\n연역적 및 귀납적 접근 방식을 통해 프롬프트 기획의 효과적인 방법론을 습득하고, 이를 실제 적용할 수 있다.\n04\n실제 사례를 기반으로 사용자 중심의 프롬프트 기획을 학습하고, 다양한 상황에 적용할 수 있다.",
+      "char_count": 275,
+      "word_count": 65,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 49,
+      "text": "Course Objectives & Learning Outcomes\n기대 학습 성과\n01\nü AI 기술을 효과적으로 활용하여 사용자 경험을 최적화할 수 있는 고급 기획 전략을 개발하고 적용하는 능력을 향상 시킨다\n02\n사용자 세그먼테이션과 맞춤형 경험 설계를 통해 다양한 문제를 분석하고, 적절한 해결책을 도출하는 능력을 강화한다.\n이론적 지식을 실제 상황에 적용하여 실질적인 성과를 도출할 수 있는 능력을 배양하며, 사례 기반 학습을 통해 실용적인\n03\n기획 능력을 향상 한다.",
+      "char_count": 268,
+      "word_count": 64,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}

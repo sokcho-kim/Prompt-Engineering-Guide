@@ -1,0 +1,682 @@
+{
+  "source": "Part 4. 프롬프트 제작의 기초 - 핵심 원리와 방법론 (Chapter 3 ~ Chapter 4).pdf",
+  "parsed_at": "2026-01-09T17:58:20.729486",
+  "total_pages": 83,
+  "pages_with_text": 76,
+  "pages_needing_ocr": 7,
+  "ocr_page_numbers": [
+    42,
+    50,
+    60,
+    62,
+    69,
+    72,
+    78
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering",
+      "char_count": 59,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Chapter 03. Part 04.\nPrompt Engineering Techniques\nLevel : Basic (cid:13249) Advanced (cid:13247) Applications",
+      "char_count": 110,
+      "word_count": 14,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Chapter 03\nTaxonomy of Prompt Engineering Techniques\nAdvanced\nBasic Applications\n• Generate Knowledge Prompting, •데이터생성과분류하기\n•Zero-Shot Prompting Prompt Chaining, Tree of Thoughts\n•코드생성하기\n•Few-Shot Prompting • Retrieval Augmented Generation,\n•펑션콜함수\nAutomatic Prompt Engineer,\n•Chain-of-Thought Prompting\nActive-Prompt,\n•Self-consistency Directional Stimulus Prompting,\nReAct",
+      "char_count": 374,
+      "word_count": 41,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 4,
+      "text": "Table of Contents\n8 Advanced Prompt Engineering Techniques\nGenerate Knowledge Prompting\n01\n02 Prompt Chaining\n03 Tree of Thoughts\n04 Retrieval Augmented Generation\n05 Automatic Prompt Engineer\n06 Active-Prompt\n07 Directional Stimulus Prompting\n08 React",
+      "char_count": 252,
+      "word_count": 35,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 5,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n01. Generate Knowledge Prompting",
+      "char_count": 87,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nGenerate Knowledge Prompting\n개요: 언어 모델의 추론 능력을 더 향상시키기 위한 방법\n목적:\no 할루시네이션 현상을 완화하기 위한 방법\no 언어 모델이 추가 지식을 활용하게 하는 것\no 언어 모델이 오픈 Q(cid:13247)A 테스크 방식을 활용 하여 스스로 지식을 생성함\no 모델로부터 최종 답변을 얻기 전 모델이 직접 관련 정보를\n가져오도록 한 다음 이를 활용해서 답을 가져오도록 하는 방식\n이전:\n• 사람이 직접 관련 정보를 넣어야 하는 번거로움, 별도의 모델,\n• 검색 엔진 필요\n• 외부 지식 IR 정보 추출\n• 구글 검색 결과 활용\n• 백과 사전 검색",
+      "char_count": 351,
+      "word_count": 91,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n작동 방식 세 단계\no Step 1. 지식 생성(cid:13273)knowledge Generation(cid:13274)\nFew-shot prompting 을 사용해서 언어 모델로부터 관련 정보를 생성\no Step 2. 지식 통합(cid:13273)knowledge Integration(cid:13274) 두 번째 언어 모델을 사용하여, 1단계에서 생성된 정보에 대해 예측하게 함\n그 다음, 가장 높은 확신을(High-confidence prediction) 가진 예측을\n최종 답변으로 선택\no Step 3. 답변 생성(cid:13273)Answer Generation(cid:13274)",
+      "char_count": 354,
+      "word_count": 56,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nGenerated knowledge prompting for commonsense reasoning (Liu et al., 2021)\n프롬프트 구성 요소 Instruction, Human-Written Demonstration, Question\n프롬프트: 입력에대한지식을생성하십시오.\n예시:\n입력: 구름에의해형성되는물의종류는무엇인가요?\n지식: 구름은수증기로만들어집니다.\n입력: 음식을상하지않게하는방법은무엇인가요?\n지식: 탈수처리는음식을보존하는데사용됩니다.\n입력: 유전자가전달되는과정은무엇인가요?\n지식: 유전자는부모로부터자손에게전달됩니다.\n입력: 위장은몸에서어떤역할을하나요?\n지식: 위장은소화시스템의일부입니다.\n입력: 암석을부수는원인은무엇인가요?\n지식: 기계적풍화는암석이기계적수단으로부서질때발생합니다\n.\n입력: (cid:13275)질문(cid:13276)\n지식:\n• QASC (cid:13273)Question Answering via Sentence Composition(cid:13274)는문장구성을통한질문응답을위한데이터셋. 초등학교\n과학에관한9,980개의8지선다형질문으로구성되어있음.\nLiu, J., Liu, A., Lu, X., Welleck, S., West, P., Bras, R. L., ... & Hajishirzi, H. (2021). Generated knowledge prompting for commonsense reasoning.arXivpreprint arXiv:2110.08387.",
+      "char_count": 769,
+      "word_count": 83,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nKnowledge Integration Via Prompting\n*k1, k2, ..., kM은 모델이 생성한 다양한 지식 문장\no 예시: 판다의 다리는 몇 개입니까?\n• 모델 예측:\nStep 1. 지식 생성:\n각 결합된 질문(cid:13273)q0, q1, q2, q3(cid:13274)을 모델에게 주고 답변을 예측\n(cid:13247) 판다는 네 개의 다리를 가지고 있다.\n가장 신뢰할 수 있는 답변 선택:\n(cid:13247) 판다는 포유류이다.\n모델이 예측한 답변들 중 가장 신뢰할 수 있는 답변 선택\n(cid:13247) 판다는 중국에서 서식한다.\nStep 2. 질문 결합\n• 이 지식들을 질문과 결합\n예를 들어:\n•q0 (cid:13965) (cid:13379)판다의 다리는 몇 개입니까?(cid:13379)\n정답: q1\n•q1 (cid:13965) (cid:13379)판다는 네 개의 다리를 가지고 있다. 판다의 다리는 몇 개입니까?(cid:13379)\n•q2 (cid:13965) (cid:13379)판다는 포유류이다. 판다의 다리는 몇 개입니까?(cid:13379)\n•q3 (cid:13965) (cid:13379)판다는 중국에서 서식한다. 판다의 다리는 몇 개입니까?(cid:13379)\nLiu, J., Liu, A., Lu, X., Welleck, S., West, P., Bras, R. L., ... & Hajishirzi, H. (2021). Generated knowledge prompting for commonsense reasoning.arXivpreprint arXiv:2110.08387.",
+      "char_count": 836,
+      "word_count": 144,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n실험 결과\nBaseline 비교\nü Generated Knowledge Prompting은 검색해서 정답을 얻는 방법에 준하는 결과\nVanilla baseline:\n•기본적인모델성능.\nRandom sentences:\n•무작위문장을사용.\nContext sentences:\n•문맥정보를제공.\nTemplate(cid:13247)based:\n•템플릿기반접근방식.\nRetrieval(cid:13247)based:\n•검색기반접근방식.\nAnswers:\n•정답을제공.\nOurs\n• Generate Knowledge Prompting\nTable 3: Experimental results of applying different knowledge generation methods on various tasks and inference models. T5-11b is the zero-shot inference model, whereas other inference\nmodels are finetuned based on T5-11b. We bold the best and underline the second bestnumbers. Previous SOTA and retrieval-based methods are also based on the inference model in their\ncorresponding column: * T5-11b 1.1 +digits (Submission by ISI Waltham); ** T5-11b + IR (Yan, 2021); # UQA-11b-ft (Khashabiet al., 2020) (SOTA of single-model methods without referencing\nConceptNet); † Unicorn-ft (Talmor et al., 2021); †† Unicorn-ft + Google snippets (Talmor et al., 2021); ‡ UQA-11b-ft (Khashabiet al., 2020).\n• NumerSense는숫자상식을평가하기위한데이터셋으로, 0에서10 사이의숫자가마스킹된문장들로구성되어있음.\n• 데이터셋은언어모델이마스킹된숫자를정확히예측할수있는지를테스트함.\n• QASC (cid:13273)Question Answering via Sentence Composition(cid:13274)는문장구성을통한질문응답을위한데이터셋. 초등학교과학에관한9,980개의8지선다형질문으로구성되어있음.\n• CSQA (cid:13273)Commonsense Question Answering(cid:13274)는상식기반질문에답변하기위한데이터셋",
+      "char_count": 1306,
+      "word_count": 158,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n실험 결과\nBaseline 비교\no Knowledge 를 몇 개까지 만드는게 좋은가? o Integration 방법 3 개중 Knowledge 방법이 제일 좋음\n(cid:13273)20개 까지(cid:13274)\no Ours: 프롬프트 (cid:13961) 지식 추가\no Mixture(cid:13247)of(cid:13247)Experts: 외부 모델과의 결합\no Product(cid:13247)of(cid:13247)Experts: 확률 값을 곱하는 방식",
+      "char_count": 280,
+      "word_count": 42,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 12,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n실험 결과\n실제로 유용한 knowledge 인가?\n사람 평가 결과\n도움이 되는 & 유해한 지식 분포\no 선택된 지식이 모델 예측을 개선하는 데 매우 효과적임\no 유해한 지식을 비율을 줄여야 함\n잘못 생성된 지식 중에서는\nHarmful/neutral\n• Grammatic/Relevant: 문법적으로 올바르고 관련성 있음\n• Factual: 사실에 기반한 진술\n• Helpful : 모델의 예측에 도움이 되는지 평가",
+      "char_count": 254,
+      "word_count": 57,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n02. Prompt Chaining",
+      "char_count": 74,
+      "word_count": 10,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nPrompt Chaining\no 복잡한 작업을 더 작고 관리하기 쉬운 하위 작업으로 나누어 각각의 하위 작업을 별도의 프롬프트로 처리하는 기법\no 한 프롬프트의 출력이 다음 프롬프트의 입력으로 사용\no 대형 언어 모델(cid:13273)LLM(cid:13274)의 성능과 신뢰성을 향상시키고 투명성, 제어 가능성, 신뢰성을 높임\n1. 다단계 작업:\n주제 조사, 에세이 작성 계획, 에세이 작성, 에세이 형식화 등 여러 개의 분리된 단계가 필요한 작업의 경우,\n고품질 결과 보장\n2. 복잡한 지시사항\nLLM이 처리하기 어려운 복잡한 작업을 단계로 나누어, 각 단계의 작업 성능을 높임 (예시. CS챗봇)\n3. 출력물 검증\n체이닝을 사용하여 자신의 출력을 기준에 따라 검증. 출력물의 안전성과 정확성을 향상시킬 수 있음\n4. 병렬 처리: 독립적인 하위 작업의 병렬 작업으로 시간 절약\nSource: https://docs.anthropic.com/en/docs/chain-prompts",
+      "char_count": 516,
+      "word_count": 110,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nUse Cases for Prompt Chaining\no 긴 텍스트에서 ＂질의 응답(cid:13362) 기능 프롬프트\no 두 가지 프롬프트 제작:\n(cid:13273)1(cid:13274) 질문에 답하기 위해 문서 내 관련 문장 추출\n(cid:13273)2(cid:13274) (cid:13273)1(cid:13274)에서 추출한 문장 활용하여 주어진 질문에 답생성\nPrompt 1. 인용문 추출하기\nPrompt 1. (cid:13275)(cid:13275)quotes(cid:13276)(cid:13276) Extraction\nYou are a helpful assistant. Your task is to help answer\n너는 나의 어시스턴트야. 너의 임무는 문서에 주어진 질문에 답하는 거야. 첫\na question given in a document. The first step is to extract 번째 단계는 ####로 구분된 문서에서 질문과 관련된 인용문을\nquotes relevant to the question from the document, delimited 추출하는거야.\nby ####.\n인용문 목록을 (cid:13968)quotes(cid:13967)(cid:13968)/quotes(cid:13967) 태그로 출력해줘.\n관련된 인용문을 찾지 못하면 (cid:13379)No relevant quotes found!(cid:13379)라고 응답해\nPlease output the list of quotes using (cid:13968)quotes(cid:13967)(cid:13968)/quotes(cid:13967).\n####\nRespond with (cid:13379)No relevant quotes found!(cid:13379) if no relevant\n(cid:13275)(cid:13275)document(cid:13276)(cid:13276)\nquotes were found.\n####\n####\n(cid:13275)(cid:13275)document(cid:13276)(cid:13276)\n질문: 앤트로픽 회사에 대한 문장\n####",
+      "char_count": 1076,
+      "word_count": 144,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nUse Cases for Prompt Chaining Prompt 2. (cid:13273)1(cid:13274) 결과물 이용해서 답변 생성하기\n문서에서 가져온 관련 인용구를 사용하여 질문에 답변해.\nPrompt 2. (cid:13275)(cid:13275)Quotes(cid:13276)(cid:13276) Question Answering\nHere is a document, in <document></document> XML 여기 문서가 있어:\n<document>\ntags:\n{{DOCUMENT}}\n</document>\n<document>\n{{DOCUMENT}}\n</document>\n여기 질문과 가장 관련 있는 문서의 직접 인용구야:\n<quotes>\nPlease extract, word-for-word, any quotes relevant to the {{QUOTES}}\nquestion {{QUESTION}}. Please enclose the full list of </quotes>\nquotes in <quotes></quotes> XML tags. If there are no\nquotes in this document that seem relevant to this\n이것들을 사용하여 \"{{QUESTION}}\"에 대한 답변을 구성해.\nquestion, please say \"I can't find any relevant quotes\"\n답변이 정확하고 인용구에 직접적으로 뒷받침되지 않는 정보는\n포함하지 말아.\n{{QUESTION}}: 앤트로픽은 어떤 회사인가요?",
+      "char_count": 795,
+      "word_count": 117,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 17,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n03. Tree of Thought",
+      "char_count": 74,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 18,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nTree of Thoughts, ToT\no 더 복잡하고, 전략적인 과제 해결을 위한 프레임워크\no CoT 프롬프트를 일반화하고, 언어 모델을 사용한 일반 문제 해결을 위해 중간 단계를 거치며 탐색\no 문제를 해결하기 위해 여러 가능성을 탐색하며 최적의 해결책을 찾아감\n네 단계 과정\n1단계. 생각 분해하기 (cid:13273)thought decomposition(cid:13274)\n2단계. 생각 생성하기 (cid:13273)thought generator(cid:13274)\n3단계. 생각 평가하기 (cid:13273)state evaluator(cid:13274)\n4단계. 검색 알고리즘 (cid:13273)search algorithm(cid:13274)",
+      "char_count": 393,
+      "word_count": 63,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 19,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nTree of Thoughts: Deliberate Problem Solving with Large Language Models (Yao et al. 2024)\nCoT 와 ToT 기법을 비교하면 큰 차이점.\nCoT 는 회귀를 할 수 없다. 언어 모델에 입력 값을 넣으면 순차적으로 진행하면 추론한 결과를 내놓는다(cid:13273)linear search(cid:13274).\nToT 는 중간에 회귀를 하고 더 좋은 방법을 시도한다.\no 각각의 직사각형 박스는 생각을 대표함.\no 각 상자는 문제해결을 위한 중간단계로\n일관된 언어 순서인 생각을 나타냄.\no 생각이 어떻게 생성되고, 평가되며\n검색되는지 보여줌.\nYao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., & Narasimhan, K. (2024). Tree of thoughts: Deliberate problem solving with large language models.Advances in\nNeural Information Processing Systems,36.",
+      "char_count": 594,
+      "word_count": 107,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 20,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nTree of Thoughts: Deliberate Problem Solving with Large Language Models\nü 3 new tasks GPT(cid:13247)4 can(cid:13380)t solve directly or with CoT\nYao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., & Narasimhan, K. (2024). Tree of thoughts: Deliberate problem solving with large language models.Advances in\nNeural Information Processing Systems,36.",
+      "char_count": 382,
+      "word_count": 55,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 21,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nQ. 숫 자 네 개 (cid:13273)4, 9, 10, 13(cid:13274)으로 사칙연산으로 24를 만들 수 있는가?\n생각 분해 생각 생성 생각 평가\n중간 중간 수식과 남은 숫자를 다음 단계에서는 (cid:13363)Possible next 다음 숫자를 통해서 24를 만들 수\n표시하면서 생각 분해 과정 거침 inputs(cid:13364) 라는 프롬프트를 사용해 있는지를 평가 (cid:13273)가능 _ 불가능(cid:13274)\n생각을 만듦 그러면서 정답에 도달\n1. 4 (cid:13961) 9 (cid:13247)13 (cid:13961) 10 1. 4 * 6 (cid:13965) 24 (cid:14067) 가능\n4, 9, 10, 13 (cid:14067) 13(cid:13247)9(cid:13965)4; 4*6(cid:13965)24\n2. (cid:13273)4 * 10(cid:13274) (cid:13247)(cid:13273)9 (cid:13961) 13(cid:13274) 2. 10 (cid:13961) 13 (cid:13247)3 (cid:13965) 20 (cid:14067) 불가능",
+      "char_count": 591,
+      "word_count": 95,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 22,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\no ToT의 문제 풀이 성공률\nCoT 에 비해 ToT 는 적은 개수를 풀고도 가장 높은 성공률\nCoT는 첫 시도부터 오답\nToT는 단계별 정답 생성했기 때문에 오답률이 0.0 에\n가까움\nResults. As shown in Table 2, IO, CoT, and CoT-SC prompting methods perform badly on the task, achieving only 7.3%, 4.0%, and 9.0% success\nrates. In contrast, ToTwith a breadth of b = 1 already achieves a success rate of 45%, while b = 5 achieves 74%. We also consider an oracle\nsetup for IO/CoT, by calculating the success rate using best of k samples (1 ≤ k ≤ 100). To compare IO/CoT(best of k) with ToT, we consider\ncalculating the tree nodes visited per task in ToTacross b = 1 · · · 5, and map the 5 success rates in Figure 3(a), treating IO/CoT(best of k) as\nvisiting k nodes in a bandit. Not surprisingly, CoTscales better than IO, and best of 100 CoTsamples achieve a success rate of 49%, but still\nmuch worse than exploring more nodes in ToT(b > 1).\nYao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., & Narasimhan, K. (2024). Tree of thoughts: Deliberate problem solving with large language models.Advances in\nNeural Information Processing Systems,36.",
+      "char_count": 1100,
+      "word_count": 207,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 23,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\no ToT 기법의 한계\nGPT(cid:13247)4/4o가 대체로 많은 영역에서 좋은 성능 (cid:13247) ToT기법 적용 가능 범위 적음\n많은 연산 과정이 필요 (cid:13247) 과제를 수행하는데 시간과 API비용\n코드 https://github.com/princeton-nlp/tree-of-thought-llm",
+      "char_count": 204,
+      "word_count": 30,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 24,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nTree-of-thoughts-prompting (X Framework)\nHulbert (2023)\nToT 의 컨셉을 활용하여 단순한 프롬프트 엔지니어링 기법 제안\n하나의 프롬프트에 언어 모델이 중간 단계를 평가할 수 있도록 함\nImagine three different experts are answering this question. All experts will write down 1 step of their thinking,\nthen share it with the group. Then all experts will go on to the next step, etc. If any expert realises they're\nwrong at any point then they leave. The question is...\nSimulate three brilliant, logical experts collaboratively answering a question. Each one verbosely explains their\nthought process in real-time, considering the prior explanations of others and openly acknowledging\nmistakes. At each step, whenever possible, each expert refines and builds upon the thoughts of others,\nacknowledging their contributions. They continue until there is a definitive answer to the question. For clarity,\nyour entire response should be in a markdown table. The question is...\nIdentify and behave as three different experts that are appropriate to answering this question.\nAll experts will write down the step and their thinking about the step, then share it with the group.\nThen, all experts will go on to the next step, etc.\nAt each step all experts will score their peers response between 1 and 5, 1 meaning it is highly unlikely, and 5\nmeaning it is highly likely.\nIf any expert is judged to be wrong at any point then they leave.\nAfter all experts have provided their analysis, you then analyze all 3 analyses and provide either the consensus\nsolution or your best guess solution.\nThe question is...\nSource: https://github.com/dave1010/tree-of-thought-prompting",
+      "char_count": 1624,
+      "word_count": 262,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 25,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nTree-of-thought-prompting 예시\n세 명의 다른 전문가가 이 질문에 답하는 모습을 상상해보세요. 모든 전문가는 그들의 생각을\n한 단계씩 작성한 후 그룹과 공유할 것입니다. 그런 다음 모든 전문가는 다음 단계로\n진행합니다. 만약 어떤 전문가가 어느 순간에 자신이 틀렸다는 것을 깨닫는다면, 그들은 전문가 (cid:13249) 생각 공유\n떠나게 됩니다. 질문은...\n세 명의 뛰어나고 논리적인 전문가가 협력하여 질문에 답하는 것을 시뮬레이션합니다. 각\n전문가는 다른 전문가들의 이전 설명을 고려하며 실시간으로 자신의 사고 과정을 장황하게\n전문가 (cid:13249) 생각 공유 (cid:13249) 응답 표로 작성\n설명하고 실수를 공개적으로 인정합니다. 각 단계에서 가능한 한 서로의 생각을 정제하고\n구축하며, 기여를 인정합니다. 그들은 질문에 대한 명확한 답이 나올 때까지 계속합니다.\n명확성을 위해, 응답 전체를 마크다운 표로 작성해야 합니다. 질문은...\n이 질문에 답하는 데 적합한 세 명의 다른 전문가를 식별하고 그들처럼 행동하세요. 모든\n전문가는 단계와 해당 단계에 대한 생각을 작성한 후 그룹과 공유합니다. 그런 다음 모든\n전문가는 다음 단계로 진행합니다. 각 단계에서 모든 전문가는 동료의 응답을 1에서 5까지\n점수로 평가합니다. 1은 가능성이 매우 낮음을 의미하고, 5는 가능성이 매우 높음을\n전문가 (cid:13249) 동료 평가 (cid:13249) 최적 솔루션\n의미합니다. 어떤 전문가가 어느 시점에서 틀렸다고 판단되면, 그들은 떠나게 됩니다.\n모든 전문가가 분석을 제공한 후, 세 가지 분석을 모두 분석하고 합의된 솔루션이나 최선의\n추정 솔루션을 제공합니다. 질문은...",
+      "char_count": 867,
+      "word_count": 193,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 26,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n03. RAG\n(cid:13273)Retrieval Augmented Generation(cid:13274)",
+      "char_count": 115,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 27,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nRAG (Retrieval Augmented Generation)\no 검색증강생성\no 프롬프트로 컨텍스트 정보를 추가해, 언어 모델의 결과 품질을 높이는 것\no 질문에 대한 답변을 생성할 때, 먼저 외부 데이터베이스에서 관련 정보를 검색(Retrieval)하고, 이를\n바탕으로 답변을 생성(Generation)하는 방식\no 정확한 답변 제공, 다양한 도메인에 적용 가능, 정보 업데이트\no Key Points o When to use RAG:\n• 언어 모델이 학습하지 않은 정보에 대해 생성할 때\n정보 검색: 주어진 질문이나 입력 문장과 관련된 문서를 외부\n데이터베이스나 지식베이스에서 검색. TF(cid:13247)IDF, BM25, dense • 할루시네이션의 비율을 줄이고 싶을 때\nretrievers와 같은 정보 검색 알고리즘 사용 • 언어 모델의 응답을 특정 문서 내에서 생성할 때\n정보 통합: 검색된 관련 문서들을 바탕으로 필요한 정보를 추출하고\n통합. 생성 단계에서 사용할 수 있는 풍부한 컨텍스트 제공\n자연어 생성: 통합된 정보를 바탕으로 질문에 대한 답변 생성. 이\n단계에서는 Transformer 기반의 언어 모델, 예를 들어 GPT(cid:13247)3,\nBERT 등을 활용하여 자연스러운 문장 생성",
+      "char_count": 649,
+      "word_count": 142,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 28,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nRAG (Retrieval Augmented Generation)\nStandard Prompt: RAG-enhanced prompt:\nWhere does Ilya Sutskever work? Here is some relevant context for this conversation:\n”\"\" {PASTE TEXT FROM WIKIPEDIA\nhttps://en.wikipedia.org/wiki/Ilya_Sutskever}\n\"\"”\nFor the following question, please answer questions\nbased on the document above. Where does Ilya\nSutskever work?",
+      "char_count": 376,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 29,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nRAG (Retrieval Augmented Generation)\nStandard Prompt: RAG-enhanced prompt:\nExplain the impact of climate change \"Using the latest data from scientific studies, explain\non polar bear populations. the impact of climate change on polar bear\npopulations.\"\nOutput:\nOutput:\n\"According to a 2022 study published in the journal Nature\nClimate change has a significant impact on\nClimate Change, polar bear populations are experiencing\npolar bear populations primarily through the\nsignificant declines due to the rapid loss of sea ice in the\nloss of sea ice habitat. As global temperatures\nArctic. The study highlights that the extent of sea ice has\nrise, sea ice melts earlier and forms later each\ndecreased by approximately 13% per decade since 1979,\nyear, reducing the time polar bears have to\ndirectly affecting the hunting and breeding habitats of polar\nhunt seals, their primary food source. This leads\nbears. Furthermore, the research indicates that by 2100, if\nto malnutrition, decreased body condition, and\ncurrent trends continue, polar bears could lose over 80% of\nlower cub survival rates. Additionally, polar\ntheir habitat, leading to severe population declines. Another\nbears may be forced to swim longer distances\nreport from the World Wildlife Fund (WWF) emphasizes that\nto find suitable habitats, increasing the risk of\npolar bear cub survival rates have dropped by 30% over the\ndrowning.\npast decade due to malnutrition caused by shorter hunting\nseasons.\"",
+      "char_count": 1486,
+      "word_count": 229,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 30,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nRAG (Retrieval Augmented Generation)\n고도화된 RAG 프롬프트 예시\n프롬프트 엔지니어링\n프롬프트:\n명확한 요청\nUsing the latest scientific data, particularly from the\nUsing the latest scientific data\n2022 Nature Climate Change journal and the World\nWildlife Fund reports, explain the impact of climate\n콘텍스트 제공\nchange on polar bear populations. Specifically,\n기후 변화, 북극곰 서식지, 연구 데이터 등의 배경 정보\naddress the following points:\n출처 명시\n• The rate of sea ice loss per decade. 2022년 Nature Climate Change 저널\n• How sea ice loss affects the hunting and breeding\n구체적인 요구사항\nhabitats of polar bears.\n\"해빙 손실\", \"사냥 및 번식 서식지\", \"새끼 생존율\" 등\n• The projected habitat loss by 2100.\n구체적인 영향을 명시\n• The impact on polar bear cub survival rates over the\npast decade.",
+      "char_count": 725,
+      "word_count": 130,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 31,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nRAG 의 두 단계\n1. Indexing: Knowledge Base 를 준비하는 단계\n2. Query : KB로부터 추출한 컨텍스트를 활용해 LLM에게 질문 하는 단계\n1단계 2단계\n• 데이터 소스로부터 데이터를 로드 • 생성된 색인으로부터 질의에 맞는 컨텍스트 추출\n• 로드한 데이터를 문서(cid:13273)Documents(cid:13274)로 변환 • 추출한 컨텍스트를 포함하여 LLM 쿼리\n• 변환한 문서에 대한 색인(cid:13273)Index(cid:13274) 생성 • 쿼리 결과 처리\nImage source: https://docs.llamaindex.ai/en/latest/getting_started/concepts/",
+      "char_count": 380,
+      "word_count": 63,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 32,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nRetrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. Lewis et al., (2021)\nRAG Model Overview\n문서 인덱스 (cid:13273)Document Index(cid:13274):\n•미리인코딩된문서들의벡터데이터베이스. 각\n•문서는질문벡터와의내적연산을통해관련성을평가받음.\n생성기 (cid:13273)Generator(cid:13274):\n•검색된문서들을입력으로받아최종답변을생성. 여러문서들을기반으로\n가장적절한답변을생성하도록훈련됨.\n•생성과정에서문서들에따라다양한답변을생성하고, 이를종합하여최종\n답변을제공. 이를pθ로나타냄\n최종 답변 생성:\n•여러문서에대한답변을종합하여최종적으로하나의답변을생성\n질문 인코더 (cid:13273)Query Encoder(cid:13274):\n•질문qqq을입력받아인코딩\n검색기 (cid:13273)Retriever(cid:13274):\n•질문인코더가생성한질문벡터q(cid:13273)x(cid:13274)q(cid:13273)x(cid:13274)q(cid:13273)x(cid:13274)을사용하여문서\n인덱스에서관련문서를검색. 이과정은최대내적검색(cid:13273)Maximum Inner\nProduct Search, MIPS(cid:13274)을통해이루어짐.\n•검색된상위K개의문서z1,z2,...,zKz(cid:13255)1, z(cid:13255)2, ..., z(cid:13255)Kz1,z2,...,zK를반환.\n이문서들은질문과관련이높은문서들.\nLewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D. (2020). Retrieval-augmented\ngeneration for knowledge-intensive nlptasks.Advances in Neural Information Processing Systems,33, 9459-9474.",
+      "char_count": 1027,
+      "word_count": 85,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 33,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning,\nand inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in\ncontext learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has\ndelved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring\nways to enhance language models in the pre-training stage through retrieval-augmented techniques.\nGao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., ... & Wang, H. (2023). Retrieval-augmented generation for large language models: A survey.arXivpreprint arXiv:2312.10997.",
+      "char_count": 732,
+      "word_count": 103,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 34,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nü RAG의 단점\n• RAG는 창의성을 제한, 작문 영역에서는 효용성이 낮음\n• 비용이 비쌈 (많은 토큰 소모)\n• 언어 모델이 문서 포맷을 이해하지 못하면, 할루시네이션 방지 못함\nRAG & Prompt Engineering\n프롬프트 엔지니어링은 RAG성능을 최적하는 데 중요한 역할\no 질문 구체화\no 컨텍스트 제공\no 모델 지침 (cid:13273)형식 (cid:13704) 스타일(cid:13274)",
+      "char_count": 250,
+      "word_count": 53,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 35,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n05. Automatic Prompt Engineer",
+      "char_count": 84,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 36,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nAutomatic Prompt Engineer\nResearch Paper\nLarge Language Models Are Human-Level Prompt Engineers. Zhou (2022)\no 자동 프롬프트 엔지니어(cid:13273)APE(cid:13274)라는 프레임워크를 제안\no APE는 여러 단계의 평가 과정을 통해 최적의 명령어를 자동으로 생성하고 선택하는 방법\no 각 단계에서 대형 언어 모델을 사용하여 후보 명령어를 생성하고 평가하며, 가장 적절한 명령어를 선택하여 최종적으로 사용\n후보 명령어 제안\n점수 매기기\n여섯 단계\n낮은 점수 후보 제거\n높은 점수 후보 선정\n샘플링 모델 사용 (cid:13273)선택사항(cid:13274)\n최종 후보 선정\nZhou, Y., Muresanu, A. I., Han, Z., Paster, K., Pitis, S., Chan, H., & Ba, J. (2022). Large language models are human-level prompt engineers.arXivpreprint arXiv:2211.01910.",
+      "char_count": 569,
+      "word_count": 100,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 37,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nAutomatic Prompt Engineer\nResearch Paper\nLarge Language Models Are Human-Level Prompt Engineers. Zhou (2022)\nZhou, Y., Muresanu, A. I., Han, Z., Paster, K., Pitis, S., Chan, H., & Ba, J. (2022). Large language models are human-level prompt engineers.arXivpreprint arXiv:2211.01910.",
+      "char_count": 304,
+      "word_count": 42,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 38,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nAPE Workflow\n1. LLMs as Inference Models\n시작 지점에서 LLM은 제공된 프롬프트를 바탕으로 다양한 응답을 생성\n예시 (cid:13379)write the antonym of the word(cid:13379)라는 입력을 받아 다양한 응답을 생성\n2. LLMs as Scoring Models\n각 생성된 프롬프트에 대해 LLM은 해당 프롬프트가 얼마나 적합한지 스코어를 매김\n여기서 각 프롬프트는 (cid:13379)LIKELIHOOD(cid:13379)에 기반하여 점수를 받음\n예를 들어, (cid:13379)write the antonym of the word(cid:13379)가 (cid:13247)0.26의 점수를 받는 식\nHigh Score Candidates (cid:13273)높은 점수 후보군(cid:13274)\n스코어링 모델을 통해 높은 점수를 받은 프롬프트는 유지되고,\n낮은 점수를 받은 프롬프트는 제거됨\n3. LLMs as Resampling Models (cid:13273)Optional(cid:13274)\n선택적으로, 이 단계에서는 높은 점수를 받은 프롬프트 중에서 의미를 유지하면서\n변형된 프롬프트를 생성.\n예를 들어, (cid:13379)write the antonym of the word(cid:13379)라는 프롬프트를 바탕으로 (cid:13379)list antonyms for the\ngiven word(cid:13379)라는 변형된 프롬프트가 생성\n4. 최종 선택\n최종적으로 가장 높은 점수를 받은 프롬프트가 선택되어 사용\n(cid:13379)give the antonym of the word provided(cid:13379)라는 프롬프트가 최종적으로 선택",
+      "char_count": 880,
+      "word_count": 144,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 39,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n연구 결과\no APE는 인간이 설계한 (cid:13379)단계별로 생각해 보자(cid:13273)Let(cid:13380)s think step by step(cid:13274)(cid:13379) 프롬프트(cid:13273)Kojima et al., 2022(cid:13274)보다\n더 나은 제로샷 연쇄적 사고(cid:13273)Chain(cid:13247)of(cid:13247)Thought, CoT(cid:13274) 프롬프트를 발견\no 확실한 정답을 얻기 위해 단계별로 해결해 보자\n(cid:13361)Let(cid:13380)s work this out in a step by step way to be sure we have the right answer(cid:13362)라는\n프롬프트는 연쇄적 사고를 유도하여 MultiArith 및 GSM8K 벤치마크에서 성능 향상 시킴\n• MultiArith는복합산술문제를해결하기위해개발된알고리즘또는모델",
+      "char_count": 501,
+      "word_count": 67,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 40,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nLarge Language Models as Optimizers (Yang at el.,2023)\n•OPRO(introduces the idea of using LLMs to optimize prompts:\n• Let LLMs \"Take a deep breath\" improves the performance on math problems.\nOptimization-based Prompt Re-optimization\nYang, C., Wang, X., Lu, Y., Liu, H., Le, Q. V., Zhou, D., & Chen, X. (2023). Large language models as optimizers.arXivpreprint arXiv:2309.03409.",
+      "char_count": 415,
+      "word_count": 61,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 41,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\no Optimization-based Prompt Re-optimization\n3. 생성된 해결책\n2번 단계에서 생성된 결과\n4. 목적 함수 평가자 (Objective Function Evaluator)\n각각의 해결책에 점수 부여\n5. 점수\n6. 최적화 루프 (Optimization Loop)\n점수가 부여된 새로운 해결책들은 메타 프롬프트에 추가됨\n이 과정을 반복하여, LLM이 계속해서 새로운 해결책을 생성하고,\n평가하고, 최적화함\n1. 메타 프롬프트 최적화가 완료되면 가장 좋은 해결책들을 반환함\n문제 설명 (cid:13249) 해결책 점수 쌍\n2. LLM as Optimizer\n메타 프롬프트를 입력으로 받아 새로운 해결책 생성",
+      "char_count": 378,
+      "word_count": 75,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 42,
+      "text": "Chapter 03. \nThe Advanced Prompt Engineering Techniques \n06. Active-Prompt \nFast campus",
+      "char_count": 87,
+      "word_count": 11,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 43,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nActive Prompting with Chain-of-Thought for Large Language Models (Diao et al., 2023)\no CoT 기법 한계 (cid:13704) 문제점\n인간이 만든 예시에 의존함 다양한 작업에 대해 효과적인 예시가 아닐 수 있음\n어렵고 모호한 질문에 대한 답을 예시로 LLM에게 주면, 복잡한 질문에도 답을 잘 함\n사람이 질문(cid:13247)응답 쌍을 만드는데 한계가 있음\no Active Prompt\n인간이 설계한 CoT 추론으로 주석이 달린 다양한 작업별 예시\n프롬프트에 LLM 적용시키는 방법\nDiao, S., Wang, P., Lin, Y., & Zhang, T. (2023). Active prompting with chain-of-thought for large language models.arXivpreprint arXiv:2302.12246.",
+      "char_count": 492,
+      "word_count": 89,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 44,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nActive Prompting with Chain-of-Thought for Large Language Models (Diao et al., 2023)\n답을 더 잘 찾기 위한 네 단계 과정\n(1)Uncertainty Estimation\n(2)Selection\n(3)Annotation\n(4)Inference\no AI가 답을 잘 모를 질문을 찾아낸다\no 가장 불확실한 질문들을 선택한다\no 사람이 그 질문에 답을 달아준다\no AI가 새로 답을 달아준 질문을 바탕으로 새로운 질문에\n더 잘 답할 수 있게 된다\nFigure 1: Illustrations of our proposed approach. There are four stages. (1) Uncertainty Estimation: with or without\na few human-written chain-of-thoughts, we query the large language model k (k “ 5 in this illustration) times to\ngenerate possible answers with intermediate steps for a set of training questions. Then we calculate the\nuncertainty u based on the k answers via an uncertainty metric (we use disagreement in this illustration). (2)\nSelection: according to the uncertainty, we select the most uncertain questions for annotation. (3) Annotation:\nwe involve humans to annotate the selected questions. (4) Inference: infer each question with the new\nannotated exemplars.\nDiao, S., Wang, P., Lin, Y., & Zhang, T. (2023). Active prompting with chain-of-thought for large language models.arXivpreprint arXiv:2302.12246.",
+      "char_count": 1147,
+      "word_count": 185,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 45,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nActive Prompting with Chain-of-Thought for Large Language Models (Diao et al., 2023)\nü 답변의 Uncertainty 를 어떻게 평가할까?\n논문은 Disagreement 사용\n모델로부터 동일한 질문에 대해 많은 답변을 내놓게 한다\n답변들 중 동일한 답변 제외하고, unique 한 답변의 개수를 센다\n그 갯수를 전체 답변 갯수로 나눈다\nlen(cid:13273)set (cid:13273)답변리스트(cid:13274)(cid:13274)/ len(cid:13273)답변 리스트(cid:13274)\n질문: \"A robe takes 2 bolts of blue fiber and half that much white fiber. How many\nbolts in total does it take?”\n답변: [3, 3, 3, 3, 3]\n불확실성: 15=0.2\\frac{1}{5} = 0.251=0.2\nDiao, S., Wang, P., Lin, Y., & Zhang, T. (2023). Active prompting with chain-of-thought for large language models.arXivpreprint arXiv:2302.12246.",
+      "char_count": 665,
+      "word_count": 106,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 46,
+      "text": "Chapter 03.\nThe Advanced Prompt Engineering Techniques\n07. Directional Stimulus\nPrompting",
+      "char_count": 89,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 47,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nDirectional Stimulus Prompting\nResearch Paper\nGuiding Large Language Models via Directional Stimulus Prompting Li et al., (2023)\no 정의 : Prompt 에 사용할 힌트를 만드는 모델을 사용하는 방법\nLLM을 원하는 출력 방향으로 유도하는 새로운 프레임 워크\no 사용 방법: 작은 튜닝 정책 모델(cid:13273)T5(cid:13274) 사용, 각 입력 값에 대한 보조 프롬프트 생성\n생성된 요약에 특정 키워드를 포함시키기\n1(cid:13274) Supervised Fine Tuning\n2(cid:13274) Reinforcement Learning\nLi, Z., Peng, B., He, P., Galley, M., Gao, J., & Yan, X. (2024). Guiding large language models via directional stimulus prompting.Advances in Neural Information Processing Systems,36.",
+      "char_count": 573,
+      "word_count": 93,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 48,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n1. 기사 입력\nDirectional Stimulus Prompting\nCNN 기사 (cid:13362)The Price Is Right(cid:13362)\n2. 정책 모델\n기사를 읽고 중요한 키워드 추출\nü Language Model 을 학습시켜 힌트 만드는 모델 (cid:13273)Policy LM(cid:13274) 만들어 사용\n(cid:13361)The Price Is Right(cid:13362), (cid:13361)Bob Baker(cid:13362), (cid:13361)2007(cid:13362)\n3. 힌트\n추출된 키워드는 힌트로 사용\n키워드는 다음 단계의 요약에 도움\n4. 블랙박스 모델\n힌트를 바탕으로 기사 요약\n5. 출력\n답변에 대한 평가 진행 ROUGE 점수 사용\n6. 보상\n점수를 reward 로 사용하여 강화학습으로\nPolicy LM을 학습 시킴\nFigure 2: Overview of our proposed framework DSP, where we learn a small tunable policy model to generate the\n7. 학습된 정책 모델이 만들어지고,\ndirectional stimulus (keywords in this case) that provide input-specific guidance for the LLM toward the desired target.\nThe policy model can be trained with SFT and/or RL, where the reward is defined as the downstream task performance 이를 Prompt의 힌트 부분을 만드는 작업에 활용\nmeasure, such as the ROUGE score for the summarization task, or other alignment measures like human preferences.",
+      "char_count": 967,
+      "word_count": 165,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 49,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n평가결과\no 요약, 대화 응답 생성, 사고 추론\nMultiWOZ 데이터셋에서 80개의 대화만을 사용하여, DSP 기법은 ChatGPT의 성능을 41.4% 향상\n주요 평가 지표\n1.ROUGE(cid:13247)1, ROUGE(cid:13247)2, ROUGE(cid:13247)L:\n텍스트 요약의 정확성을 평가하는 지표\n2. BLEU: 기계 번역의 품질을 측정하는 지표\n3.METEOR: 의미적 일치를 평가하는 지표\n4.BERTScore: 문장 임베딩을 사용하여 의미적 유사성을\n평가하는 지표",
+      "char_count": 297,
+      "word_count": 53,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 50,
+      "text": "Chapter 03. \nThe Advanced Prompt Engineering Techniques \n08. React \nFastcampus",
+      "char_count": 78,
+      "word_count": 10,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 51,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nReAct Prompting\no Generate both reasoning traces and task(cid:13247)specific actions in an interleaved manner.\no Re (cid:13961) Act (cid:13965) 질문에 답하기 위한 생각(cid:13273)Reason(cid:13274)과 행동(cid:13273)Act(cid:13274)를 교차적으로 사용하는 프롬프팅 방식\n1. Reasoning 생성\n모델의 행동 계획 유도, 추적 및 업데이트, 예외 사항 처리\n2. Action\n지식 베이스나 환경과 같은 외부 소스와 상호작용하여 정보를 수집할 수 있도록 함\nLLM이 외부 도구와 상호작용을 통해 더 신뢰할 수 있고 사실적인 응답을 생성하기 위해\n추가 정보를 검색할 수 있게 함",
+      "char_count": 429,
+      "word_count": 77,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 52,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nResearch Paper\nReAct: Synergizing Reasoning and Acting in Language Models (Yao et al., 2022)\no 표준프롬프트: 추가적인 추론이나 행동 없이질문에 답변\no Chain-of-Thought (CoT) 추론만: 추론을 제공하지만행동은 하지 않음\no 행동만 (Act-Only): 추론없이 행동만 실행\no ReAct(Reason + Act): 추론과 행동을 결합하여 작업 수행\nFigure 1: (1) Comparison of 4 prompting methods, (a) Standard,\n(b) Chain-of-thought (CoT, Reason Only), (c) Act-only, and (d)\nReAct (Reason+Act), solving a HotpotQA (Yang et al., 2018)\nquestion. (2) Comparison of (a) Act-only and (b) ReAct\npromptingtosolveanAlfWorld(Shridharetal.,2020b)game.In\nbothdomains,weomitin-contextexamplesintheprompt,and\nonly show task solving trajectories generated by the model\n(Act,Thought)andtheenvironment(Obs).\nYao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). React: Synergizing reasoning and acting in language models.arXivpreprint arXiv:2210.03629.",
+      "char_count": 884,
+      "word_count": 121,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 53,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n(cid:13361)Apple Remote 외에 Apple Remote에서\n가능한 상호작용 기능을 할 수 있는 다른 장치는\n무엇입니까?(cid:13379) 라는 질문에 대한 답변\nThought와 Action 과정을 추가한 것\n(cid:13379)(cid:13973)하기 때문에 이제 (cid:13973)한 행동을 해야겠다(cid:13379)라고\n생각하는 과정 (cid:13961) 생각을 통해 행동하는 과정을\n단계적으로 수행하는 것",
+      "char_count": 264,
+      "word_count": 42,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 54,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nHotpot QA as a Test-Training Set\nQ. (cid:13379)Apple Remote 외에 Apple Remote에서 가능한 상호작용 기능을 할 수 있는 다른 장치는 무엇입니까?(cid:13379)\nThought 1: Apple Remote와 관련된 프로그램을 검색해야 한다고 생각합니다.\nAct 1: Apple Remote를 검색합니다\n.Obs 1: Apple Remote는 2005년에 도입된 장치입니다.\nThought 2: Front Row 프로그램을 제어할 수 있는 장치를 찾아야 한다고 생각합니다.\nAct 2: Front Row를 검색합니다.\nObs 2: Front Row를 찾을 수 없습니다.\nThought 3: Front Row 소프트웨어를 검색해야 한다고 생각합니다.\nAct 3: Front Row 소프트웨어를 검색합니다.\nObs 3: Front Row 소프트웨어는 Apple Remote로 제어할 수 있습니다.\nThought 4: 답은 키보드 기능 키입니다.\nAct 4: 키보드 기능 키로 완료합니다.",
+      "char_count": 548,
+      "word_count": 105,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 55,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n연구 결과\nPaLM-540B is used as the base model for prompting\nReAct outperforms (cid:13967)(cid:13967)(cid:13967) Act\no CoT는 환각 문제 발생\no ReAct 한계: 구조적 제약은 추론 단계를 공식화하는 유연성 감소시킴\no ReAct 는 검색정보에 의존, 정보가 부족한 검색결과는\no 모델의 추론을 방해하고, 생각을 복구하고 재구성하는 데 어려움 초래\n• Hotpot QA는복잡한질의응답시스템으로여러출처의정보를통합하여복잡한질문에대한답을찾는것을목표로함\n-다중문서이해(Multi-hop Reasoning) & 증거기반추론(Evidence-based Reasoning)\n• FEVER(cid:13273)Fact Extraction and VERification(cid:13274) 데이터셋은사실확인(cid:13273)fact(cid:13247)checking(cid:13274) 작업을위해설계된대규모데이터셋입니다.",
+      "char_count": 522,
+      "word_count": 66,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 56,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nReact Prompting 장점\no 문제 해결 능력 향상\n질문을 해결하기 위해 필요한 정보를 순차적으로 검색하며, 각 검색 결과를 바탕으로 다음 검색 방향을 결정\no 문제 적응력 향상\n생각(cid:13273)Thought(cid:13274)과 행동(cid:13273)Act(cid:13274)을 번갈아가며 수행하여 점진적으로 질문에 대한 답을 찾아감.\no 정보 신뢰성 증가",
+      "char_count": 232,
+      "word_count": 43,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 57,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n프롬프트 엔지니어링 심화 기법 핵심 포인트\nGenerate Retrieval\nPrompt Tree of\nKnowledge Augmented\nChaining Thoughts\nPrompting Generation\n트리 구조를 이용하여 AI\nAI 모델이 스스로 지식을 여러 프롬프트를 연결하여 검색 기능활용하여 AI\n모델이 다양한 사고 경로를\n생성하도록 유도하는 기법 복잡한 작업 수행 모델이 보다 정확한 답변을\n탐색하도록 하는 기법\n생성하도록 유도\n프롬프트 체인의 개념과\n지식 생성의 기본 원리 이해 사고 트리 구조 이해\n역할\n검색 기반 답변 생성 원리\n단계별 프롬프트 설계 및\nAI 모델의 지식 생성 능력\n연결 방법 트리 기반 문제 해결 방법 검색 결과 활용 방법\n향상",
+      "char_count": 396,
+      "word_count": 92,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 58,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n프롬프트 엔지니어링 심화 기법 핵심 포인트\nDirectional\nAutomatic Active(cid:13247)\nStimulus ReAct\nPrompt\nPrompt Engineer\nPrompting\nLLM이 스스로 프롬프트를 LLM 이 능동적으로 방향성을 가진 자극을 통해\n행동 기반의 프롬프트\n설계 하도록 하는 자동화 프롬프트를 생성하고 AI모델이 특정 목표를 향해\n기법을 활용하여 AI모델이\n기법 수정하는 기법 나아가도록 유도\n반응하도록 유도\n자동 프롬프트 생성법 능동적 프롬프트의 개념 방향성 자극의 원리\nReAct 원리와 활용 사례\n특정 목표 지향적 행동 기반 프롬프트 설계\n자동화 도구 사용법\n프롬프트 설계 및 적용법",
+      "char_count": 374,
+      "word_count": 78,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 59,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nReference\nLiu, J., Liu, A., Lu, X., Welleck, S., West, P., Bras, R. L., ... & Hajishirzi, H. (2021). Generated knowledge prompting for commonsense reasoning. arXiv\npreprint arXiv:2110.08387.\nYao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., & Narasimhan, K. (2024). Tree of thoughts: Deliberate problem solving with large language\nmodels. Advances in Neural Information Processing Systems, 36.\nLewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP\ntasks. Advances in Neural Information Processing Systems, 33, 9459-9474.\nGao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., ... & Wang, H. (2023). Retrieval-augmented generation for large language models: A survey. arXiv\npreprint arXiv:2312.10997.\nZhou, Y., Muresanu, A. I., Han, Z., Paster, K., Pitis, S., Chan, H., & Ba, J. (2022). Large language models are human-level prompt engineers. arXiv\npreprint arXiv:2211.01910.\nYang, C., Wang, X., Lu, Y., Liu, H., Le, Q. V., Zhou, D., & Chen, X. (2023). Large language models as optimizers. arXiv preprint arXiv:2309.03409.\nDiao, S., Wang, P., Lin, Y., & Zhang, T. (2023). Active prompting with chain-of-thought for large language models. arXiv preprint arXiv:2302.12246.\nLi, Z., Peng, B., He, P., Galley, M., Gao, J., & Yan, X. (2024). Guiding large language models via directional stimulus prompting. Advances in Neural\nInformation Processing Systems, 36.\nYao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). React: Synergizing reasoning and acting in language models. arXiv\npreprint arXiv:2210.03629.\nSource: https://docs.anthropic.com/claude/docs/chain-prompts\nSource: https://www.hani.co.kr/arti/economy/it/1130935.html\nSource: https://github.com/dave1010/tree-of-thought-prompting\nsource: https://docs.llamaindex.ai/en/latest/getting_started/concepts",
+      "char_count": 1922,
+      "word_count": 260,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 60,
+      "text": "Chapter 03. \nPrompt Engineering Applications \nFast campus",
+      "char_count": 57,
+      "word_count": 7,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 61,
+      "text": "Table of Contents\n01 데이터 생성과 분류하기\n02 코드 생성하기\n03 Function Calling with LLMs",
+      "char_count": 74,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 62,
+      "text": "Chapter 03. \nApplications \n01. Data Generation \nFastcampus",
+      "char_count": 58,
+      "word_count": 7,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 63,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nGenerating Data\no LLM은 관련 텍스트(cid:13273)Coherent Text(cid:13274)를 생성하는 우수한 능력을 가짐\no 프롬프트 엔지니어링으로 고품질, 일관적인, 사실에 가까운 답을 생성할 수 있음\no 데이터 테스트 (cid:13704) 평가에 유용\no Sentiment Analysis\n프롬프트:\nsentiment analysis 를 위해 10개 예시 문장을 생성해. 예시는\n＂긍정(cid:13362) 혹은 (cid:13361)부정(cid:13362) 에 해당하는 문장이어야 해.\n## 개수:\n(cid:13247) 부정: 2개\n(cid:13247) 긍정 :8개\n### Response Format:\nQ: (cid:13968)문장(cid:13967)\nA: (cid:13968)sentiment(cid:13967)",
+      "char_count": 438,
+      "word_count": 66,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 64,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nGenerating Data\nü 생성된 내용의 다양성을 높이려면?\no Finetune (cid:13704) RAG 를 사용하지 않고 생성 결과 조정하기\no 프롬프트 엔지니어링만 으로 해결\nResearch Paper\nTinyStories: How Small Can Language Models Be and Still Speak Coherent English? (cid:13273)2023(cid:13274)\n(cid:13273)예시(cid:13274) Creative Writing\n3(cid:13247)4세 아이가 이해할 만한 수준으로 동화 스토리 생성하기\n(cid:13247) Parameter with high temperature\n반복적인 단어, 문장 내용 깨짐, 문장 연결성 깨짐\n(cid:13247) 1,500 2(cid:13247)3세 유아 수준 단어 준비(cid:13273)동사, 명사, 형용사 구분(cid:13274)\n(cid:13247) 데이터 생성시 각각 1개의 품사 활용\n(cid:13247) 데이터 생성시 대화, 줄거리 반전, 결말, 도덕적 교훈과 같은 잠재적 이야기 특징 활용\nEldan, R., & Li, Y. (2023). Tinystories: How small can language models be and astillspeak coherent english?.arXivpreprint arXiv:2305.07759.",
+      "char_count": 722,
+      "word_count": 113,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 65,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nData Generation\no Prompt: Word List 사용\nWrite a short story (cid:13273)3(cid:13247)5 paragraphs(cid:13274) which only 3살 어린 아이가 쉽게 이해할 수 있는 아주 쉬운 단어를\nuses very simple words that a 3 year old child 사용해서 3(cid:13247)5단락 정도의 이야기를 써줘.\nwould likely understand. The story should use the 이야기에는 동사 (cid:13275)random.choice(cid:13273)verbs(cid:13255)list(cid:13274)(cid:13276), 명사\nverb (cid:13362)(cid:13275)random.choice(cid:13273)verbs(cid:13255)list(cid:13274)(cid:13276)(cid:13362), the noun (cid:13275)random.choice(cid:13273)nouns(cid:13255)list(cid:13274)(cid:13276)\n(cid:13362)(cid:13275)random.choice(cid:13273)nouns(cid:13255)list(cid:13274)(cid:13276)(cid:13362) and the adjective 그리고 형용사 (cid:13275)random.choice(cid:13273)adjectives(cid:13255)list(cid:13274)(cid:13276) 를\n(cid:13362)(cid:13275)random.choice(cid:13273)adjectives(cid:13255)list(cid:13274)(cid:13276)(cid:13362). The story 사용해야 해.\nshould have the following features: 다음 특징을 꼭 반영해\n(cid:13275)random.choice(cid:13273)features(cid:13255)list(cid:13274)(cid:13276), (cid:13275)random.choice(cid:13273)features(cid:13255)list(cid:13274)(cid:13276).\n(cid:13275)random.choice(cid:13273)features(cid:13255)list(cid:13274)(cid:13276). 꼭 쉬운 단어를 사용해야 해.\nRemember to only use simple words!\nEldan, R., & Li, Y. (2023). Tinystories: How small can language models be and astillspeak coherent english?.arXivpreprint arXiv:2305.07759.",
+      "char_count": 1408,
+      "word_count": 114,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 66,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nPrompt 사용 결과\nStory generated by gpt(cid:13247)3.5\nWrite a short story (3-5 paragraphs) which only uses very simple words that a 3 year old child would likely\nunderstand. The story should use the verb ”decorate”, the noun ”thunder” and the adjective ”ancient”.\nThe story should have the following features: the story should contain at least one dialogue, the story has a bad\nending. Remember to only use simple words!\nEldan, R., & Li, Y. (2023). Tinystories: How small can language models be and astillspeak coherent english?.arXivpreprint arXiv:2305.07759.",
+      "char_count": 579,
+      "word_count": 90,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 67,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n반복적인 합성 데이터 생성\nIterative Synthetic Data Generation\n구조 이용하기\nPrompt\no Summary: (cid:13275)a short summary generated by LLM(cid:13276)\no Features: (cid:13275)copy the features from the initial prompt(cid:13276)\nEntity\no Sentence: (cid:13275)a sentence generated by LLM, which should be present in the story(cid:13276)\n사용\no Words: (cid:13275)copy the words from the initial prompt(cid:13276)\no Story:\nEldan, R., & Li, Y. (2023). Tinystories: How small can language models be and astillspeak coherent english?.arXivpreprint arXiv:2305.07759.",
+      "char_count": 559,
+      "word_count": 76,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 68,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nPrompt 생성 결과\n요약 : (cid:13275)LLM이 생성한 짧은 요약을 내용에 포함 (cid:13276)\n특징: (cid:13275) 내용에 반전이 있어야 함(cid:13276)\n문장: (cid:13275)구어체 (cid:13276)\n단어: (cid:13275)한국어 의성어, 의태어 많이 사용(cid:13276)\n이야기: (cid:13275)중국으로 간 팬더 푸바오의 하루(cid:13276)\nStandard Prompting\nStructured Prompting",
+      "char_count": 288,
+      "word_count": 40,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 69,
+      "text": "Chapter 03. \nApplications \n02. Code Generation \nFastcampus",
+      "char_count": 58,
+      "word_count": 7,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 70,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nCode Generation\no LLM은 코드 생성과 수정에 뛰어난 성능을 보임\no System Message 를 사용하여 코드 생성과 수정 연습\nPrompt\nSystem\n너는 나의 코드작성 도우미야.\n나는 주니어 개발자야. 파이썬 언어를 설명해줘.\n코드에 대해 설명할 필요없어. 필요한 부분에서\n코드 블록을 생성해줘.",
+      "char_count": 201,
+      "word_count": 43,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 71,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nCode Generation\nUser message\nPrompt\n\"\"\"1. 영화 리스트 생성\n2. 영화리스트의 별점 리스트 생성\nSystem\n3. 영화 10개와 별점을 포함한 json 응답형태.\"\"\"\n너는 나의 코드작성 도우미야.\n나는 주니어 개발자야. 파이썬 언어를 설명해줘.\n코드에 대해 설명 할 필요 없어.\n코드 블록만 생성해줘.",
+      "char_count": 210,
+      "word_count": 44,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 72,
+      "text": "Chapter 03. \nApplications \n03. Function Calling w/h LLM \nFast campus",
+      "char_count": 68,
+      "word_count": 10,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 73,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\no OpenAI 2023년 6월 발표\no API 사용 시 (cid:13361)functions(cid:13362) 파라미터로 기능 목록 제공하면 GPT가 판단 후 해당 function사용\no 함수와 파라미터를 json 형식으로 응답\no ChatGPT Plugin (cid:13247) Function Call 사용\nImage source: https://gradientflow.substack.com/p/expanding-ai-horizons-the-rise-of",
+      "char_count": 296,
+      "word_count": 40,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 74,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\n1. Model : 사용 할 모델명 입력\n2. Functions: 각 function 별로 다음 key 를 가짐\nKey 선택사항 타입 설명\nname required string Function 이름. a(cid:13247)z, A(cid:13247)Z, 0(cid:13247)9, (cid:13247) 로 표현 가능 64가 최대 길이\ndescription optional string Function 이 무슨 일을 하는지에 대한 설명\nparameters optional object 함수가 허용하는 매개 변수",
+      "char_count": 321,
+      "word_count": 57,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 75,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\n3. function_call\n모델이 Function calling 에 응답하는 방식을 설정\nü Functions, function(cid:13255)call 은 system message 에 포함, token으로 추가\nKey 설명\nnone Function calling 을 사용하지 않음, function 이 없을 시, 디폴트 값\nauto 모델이 function calling 을 선택하도록 함. Function 이 있을 시, 디폴트 값\n(cid:13275)(cid:13361)name(cid:13362): (cid:13362)my(cid:13255)function(cid:13362)(cid:13274) 모델이 my(cid:13255)function 이란 함수를 call 하도록 함",
+      "char_count": 420,
+      "word_count": 60,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 76,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nOpen API 사용하기 위한 데이터 정의\nFunctions 정의\nUser Input: 서울 날씨는 어때?\nFunction: get_current_weather\nParameter: location, Unit",
+      "char_count": 138,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 77,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\n04. OpenAI의 GPT 모델에 대화와 함수\n정보를 전달하고 응답받기",
+      "char_count": 63,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 78,
+      "text": "Chapter 3. 프롬프트 엔지니어링 심화 \n05. GPT가 요청한 함수 실행 \n함수 \n\"location\": \"서울\" \n\"temperature\" : \"24\" \n\"unit\": \"섭씨\" \n\"forecast\" : [ \n\"sunny\" \n\"windy\" \nFast campus",
+      "char_count": 149,
+      "word_count": 25,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 79,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\nUser Input: 날씨는 어때?\nResponse: {\n‘role’ : ‘assistant’,\n’content’: 어느 도시나 지역의 날씨를 알고 싶으신가요?\n}",
+      "char_count": 128,
+      "word_count": 22,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 80,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\nUser Input: 서울 날씨는 어때?\nResponse: {\n‘role’ : ‘assistant’,\n’content’: None,\n‘function_call’ : {\n‘name’ : ‘get_current_weather’,\n‘argument’:\n‘{\\n \"location\": \"서울\",\\n “format” : “Celsius” \\n}’\n}\n}\no Argument: 함수가 무엇을 해야하는지 설명하는 부분\no Location: 날씨를 확인하고 싶은 장소",
+      "char_count": 290,
+      "word_count": 46,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 81,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\n사용 용도\n장점\noQuestion Answering 챗봇\n1. 자연어로 JSON 데이터 얻기\no자연어 API호출로 변환\n2.더 짧은 프롬프트로 토큰 절약\no텍스트에서 구조화된 데이터 추출\nSource: https://platform.openai.com/docs/guides/function-calling",
+      "char_count": 206,
+      "word_count": 30,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 82,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nFunction Call\n한계점\no 프롬프트 인젝션\n중요한 정보는 파라미터 설정에 넣지 않기, 테스트를 통해 호출 결과 확인\no 호출 오류\n응답 결과 확인 필요성\n요청하지 않은 함수 호출 발생 (cid:13273)add, delete(cid:13274)\no 내용 정확성 떨어짐\nSource: https://platform.openai.com/docs/guides/function-calling",
+      "char_count": 242,
+      "word_count": 40,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 83,
+      "text": "Chapter 3. 프롬프트엔지니어링심화\nReference\nEldan, R., & Li, Y. (2023). Tinystories: How small can language models be and astill speak coherent english?. arXiv preprint\narXiv:2305.07759.\nSource\nhttps://imnews.imbc.com/replay/2024/nwdesk/article/6604899_36515.html\nhttps://techbukket.com/blog/chatgpt-api-guide\nhttps://platform.openai.com/docs/guides/text-generation/function-calling",
+      "char_count": 371,
+      "word_count": 29,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}

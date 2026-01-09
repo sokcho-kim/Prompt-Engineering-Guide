@@ -1,0 +1,10 @@
+{"text": "환자는 Ki-67 검사를 받았다", "entity": "Ki-67", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "HER2 양성 유방암으로 진단", "entity": "HER2", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "cancer 관련 연구 진행 중", "entity": "er", "entity_type": "Biomarker", "expected": "무효"}
+{"text": "주사를 맞은 후 경과 관찰", "entity": "주사", "entity_type": "Disease", "expected": "무효"}
+{"text": "본태성 고혈압 환자", "entity": "고혈압", "entity_type": "Disease", "expected": "유효"}
+{"text": "입술 부위 통증 호소", "entity": "입술", "entity_type": "Disease", "expected": "무효"}
+{"text": "메토트렉세이트 투여 중", "entity": "메토트렉세이트", "entity_type": "Drug", "expected": "유효"}
+{"text": "EGFR 변이 검사 양성", "entity": "EGFR", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "제2형 당뇨병 진단", "entity": "당뇨병", "entity_type": "Disease", "expected": "유효"}
+{"text": "무증상 경과 관찰", "entity": "무증상", "entity_type": "Disease", "expected": "무효"}

@@ -27,3 +27,11 @@ prompts
 #mcp
 .mcp.json
 .env.local
+
+# learning experiments
+_learning/experiments/.env
+_learning/experiments/runs/
+_learning/reports/output/
+
+# large PDF files (parsed markdown available)
+_learning/inspirations/from_sujin/fastcampus/*.pdf

@@ -1,0 +1,145 @@
+{
+  "url": "https://test.the-prompt.me/test",
+  "scraped_at": "2026-01-09T16:12:07.505035",
+  "screenshots": [
+    "C:\\Jimin\\Prompt-Engineering-Guide\\_learning\\_from_sujin\\the_prompt_test\\screenshots\\01_main_page.png",
+    "C:\\Jimin\\Prompt-Engineering-Guide\\_learning\\_from_sujin\\the_prompt_test\\screenshots\\02_model_selector.png",
+    "C:\\Jimin\\Prompt-Engineering-Guide\\_learning\\_from_sujin\\the_prompt_test\\screenshots\\scroll_1.png",
+    "C:\\Jimin\\Prompt-Engineering-Guide\\_learning\\_from_sujin\\the_prompt_test\\screenshots\\scroll_2.png"
+  ],
+  "page_structure": {
+    "navigation": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Legacy"
+      },
+      {
+        "tag": "H1",
+        "text": "프롬프트 작성"
+      },
+      {
+        "tag": "H2",
+        "text": "role"
+      },
+      {
+        "tag": "H2",
+        "text": "message"
+      },
+      {
+        "tag": "H1",
+        "text": "변수 테스트"
+      },
+      {
+        "tag": "H1",
+        "text": "실행결과 로그"
+      },
+      {
+        "tag": "H1",
+        "text": "실행 옵션"
+      },
+      {
+        "tag": "H1",
+        "text": "실행 메트릭"
+      }
+    ]
+  },
+  "ui_elements": [
+    {
+      "type": "buttons",
+      "items": [
+        "+ 모델별 비교",
+        "+ 메시지 추가",
+        "실행\n1",
+        "메시지 비우기"
+      ]
+    },
+    {
+      "type": "inputs",
+      "items": [
+        {
+          "tag": "INPUT",
+          "type": "",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "TEXTAREA",
+          "type": "",
+          "name": "",
+          "placeholder": "메시지를 입력해주세요."
+        },
+        {
+          "tag": "INPUT",
+          "type": "number",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "range",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "number",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "range",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "TEXTAREA",
+          "type": "",
+          "name": "",
+          "placeholder": "콤마(,)로 구분해서 입력해주세요."
+        },
+        {
+          "tag": "INPUT",
+          "type": "number",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "range",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "number",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "range",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "number",
+          "name": "",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "range",
+          "name": "",
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "type": "select_options",
+      "items": []
+    }
+  ]
+}

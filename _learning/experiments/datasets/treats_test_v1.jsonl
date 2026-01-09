@@ -1,0 +1,10 @@
+{"drug": "메토트렉세이트", "disease": "류마티스관절염", "disease_code": "M05", "text": "류마티스 관절염 치료에 사용", "expected": "유효"}
+{"drug": "히드록시우레아", "disease": "화상", "disease_code": "T20", "text": "입술을 제외한 두경부의 1차 편평세포암종", "expected": "무효"}
+{"drug": "아비라테론", "disease": "임신합병증", "disease_code": "O98", "text": "무증상 또는 경미한 증상의 전이성 거세저항성 전립선암", "expected": "무효"}
+{"drug": "독소루비신", "disease": "유방암", "disease_code": "C50", "text": "전이성 유방암의 1차 치료", "expected": "유효"}
+{"drug": "타목시펜", "disease": "유방암", "disease_code": "C50", "text": "에스트로겐 수용체 양성 유방암 환자의 보조요법", "expected": "유효"}
+{"drug": "시스플라틴", "disease": "폐암", "disease_code": "C34", "text": "비소세포폐암의 1차 병용요법", "expected": "유효"}
+{"drug": "파클리탁셀", "disease": "두통", "disease_code": "G43", "text": "진행성 난소암 환자에서 두통이 부작용으로 보고됨", "expected": "무효"}
+{"drug": "이마티닙", "disease": "백혈병", "disease_code": "C92", "text": "필라델피아 염색체 양성 만성골수성백혈병", "expected": "유효"}
+{"drug": "리툭시맙", "disease": "당뇨병", "disease_code": "E11", "text": "당뇨병 환자에서는 주의가 필요함", "expected": "무효"}
+{"drug": "트라스투주맙", "disease": "위암", "disease_code": "C16", "text": "HER2 양성 전이성 위암의 치료", "expected": "유효"}

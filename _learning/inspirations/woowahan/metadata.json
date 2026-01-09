@@ -1,0 +1,257 @@
+{
+  "url": "https://techblog.woowahan.com/22839/",
+  "scraped_at": "2026-01-09T16:33:43.539488",
+  "title": "",
+  "date": "2025. 09. 29.",
+  "author": "이준수",
+  "images": [
+    {
+      "index": 1,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2023/05/221007_우형사원증_양극모_이준수님_22050292.jpg",
+      "alt": "이준수",
+      "filename": "img_01.png"
+    },
+    {
+      "index": 2,
+      "src": "https://techblog.woowahan.com/wp-content/themes/techblog/imgs/link.svg",
+      "alt": "clipboard",
+      "filename": "img_02.png"
+    },
+    {
+      "index": 3,
+      "src": "https://techblog.woowahan.com/wp-content/themes/techblog/imgs/facebook.svg",
+      "alt": "facebook",
+      "filename": "img_03.png"
+    },
+    {
+      "index": 4,
+      "src": "https://techblog.woowahan.com/wp-content/themes/techblog/imgs/twitter.svg",
+      "alt": "twitter",
+      "filename": "img_04.png"
+    },
+    {
+      "index": 5,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-11.40.47%E2%80%AFAM.png",
+      "alt": "AI플랫폼 2.0 전체 구성도",
+      "filename": "img_05.png"
+    },
+    {
+      "index": 6,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-1.06.30%E2%80%AFPM.png",
+      "alt": "구글 시트에서 관리하고 있는 버전, 코멘트,프롬프트\n",
+      "filename": "img_06.png"
+    },
+    {
+      "index": 7,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.08.12%E2%80%AFPM.png",
+      "alt": "외부 API 리전(region) 이슈",
+      "filename": "img_07.png"
+    },
+    {
+      "index": 8,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.08.21%E2%80%AFPM.png",
+      "alt": "제공자 정책 차단 (Blocked by Provider Policy)",
+      "filename": "img_08.png"
+    },
+    {
+      "index": 10,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.09.36%E2%80%AFPM.png",
+      "alt": "시트에서 관리하는 실험 결과",
+      "filename": "img_10.png"
+    },
+    {
+      "index": 11,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-11.43.15%E2%80%AFAM.png",
+      "alt": "GenAI Studio",
+      "filename": "img_11.png"
+    },
+    {
+      "index": 12,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-11.45.01%E2%80%AFAM.png",
+      "alt": "GenAI Studio",
+      "filename": "img_12.png"
+    },
+    {
+      "index": 13,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC3.png",
+      "alt": "GenAI Studio 기능 - 프롬프트 관리",
+      "filename": "img_13.png"
+    },
+    {
+      "index": 14,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC4.png",
+      "alt": "GenAI Studio 기능 - Observability",
+      "filename": "img_14.png"
+    },
+    {
+      "index": 15,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.15.20%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - Observability",
+      "filename": "img_15.png"
+    },
+    {
+      "index": 16,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.17.15%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - Observability",
+      "filename": "img_16.png"
+    },
+    {
+      "index": 17,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC5.png",
+      "alt": "GenAI Studio 기능 - 크레덴셜 관리",
+      "filename": "img_17.png"
+    },
+    {
+      "index": 18,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.19.07%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - 크레덴셜 관리",
+      "filename": "img_18.png"
+    },
+    {
+      "index": 19,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.19.47%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - 크레덴셜 관리",
+      "filename": "img_19.png"
+    },
+    {
+      "index": 20,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.19.55%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - 크레덴셜 관리",
+      "filename": "img_20.png"
+    },
+    {
+      "index": 21,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-1.19.34%E2%80%AFPM.png",
+      "alt": "GenAI Studio 기능 - 크레덴셜 관리",
+      "filename": "img_21.png"
+    },
+    {
+      "index": 22,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-12.46.39%E2%80%AFPM.png",
+      "alt": "GenAI SDK",
+      "filename": "img_22.png"
+    },
+    {
+      "index": 23,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-12.53.12%E2%80%AFPM.png",
+      "alt": "GenAI API Gateway",
+      "filename": "img_23.png"
+    },
+    {
+      "index": 24,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-12.56.06%E2%80%AFPM.png",
+      "alt": "GenAI Labs",
+      "filename": "img_24.png"
+    },
+    {
+      "index": 25,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC9.png",
+      "alt": "GenAI Labs 실험 화면",
+      "filename": "img_25.png"
+    },
+    {
+      "index": 26,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC10.png",
+      "alt": "GenAI Labs 활용 시나리오",
+      "filename": "img_26.png"
+    },
+    {
+      "index": 27,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/AI-Platform-2.0-%EA%B7%B8%EB%A6%BC11.png",
+      "alt": "GenAI Labs 활용 시나리오",
+      "filename": "img_27.png"
+    },
+    {
+      "index": 28,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-1.04.14%E2%80%AFPM.png",
+      "alt": "크레덴셜 발급 프로세스",
+      "filename": "img_28.png"
+    },
+    {
+      "index": 29,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-5.15.23%E2%80%AFPM.png",
+      "alt": "결과",
+      "filename": "img_29.png"
+    },
+    {
+      "index": 30,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-5.15.30%E2%80%AFPM.png",
+      "alt": "결과",
+      "filename": "img_30.png"
+    },
+    {
+      "index": 31,
+      "src": "https://techblog.woowahan.com/wp-content/uploads/2025/09/Screenshot-2025-11-06-at-5.15.39%E2%80%AFPM.png",
+      "alt": "결과",
+      "filename": "img_31.png"
+    }
+  ],
+  "links": [
+    {
+      "text": "AI",
+      "href": "/?pcat=ai"
+    },
+    {
+      "text": "배민 앱에도 AI 서비스가? AI 서비스와 MLOps 도입기",
+      "href": "https://techblog.woowahan.com/11582/#toc-3"
+    },
+    {
+      "text": "제목은 안정적인 AI 서빙 시스템으로 하겠습니다. 근데 이제 자동화를 곁들인…",
+      "href": "https://techblog.woowahan.com/19548/"
+    },
+    {
+      "text": "GPT를 활용한 카탈로그 아이템 생성",
+      "href": "https://techblog.woowahan.com/21294/"
+    },
+    {
+      "text": "2025년 4월, Azure OpenAI East US 리전 장애로 GPT-4 계열 모델이 장시간 응답 불가 상태",
+      "href": "https://learn.microsoft.com/en-us/answers/questions/2245448/azure-open-ai-service-unavailable-east-us-region?"
+    },
+    {
+      "text": "Application Inference Profile | AWS 문서",
+      "href": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html"
+    },
+    {
+      "text": "From Zero to Scale: Langfuse’s Infrastructure Evolution | Langfuse 블로그",
+      "href": "https://langfuse.com/blog/2024-12-langfuse-v3-infrastructure-evolution"
+    },
+    {
+      "text": "Langfuse is the #1 most used Open Source LLMOps Product | Langfuse 블로그",
+      "href": "https://langfuse.com/blog/2024-11-most-used-oss-llmops"
+    },
+    {
+      "text": "LangSmith Alternative? Langfuse vs. LangSmith | Langfuse 블로그",
+      "href": "https://langfuse.com/faq/all/langsmith-alternative"
+    },
+    {
+      "text": "Ten Reasons to Use Langfuse for LLM Observability, Evaluations and Prompt Management | Langfuse 블로그",
+      "href": "https://langfuse.com/faq/all/ten-reasons-to-use-langfuse"
+    },
+    {
+      "text": "Langfuse 공식 문서",
+      "href": "https://langfuse.com/docs/prompt-management/overview"
+    },
+    {
+      "text": "Observability in Multi-step LLM Systems | Langfuse 블로그",
+      "href": "https://langfuse.com/blog/2024-10-observability-in-multi-step-llm-systems"
+    },
+    {
+      "text": "A Survey of Context Engineering for Large Language Models, Mei et al., 2025",
+      "href": "https://arxiv.org/abs/2507.13334"
+    },
+    {
+      "text": "Langfuse Playground는 아직 멀티모달 입력을 지원하지 않는 제약",
+      "href": "https://github.com/orgs/langfuse/discussions/4268"
+    },
+    {
+      "text": "Agentic Design Patterns",
+      "href": "https://www.amazon.com/Agentic-Design-Patterns-Hands-Intelligent/dp/3032014018"
+    },
+    {
+      "text": "많은 기업이 PoC 이후 운영 확장에서 어려움을 겪는 이유 | McKinsey 블로그",
+      "href": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/overcoming-two-issues-that-are-sinking-gen-ai-programs"
+    }
+  ],
+  "image_count": 30,
+  "link_count": 16
+}

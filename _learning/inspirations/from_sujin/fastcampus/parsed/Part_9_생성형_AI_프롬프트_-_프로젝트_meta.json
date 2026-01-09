@@ -1,0 +1,150 @@
+{
+  "source": "Part 9. 생성형 AI 프롬프트 - 프로젝트.pdf",
+  "parsed_at": "2026-01-09T17:59:38.395290",
+  "total_pages": 17,
+  "pages_with_text": 14,
+  "pages_needing_ocr": 3,
+  "ocr_page_numbers": [
+    3,
+    12,
+    14
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering\nChapter 04. 프롬프트 엔지니어링 파이널 프로젝트",
+      "char_count": 91,
+      "word_count": 18,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Prompt EngineeringA to Z\n생성형 AI 프로젝트의 범위와 목표 설정\n프롬프트 엔지니어링 A to Z\n교육 분야: AI 기반 교과서 활동 툴 및 챗봇 개발 : 실습\nChapter 04. 프롬프트 엔지니어링\n사용자 경험 분석: AI 상호작용 만족도 연구 : Turn Chunking\n파이널 프로젝트\n고객 서비스: AI 상담 지원 시스템 구축 : Topic Modeling",
+      "char_count": 215,
+      "word_count": 53,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Chapter 04. 프롬프트 엔지니어링 파이널 프로젝트 \n생성형 AI 프로젝트의 범위와 목표 설정 \n교육 분야 : AI 기반 영어 화자를 위한 \n교과서 활동 툴 및 챗봇 개발 한국어 학습용 툴/챗봇 \n사용자 경험 분석 → \n사용자 만족도 \nAI 상호작용 만족도 연구 \n분류 \n고객 서비스 AI 지원 \n고객 불만 데이터 기반 \n시스템 구축 Topic 모델링 \nFast campus",
+      "char_count": 212,
+      "word_count": 54,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 4,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n(cid:13967) 교육 분야: AI 기반 교과서 활동 툴 및 챗봇 개발\n대상: 영어 모어 화자를 위한 한국어 학습용 툴/챗봇\n●\n대상 레벨: Novice Level\n●\n구현 방법: 100% 프롬프트 엔지니어링\n●",
+      "char_count": 149,
+      "word_count": 34,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 5,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPrompt 프로젝트 실습 #1\nLesson 2. 어때요?\n세 개의 형용사를 Novice 레벨 학습자의 수준에 맞춰,\n＂어때요?” 문장을 학습하도록 하는 “툴”을 프롬프트로 제작해보세요.\n형용사: 맛있다, 많다, 좋다\n선생님: 학교 식당 커피가 _______?\n학생: 맛있어요.\n선생님: 한국어 수업이 ______?\n학생: 좋아요.\n선생님: 오늘 날씨가 ______?\n학생: 좋아요.",
+      "char_count": 243,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPrompt:\n(cid:13361)(cid:13362)(cid:13362)You are an expert Korean language teacher. Your task is to generate\nextremely simple questions based on the (cid:13275)(cid:13275)형용사(cid:13276)(cid:13276) inputted by the user.\nLimit your response to less than 6 words. Respond in Korean.\nInclude the English translation at the end of your response.\n(cid:13273)Example(cid:13274)\nU(cid:13205) 맛있다.\nA(cid:13205) 학교 식당 커피가 어때요? 맛있어요.\nHow is the school coffee? Delicious.\n###\nU(cid:13205) 많다.\nA(cid:13205) 한국어 수업 숙제가 어때요? 재미있어요.\nHow is your Korean homework? Fun.\n### U(cid:13205) 좋다. A(cid:13205) 요즘 기분이 어때요? 좋아요.\nHow are you feeling? Good.\n###",
+      "char_count": 661,
+      "word_count": 92,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPrompt 프로젝트 실습 #\nLesson 2. Describing People” Practice Bot\n아래 단어들을 조합하여 학습하는 챗봇을 만드세요.\n문법이나 철자 오류가 있다면, 친절하게 알려줘야해요.\n이름: 제니퍼\n학년: 4학년\n국적: 캐나다 사람\n전공: 문학\n관계: 친구\n출신: 토론토\n제니퍼는 4학년이에요. 캐나다 사람이에요. 문학을\n전공해요. 제 친구는 토론토에서 왔어요.",
+      "char_count": 245,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPrompt 프로젝트 실습 #\nLesson 2. Describing People” Prac:ce Bot",
+      "char_count": 86,
+      "word_count": 13,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n(cid:13967) 사용자 경험 만족도 : 데이터 Chunking\n프롬프트 기능: Raw Data 를 Single Turn과 Multi-Turn으로 구분하기\n●\n목적: 분류된 턴을 평가 메트릭스에 넣고 LLM에 의한 자동 스코어링\n●\n구현 방법: Pythonic Prompting\n●",
+      "char_count": 188,
+      "word_count": 36,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n실습:\nTurn을 Single(cid:13247)Turn 과 Multi(cid:13247)Turn을 자르는 프롬프트를 제작하세요.\n*실습을 위한 데이터를 사용하세요.",
+      "char_count": 121,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPythonic Promp-ng\nWe have found that using code prompts\ninstead of natural language prompts\nfor LLMs reduces ambiguity and\nmisinterpretation, which significantly\nreduces LLM hallucination\nduring plan generation and refinement.\nSource: https://proceedings.neurips.cc/paper_files/paper/2023/hash/b5c8c1c117618267944b2617add0a766-Abstract-Conference.html",
+      "char_count": 380,
+      "word_count": 35,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 12,
+      "text": "Prompting with Pseudo-Code Instructions \nChapter 04. 프롬프트 엔지니어링 파이널 프로젝트 \nA.2.2 Prompting with Pseudo-code \nListing 3 Code instructions (2-shot prompt) for \ninstructions \nsentiment classification task \ndef generate_sentiment (sentence: str) - > str: \nListing 2 Code instructions (0-shot prompt) for \n\"\"\"For the given sentence, the task is to \nsentiment classification task predict the sentiment. For positive sentiment \ndef generate_sentiment (sentence: str) str: return \"positive\" else return \"negative\" \n\"\"\"For the given sentence, the task is to \nParameters: \npredict the sentiment. For positive sentiment \nreturn \"positive\" else return \"negative\" sentence (str) : input sentence \nReturns: \nstr: sentiment of the input \nParameters: \n··· \nsentence (str): input sentence \nReturns: \n# predict the sentiment \nstr: sentiment of the input \nif sentiment_is_positive(sentence) : \n··· \nreturn \"positive\" \nelse: \n# predict the sentiment \nreturn \"negative\" \nif sentiment_is_positive(sentence) : \nreturn \"positive\" >>> generate_sentiment( \nelse: \" tormented by the quickened blood of the \" \nreturn \"negative\" \"roots\" \n) \n>>> generate_sentiment( negative\" \n\"that has a charmingly bourbon air ■ \n) >>> generate_sentiment( \n\"radiant as moses from the mount, he stood\" \n) \n\"positive\" \n>>> generate_sentiment( \n\"that has a charmingly bourbon air \" \nSource: https:/ / arxiv.org/pdf/2305.11790 \nFast campus",
+      "char_count": 1389,
+      "word_count": 185,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\nPythonic Prompting Example\ncontext (cid:13965) (cid:13379)(cid:13379)(cid:13379)You are tasked with recognizing dramatic context change between adjacent turns.\n(cid:13247)(cid:13247)(cid:13247)\n(cid:13277)Instructions(cid:13278)\nStart by comparing turn 0 and turn 1. Continue this process until the end.\nfor each turn comparison,\nif two turns share common context:\ncontinue\nif the user has a common shared intent between two turns:\ncontinue\nif the two turns share the same keyword:\ncontinue\nelse:\nlist the number of the latter turn\nAnswer format should be list of numbers.\n(cid:13247)(cid:13247)(cid:13247)\nNow analyze the given dialog and provide your answer.(cid:13379)(cid:13379)(cid:13379)",
+      "char_count": 722,
+      "word_count": 92,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 04. 프롬프트 엔지니어링 파이널 프로젝트 \nSingle Turn \nMulti Turn \nTurn-Chunking \nMulti Turn \nSingle Turn \nSingle Turn \nFast campus",
+      "char_count": 122,
+      "word_count": 19,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n(cid:13967)\n고객 불만 데이터 기반 Topic 모델링",
+      "char_count": 63,
+      "word_count": 10,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n(cid:13967) Sample Conversation Script\n[00:00] Agent: 네~~XX 상담원 XXX 입니다.\n[00:03] Customer: 네 저 지금 드릴집 듣고 있는데요 네 네 이거 혹시 환불하게 되면 얼마정도 받을 수\n있는지 궁금해서요\n[00:10] Agent: 아 네 회원님 성함 말씀해 주시겠습니까? 네 본인 맞으십니까? 네네 네 확인 감사합니다\n회원님 혹시 수강이 불편함을 느끼셔서 환불 말씀하시는 걸까요?\n[00:23] Customer: 네 그냥 시험을 좀 안보이게 될 거 같아서 네 그래서\n[00:28] Agent: 아 그러세요 아니시면 다른 과정으로 저희가 워낙 많은 카테고리가 있어서 네네\n다른 과정으로도 원래 사실 결제일로부터 이 주 이내에만 가능하신데\n선생님께서 환불 원치 않으시고 다른 과정을 원하시면 변경도 저희가 해드리고 있거든요\n[00:44] Customer: 아 근데 이게 그러면 시험대비 말고 혹시 뭐 네 평생 수강이나 이렇게도 좀 변경이 되나요?\n[00:51] Agent: 네 저희가 맞물려도 평생교육 평생 영업패스나 이렇게 변경하신다 하더라도\n((생략))",
+      "char_count": 596,
+      "word_count": 129,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 17,
+      "text": "Chapter 04. 프롬프트엔지니어링파이널프로젝트\n실습 : 아래 데이터를 기반으로 Topic(cid:13247)Modeling 프롬프트를 제작해보세요.\n[00:00] Agent: 네~~XX 상담원 XXX 입니다.\n[00:03] Customer: 네 저 지금 드릴집 듣고 있는데요 네 네 이거 혹시 환불하게 되면 얼마정도 받을 수\n있는지 궁금해서요\n[00:10] Agent: 아 네 회원님 성함 말씀해 주시겠습니까? 네 본인 맞으십니까? 네네 네 확인 감사합니다\n회원님 혹시 수강이 불편함을 느끼셔서 환불 말씀하시는 걸까요?\n[00:23] Customer: 네 그냥 시험을 좀 안보이게 될 거 같아서 네 그래서\n[00:28] Agent: 아 그러세요 아니시면 다른 과정으로 저희가 워낙 많은 카테고리가 있어서 네네\n다른 과정으로도 원래 사실 결제일로부터 이 주 이내에만 가능하신데\n선생님께서 환불 원치 않으시고 다른 과정을 원하시면 변경도 저희가 해드리고 있거든요\n[00:44] Customer: 아 근데 이게 그러면 시험대비 말고 혹시 뭐 네 평생 수강이나 이렇게도 좀 변경이\n되나요?\n[00:51] Agent: 네 저희가 맞물려도 평생교육 평생 영업패스나 이렇게 변경하신다 하더라도\n((생략))",
+      "char_count": 614,
+      "word_count": 133,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}

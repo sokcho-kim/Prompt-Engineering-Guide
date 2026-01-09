@@ -1,0 +1,355 @@
+---
+title: "NER 검증 프롬프트 실험 결과"
+author: "Jimin"
+date: "2026-01-09"
+format:
+  html:
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+---
+
+```{python}
+#| label: setup
+#| include: false
+import json
+import pandas as pd
+from pathlib import Path
+
+# 결과 파일 경로
+RUNS_DIR = Path("../experiments/runs")
+```
+
+## 실험 개요
+
+### 목적
+Gazetteer 기반 NER 시스템의 **오매칭(false positive)** 필터링을 위한 프롬프트 비교 실험
+
+### 실험 설계
+
+| 항목 | 내용 |
+|------|------|
+| 모델 | gpt-4o-mini |
+| 데이터셋 | ner_test_v2.jsonl (22건) |
+| 비교 대상 | v2 (Few-shot) vs v3 (CoT) |
+
+### 엔티티 타입 분포
+
+| 타입 | 유효 | 무효 | 합계 |
+|------|------|------|------|
+| Biomarker | 4 | 2 | 6 |
+| Disease | 3 | 3 | 6 |
+| Drug | 3 | 2 | 5 |
+| Procedure | 3 | 2 | 5 |
+| **합계** | **13** | **9** | **22** |
+
+---
+
+## 실험 결과
+
+```{python}
+#| label: load-results
+# 결과 파일 로드
+v2_file = list(RUNS_DIR.glob("*_ner_validation_v2_*.json"))[0]
+v3_file = list(RUNS_DIR.glob("*_ner_validation_v3_*.json"))[0]
+
+with open(v2_file, 'r', encoding='utf-8') as f:
+    v2_data = json.load(f)
+with open(v3_file, 'r', encoding='utf-8') as f:
+    v3_data = json.load(f)
+
+print(f"v2 파일: {v2_file.name}")
+print(f"v3 파일: {v3_file.name}")
+```
+
+### 정확도 비교
+
+```{python}
+#| label: accuracy-comparison
+comparison = pd.DataFrame({
+    '항목': ['정확도', '정답', '오답', '총 건수'],
+    'v2 (Few-shot)': [
+        f"{v2_data['stats']['accuracy']:.1%}",
+        v2_data['stats']['correct'],
+        v2_data['stats']['incorrect'],
+        v2_data['stats']['total']
+    ],
+    'v3 (CoT)': [
+        f"{v3_data['stats']['accuracy']:.1%}",
+        v3_data['stats']['correct'],
+        v3_data['stats']['incorrect'],
+        v3_data['stats']['total']
+    ]
+})
+comparison
+```
+
+### 토큰 사용량 비교
+
+```{python}
+#| label: token-analysis
+def analyze_tokens(data):
+    results = data['results']
+    prompt_tokens = sum(r['usage']['prompt_tokens'] for r in results)
+    completion_tokens = sum(r['usage']['completion_tokens'] for r in results)
+    total_tokens = sum(r['usage']['total_tokens'] for r in results)
+    return {
+        'prompt_tokens': prompt_tokens,
+        'completion_tokens': completion_tokens,
+        'total_tokens': total_tokens,
+        'avg_prompt': prompt_tokens / len(results),
+        'avg_completion': completion_tokens / len(results),
+        'avg_total': total_tokens / len(results)
+    }
+
+v2_tokens = analyze_tokens(v2_data)
+v3_tokens = analyze_tokens(v3_data)
+
+token_df = pd.DataFrame({
+    '항목': ['Prompt Tokens (총합)', 'Completion Tokens (총합)', 'Total Tokens (총합)',
+             'Prompt (평균/건)', 'Completion (평균/건)', 'Total (평균/건)'],
+    'v2 (Few-shot)': [
+        f"{v2_tokens['prompt_tokens']:,}",
+        f"{v2_tokens['completion_tokens']:,}",
+        f"{v2_tokens['total_tokens']:,}",
+        f"{v2_tokens['avg_prompt']:.1f}",
+        f"{v2_tokens['avg_completion']:.1f}",
+        f"{v2_tokens['avg_total']:.1f}"
+    ],
+    'v3 (CoT)': [
+        f"{v3_tokens['prompt_tokens']:,}",
+        f"{v3_tokens['completion_tokens']:,}",
+        f"{v3_tokens['total_tokens']:,}",
+        f"{v3_tokens['avg_prompt']:.1f}",
+        f"{v3_tokens['avg_completion']:.1f}",
+        f"{v3_tokens['avg_total']:.1f}"
+    ]
+})
+token_df
+```
+
+### 비용 추정 (gpt-4o-mini 기준)
+
+```{python}
+#| label: cost-estimation
+# gpt-4o-mini 가격 (2026-01 기준 추정)
+INPUT_PRICE = 0.15 / 1_000_000   # $0.15 per 1M input tokens
+OUTPUT_PRICE = 0.60 / 1_000_000  # $0.60 per 1M output tokens
+
+def estimate_cost(tokens):
+    input_cost = tokens['prompt_tokens'] * INPUT_PRICE
+    output_cost = tokens['completion_tokens'] * OUTPUT_PRICE
+    return input_cost + output_cost
+
+v2_cost = estimate_cost(v2_tokens)
+v3_cost = estimate_cost(v3_tokens)
+
+cost_df = pd.DataFrame({
+    '항목': ['22건 비용', '1,000건 추정', '10,000건 추정'],
+    'v2 (Few-shot)': [
+        f"${v2_cost:.6f}",
+        f"${v2_cost * 1000 / 22:.4f}",
+        f"${v2_cost * 10000 / 22:.4f}"
+    ],
+    'v3 (CoT)': [
+        f"${v3_cost:.6f}",
+        f"${v3_cost * 1000 / 22:.4f}",
+        f"${v3_cost * 10000 / 22:.4f}"
+    ]
+})
+cost_df
+```
+
+---
+
+## 상세 결과 비교
+
+### v3 (CoT) 추론 예시
+
+```{python}
+#| label: cot-examples
+# 유효/무효 각 2개씩 예시 출력
+examples = []
+valid_count = 0
+invalid_count = 0
+
+for r in v3_data['results']:
+    if r['expected'] == '유효' and valid_count < 2:
+        examples.append(r)
+        valid_count += 1
+    elif r['expected'] == '무효' and invalid_count < 2:
+        examples.append(r)
+        invalid_count += 1
+    if valid_count >= 2 and invalid_count >= 2:
+        break
+
+for i, ex in enumerate(examples, 1):
+    print(f"### 예시 {i}: {ex['input']['entity']} ({ex['expected']})")
+    print(f"**텍스트**: {ex['input']['text']}")
+    print(f"**타입**: {ex['input']['entity_type']}")
+    print(f"**출력**:\n{ex['output']}")
+    print()
+```
+
+### 전체 결과 테이블
+
+```{python}
+#| label: full-results
+results_list = []
+for v2_r, v3_r in zip(v2_data['results'], v3_data['results']):
+    results_list.append({
+        'entity': v2_r['input']['entity'],
+        'type': v2_r['input']['entity_type'],
+        'expected': v2_r['expected'],
+        'v2_verdict': v2_r['verdict'],
+        'v3_verdict': v3_r['verdict'],
+        'v2_correct': '✓' if v2_r['correct'] else '✗',
+        'v3_correct': '✓' if v3_r['correct'] else '✗'
+    })
+
+pd.DataFrame(results_list)
+```
+
+---
+
+## 결론
+
+### 정확도
+
+- **v2 (Few-shot)**: 100% (22/22)
+- **v3 (CoT)**: 100% (22/22)
+
+두 버전 모두 테스트 데이터셋에서 **동일한 정확도**를 보임.
+
+### 토큰 효율성
+
+```{python}
+#| label: efficiency
+efficiency_increase = (v3_tokens['total_tokens'] - v2_tokens['total_tokens']) / v2_tokens['total_tokens'] * 100
+completion_increase = (v3_tokens['completion_tokens'] - v2_tokens['completion_tokens']) / v2_tokens['completion_tokens'] * 100
+
+print(f"v3의 총 토큰 증가율: {efficiency_increase:.1f}%")
+print(f"v3의 출력 토큰 증가율: {completion_increase:.1f}%")
+```
+
+### 권장 사항
+
+| 상황 | 권장 버전 | 이유 |
+|------|----------|------|
+| **대량 배치 처리** | v2 (Few-shot) | 비용 효율적, 동일 정확도 |
+| **디버깅/분석** | v3 (CoT) | 추론 과정 확인 가능 |
+| **품질 모니터링** | v4 (Judge) | 판정 품질 평가 |
+
+### 다음 단계
+
+1. **더 어려운 테스트 케이스** 추가하여 v2 vs v3 차이 확인
+2. **프로덕션 적용**: v2로 대량 처리, 오류 발생 시 v3로 분석
+3. **Judge 패턴**: 주기적 샘플링으로 품질 모니터링
+
+---
+
+## 비용 추적
+
+### 일별 비용 현황
+
+```{python}
+#| label: daily-cost
+import yaml
+
+COST_DIR = Path("../experiments/cost")
+DAILY_DIR = COST_DIR / "daily"
+
+# 가격 정보 로드
+with open(COST_DIR / "pricing.yaml", "r", encoding="utf-8") as f:
+    pricing = yaml.safe_load(f)
+
+# 일별 로그 로드
+daily_logs = []
+for log_file in sorted(DAILY_DIR.glob("*.json")):
+    with open(log_file, "r", encoding="utf-8") as f:
+        daily_logs.append(json.load(f))
+
+if daily_logs:
+    daily_df = pd.DataFrame([
+        {
+            "날짜": log["date"],
+            "실행 횟수": log["summary"]["run_count"],
+            "총 토큰": f"{log['summary']['total_tokens']['total']:,}",
+            "비용 (USD)": f"${log['summary']['total_cost_usd']:.6f}"
+        }
+        for log in daily_logs
+    ])
+    display(daily_df)
+else:
+    print("일별 비용 로그 없음")
+```
+
+### 프롬프트별 비용 분석
+
+```{python}
+#| label: prompt-cost-breakdown
+if daily_logs:
+    prompt_costs = {}
+    for log in daily_logs:
+        for run in log["runs"]:
+            prompt = run["prompt"]
+            if prompt not in prompt_costs:
+                prompt_costs[prompt] = {"runs": 0, "tokens": 0, "cost": 0}
+            prompt_costs[prompt]["runs"] += 1
+            prompt_costs[prompt]["tokens"] += run["tokens"]["total"]
+            prompt_costs[prompt]["cost"] += run["cost_usd"]
+
+    prompt_df = pd.DataFrame([
+        {
+            "프롬프트": prompt,
+            "실행 횟수": data["runs"],
+            "총 토큰": f"{data['tokens']:,}",
+            "총 비용": f"${data['cost']:.6f}",
+            "건당 비용": f"${data['cost']/data['runs']:.6f}" if data["runs"] > 0 else "-"
+        }
+        for prompt, data in sorted(prompt_costs.items())
+    ])
+    display(prompt_df)
+```
+
+### 비용 시뮬레이션
+
+```{python}
+#| label: cost-simulation
+# 프로덕션 시나리오별 비용 추정
+scenarios = [
+    {"name": "일간 (1,000건)", "items": 1000},
+    {"name": "주간 (5,000건)", "items": 5000},
+    {"name": "월간 (20,000건)", "items": 20000},
+]
+
+# v2 기준 건당 비용 계산
+v2_cost_per_item = v2_cost / 22
+
+sim_df = pd.DataFrame([
+    {
+        "시나리오": s["name"],
+        "예상 건수": f"{s['items']:,}",
+        "v2 예상 비용": f"${s['items'] * v2_cost_per_item:.4f}",
+        "v3 예상 비용": f"${s['items'] * v3_cost / 22:.4f}",
+    }
+    for s in scenarios
+])
+sim_df
+```
+
+### 모델별 가격표 (참고)
+
+```{python}
+#| label: pricing-table
+price_df = pd.DataFrame([
+    {
+        "모델": model,
+        "Input ($/1M)": f"${info['input']:.2f}",
+        "Output ($/1M)": f"${info['output']:.2f}"
+    }
+    for model, info in pricing["models"].items()
+])
+price_df
+```

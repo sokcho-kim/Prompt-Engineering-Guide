@@ -1,0 +1,36 @@
+# LLM 모델별 가격 설정
+# 단위: USD per 1M tokens
+# 업데이트: 2026-01-09
+
+models:
+  gpt-4o-mini:
+    input: 0.15      # $0.15 / 1M input tokens
+    output: 0.60     # $0.60 / 1M output tokens
+
+  gpt-4o:
+    input: 2.50      # $2.50 / 1M input tokens
+    output: 10.00    # $10.00 / 1M output tokens
+
+  gpt-4-turbo:
+    input: 10.00
+    output: 30.00
+
+  gpt-3.5-turbo:
+    input: 0.50
+    output: 1.50
+
+  # Claude models (참고용)
+  claude-3-opus:
+    input: 15.00
+    output: 75.00
+
+  claude-3-sonnet:
+    input: 3.00
+    output: 15.00
+
+  claude-3-haiku:
+    input: 0.25
+    output: 1.25
+
+# 기본 모델 (가격 정보 없을 때)
+default: gpt-4o-mini

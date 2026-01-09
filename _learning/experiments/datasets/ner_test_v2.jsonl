@@ -1,0 +1,22 @@
+{"text": "환자는 Ki-67 검사를 받았다", "entity": "Ki-67", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "HER2 양성 유방암으로 진단", "entity": "HER2", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "ER 양성으로 호르몬 치료 시작", "entity": "ER", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "EGFR 변이 검사 양성", "entity": "EGFR", "entity_type": "Biomarker", "expected": "유효"}
+{"text": "cancer 관련 연구 진행 중", "entity": "er", "entity_type": "Biomarker", "expected": "무효"}
+{"text": "trigger 반응 확인", "entity": "er", "entity_type": "Biomarker", "expected": "무효"}
+{"text": "본태성 고혈압 환자", "entity": "고혈압", "entity_type": "Disease", "expected": "유효"}
+{"text": "제2형 당뇨병 진단", "entity": "당뇨병", "entity_type": "Disease", "expected": "유효"}
+{"text": "협심증 의심 소견", "entity": "협심증", "entity_type": "Disease", "expected": "유효"}
+{"text": "주사를 맞은 후 경과 관찰", "entity": "주사", "entity_type": "Disease", "expected": "무효"}
+{"text": "무증상 경과 관찰 중", "entity": "무증상", "entity_type": "Disease", "expected": "무효"}
+{"text": "입술 부위 통증 호소", "entity": "입술", "entity_type": "Disease", "expected": "무효"}
+{"text": "메토트렉세이트 25mg 투여", "entity": "메토트렉세이트", "entity_type": "Drug", "expected": "유효"}
+{"text": "독소루비신 병용 요법 시작", "entity": "독소루비신", "entity_type": "Drug", "expected": "유효"}
+{"text": "플루오로우라실 주입", "entity": "플루오로우라실", "entity_type": "Drug", "expected": "유효"}
+{"text": "아스피린처럼 흔한 약", "entity": "아스피", "entity_type": "Drug", "expected": "무효"}
+{"text": "린스 후 헹굼 필요", "entity": "린", "entity_type": "Drug", "expected": "무효"}
+{"text": "CT 촬영 결과 이상 소견", "entity": "CT", "entity_type": "Procedure", "expected": "유효"}
+{"text": "조직 생검 시행 예정", "entity": "생검", "entity_type": "Procedure", "expected": "유효"}
+{"text": "PET-CT 검사 완료", "entity": "PET-CT", "entity_type": "Procedure", "expected": "유효"}
+{"text": "MRI실 앞에서 대기 중", "entity": "MRI", "entity_type": "Procedure", "expected": "무효"}
+{"text": "검사 결과지 분실", "entity": "검사", "entity_type": "Procedure", "expected": "무효"}

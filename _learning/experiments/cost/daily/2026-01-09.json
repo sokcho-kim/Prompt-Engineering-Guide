@@ -1,0 +1,79 @@
+{
+  "date": "2026-01-09",
+  "runs": [
+    {
+      "file": "2026-01-09_164352_ner_validation_v1_batch.json",
+      "prompt": "ner_validation_v1",
+      "timestamp": "2026-01-09_164352",
+      "items": 10,
+      "model": "gpt-4o-mini",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0,
+        "total": 0
+      },
+      "cost_usd": 0.0
+    },
+    {
+      "file": "2026-01-09_165843_ner_validation_v1_batch.json",
+      "prompt": "ner_validation_v1",
+      "timestamp": "2026-01-09_165843",
+      "items": 22,
+      "model": "gpt-4o-mini",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0,
+        "total": 0
+      },
+      "cost_usd": 0.0
+    },
+    {
+      "file": "2026-01-09_165848_ner_validation_v2_batch.json",
+      "prompt": "ner_validation_v2",
+      "timestamp": "2026-01-09_165848",
+      "items": 22,
+      "model": "gpt-4o-mini",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0,
+        "total": 0
+      },
+      "cost_usd": 0.0
+    },
+    {
+      "file": "2026-01-09_171612_ner_validation_v2_batch.json",
+      "prompt": "ner_validation_v2",
+      "timestamp": "2026-01-09_171612",
+      "items": 22,
+      "model": "gpt-4o-mini-2024-07-18",
+      "tokens": {
+        "prompt": 15153,
+        "completion": 44,
+        "total": 15197
+      },
+      "cost_usd": 0.002299
+    },
+    {
+      "file": "2026-01-09_171653_ner_validation_v3_batch.json",
+      "prompt": "ner_validation_v3",
+      "timestamp": "2026-01-09_171653",
+      "items": 22,
+      "model": "gpt-4o-mini-2024-07-18",
+      "tokens": {
+        "prompt": 16231,
+        "completion": 968,
+        "total": 17199
+      },
+      "cost_usd": 0.003015
+    }
+  ],
+  "summary": {
+    "run_count": 5,
+    "total_tokens": {
+      "prompt": 31384,
+      "completion": 1012,
+      "total": 32396
+    },
+    "total_cost_usd": 0.005314
+  }
+}

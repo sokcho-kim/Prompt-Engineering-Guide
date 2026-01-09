@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: output
+
+website:
+  title: "Prompt Engineering 학습 리포트"
+  navbar:
+    left:
+      - href: 01-learning-summary.qmd
+        text: "학습 정리"
+      - href: 02-experiment-results.qmd
+        text: "실험 결과"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-summary: "코드 보기"

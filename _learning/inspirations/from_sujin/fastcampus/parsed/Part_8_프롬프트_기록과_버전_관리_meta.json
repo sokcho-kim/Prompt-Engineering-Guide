@@ -1,0 +1,146 @@
+{
+  "source": "Part 8. 프롬프트 기록과 버전 관리.pdf",
+  "parsed_at": "2026-01-09T17:59:34.611913",
+  "total_pages": 16,
+  "pages_with_text": 9,
+  "pages_needing_ocr": 7,
+  "ocr_page_numbers": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering\nChapter 03.\nPart 08. 프롬프트 기록과 버전 관리",
+      "char_count": 95,
+      "word_count": 20,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Prompt EngineeringA to Z\n프롬프트 기록의 필요성과 이점\n프롬프트 엔지니어링 A to Z\n프롬프트 버전 관리: 원칙과 모범 사례\nChapter 03\nPart 08. 프롬프트 기록과 버전 관리\n프롬프트 기록 실습",
+      "char_count": 127,
+      "word_count": 30,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Chapter 03.프롬프트기록과버전관리\n• 프롬프트 기록과 관리의 어려움\n- 프롬프트수정내역을체계적으로관리하기가어렵다\n- 협업이어렵다\n- 프롬프트버전관리도구가제한적이다\nGit Google Spreadsheet\nVS Code Dropbox\nNotion Other Tool",
+      "char_count": 151,
+      "word_count": 22,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 4,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nAnthropic : Prompt Library \nANTHROP\\C English ✓ Q Search... �� Research News Go to claude.ai > ※ \nWelcome User Guides API Reference Prompt Library Release Notes Developer Newsletter \nPrompt Library \nExplore optimized prompts for a breadth of business and personal tasks. \nQ Search... All prompts \nCosmic keystrokes Corporate clairvoyant \n吉 \nGenerate an interactive speed typing game in a Extract insights, identify risks, and distill key \nsingle HTML file, featuring side-scrolling gameplay information from long corporate reports into a \nand Tailwind CSS styling single memo \nWebsite wizard Excel formula expert \nCreate one-page websites based on user Create Excel formulas based on user-described \nspecifications calculations or data manipulations \nGoogle apps scripter Python bug buster \nG Generate Google Apps scripts to complete tasks Detect and fix bugs in Python code \nbased on user requirements \nTime travel consultant Storytelling sidekick \nO \nHelp the user navigate hypothetical time travel Collaboratively create engaging stories with the \nscenarios and their implications user, offering plot twists and character \ndevelopment \nCite your sources SQL sorcerer \na \nGet answers to questions about a document's Transform everyday language into SQL queries \ncontent with relevant citations supporting the \nresponse \nDream interpreter Pun-dit \nOffer interpretations and insights into the Generate clever puns and wordplay based on any \nsymbolism of the user's dreams given topic \nFast campus",
+      "char_count": 1524,
+      "word_count": 219,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 5,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nClaude for Sheets: Prompt Examples \nCopy of Claude for SheetsTM: Prompt Examples [PUBLIC ACCESS] \n田 \nFile Edit View Insert Format Data Tools Extensions Help \na Menus け さ T 100% ▼ $ % .0 .00 123 Arial - 10 + B I 응 A る。 三 ▼ 点 ▼ |→ ▼ A GD Y 囲 � \n둔 곧 \nA1 ▼ I fx \nA B C \n1 This sheet shows Claude's responses to some basic questions \n2 \n3 Some rows have been condensed for legibility. To see full responses, copy the response cell into a text editor or expand the row height. \n4 Step 1: Type your prompts in this column Step 2: Select your model Step 3: CLAUDE response \nIn one sentence, what is good about the color blue? claude-3-haiku-20240307 ▼ #NAME? \n5 \nSuppose you have a table called \"Customers\" with the following claude-3-haiku-20240307 #NAME? \ncolumn names: \nCustomerlD, CustomerName, ContactName, Address, City, \nPostalCode, Country \n6 Can you write a SQL query that finds all customers in San Francisco \nwith a customer ID of greater than 1000? \nWrite a python function to determine if a number is prime claude-3-haiku-20240307 #NAME? \nFast campus",
+      "char_count": 1083,
+      "word_count": 197,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nPrompt Layer \nPromptLayer Platform V Docs Blog Case Studies Contact Us Log In \nThe cleanest way to PromptLayer く G P PromptLa... Home Registry Evaluate \nSearch... ◇ Tags \nprompt engineer み Fine-Tune Datasets \n/ Registry / Prompts / sql-buddy / promptlayer-sql \ntext-to-sql No Tags \ngpt-3.5-turbo Last Updated: 2 days ago · ID: 17163 · Version 12 of 12 · jinja2 \nEdit, evaluate, deploy & repeat. Manage and Prompt: You are a friendly AI personal stylist. Your \nclient is not very stylish or wise, and he needs... \nmonitor prompts with your whole team, Response: Today' S precipitation probability is 0, Template Versions Hide \nso it's safe to wear suede without worrying abou... \nincluding non-technical stakeholders. ● Version 12 67 \nSYSTEM \n□ daily_ weather 3:25:02 AM \n6 months ago You are a data analyst who is a \ngpt-3.5-turbo D use preamble snippet \nThere are A LOT of logs in the 4 \nStart for free Prompt: You are a friendly AI personal stylist. Your \nx 50% passing \nkeep queries small & fast. \nclient is not very stylish or wise, and he needs... \nResponse: Today will be warm and partly cloudy, ○ Version 11 20 \nreaching around 88°F. Sunset at 7:13 PM Enj... This is the schema for your cor \n6 months ago \ndatabase. \n□ daily_weather 3:25:00 AM ○ add back few-shot, \nincrease temp \nAn embedding is a request log \ngpt-3.5-turbo x 58% passing \nfunction_name has \"Embedding \nPrompt: You are a friendly AI personal stylist. Your prod \nsqlalchemy. \nclient is not very stylish or wise, and he needs... \nResponse: Today S precipitation probability is very ○ Version 10 12 \nlow, only 1%, It seems safe to wear suede today,... \n6 months ago \n□ daily_ weather a day ago ○ remove few-shot Input Variables: question \nexample \ngpt-3.5-turbo x 8% passing \nPrompt: You are a friendly AI personal stylist. Your \nclient is not very stylish or wise, and he needs... Average Latency Average Score \n4 \nResponse: Today will be warm with scattered 3.54s 67 \nclouds, reaching a high of 87.8°F, Sunset at... \n□ dally... weather a day ago \nTrusted hu companies like UOI I \nFast campus",
+      "char_count": 2093,
+      "word_count": 356,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nSample \nPromptLayer く G P Personal Home Registry Evaluate Analytics ◎ Playground \nJTL Fine-Tune Datasets \n/ Registry / Prompts / Example: page_ title \nSearch... ○ Tags \nExample: page_title No Tags \nRequests Traces Last Updated: 4 months ago · ID: 23378 · Version 6 of 6 · f-string Delete Ⓓ Playground 0 Edit \nNo requests found \nTemplate Versions Hide \nUSER \n● Version 6 SYSTEM \nⓇ Click here to turn off the d \nefault date range limit 4 months ago # Topic \nYou are a helpful AI assistant. You work for an online media \nO No quotes, higher temp Travel \norganization called BuzzFeed. \nstaging \n# Summary \nYour task is to create catchy article titles based on a summary. The \nWanderlust calling? Check out our curated list of 10 awe-inspiring \n○ Version 5 titles should be no more than 10 words. The titles should have no \ntravel destinations that should be on every adventurer's bucket list. \n4 months ago emojis. \nFrom tropical paradises to historic cities, these places offer \n○ Remove last line \nunforgettable experiences. Get ready to fuel your wanderlust and start \nproduction The goal is to write catchy & easy to write blog post titles. These \nplanning your next getaway! \ntitles should be \"clickbait\" and encourage users to click on the \n○ Version 4 blog. \nCopy \n4 months ago \n○ More !!! The user will provide a blog post abstract summary as well as a \ntopic keyword. You will respond with a title. Don't use quotes in the ASSISTANT \ntitle. \n○ Version 3 The Ultimate Travel Bucket List: 10 Breathtaking Destinations to Visit \n4 months ago \nCopy \n○ Catchier title \nCopy \n○ Version 2 \n4 months ago Variables: article topic Metadata = Parameters \nInput \n曰 No emojis \nVersion 1 \nAverage Latency Average Score Total Cost Total Requests \n◆ ■ II  \nModel Name ◇ Input Variables ◇ Request Start Time � Score ◇ Response Preview ◇ \nFast campus",
+      "char_count": 1865,
+      "word_count": 322,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nLangSmith \n& Personal > ④ Prompts > general > c1b8dde7 \n18 \ngeneral:c1b8dde7 상 Private Make Public \n品 \nPrompt Commits Updated 3 months ago \n/ \n@ ChatPromptTemplate Edit in Playground → \nSYSTEM \nYou are a chatbot. Help me to provide an accurate information on the given topic. \nHUMAN \n{question} \nC \nChatOpenAl \nProvider OpenAl Chat Instruct C \nModel gpt-4o-mini \nTemperature 0.4 \nMax Output Tokens 1005 \nTop P 1 \nPresence Penalty 0 \nFrequency Penalty \n: \nFast campus",
+      "char_count": 494,
+      "word_count": 80,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nHub DEVELOPER \n 父 \nNew Use Cases V \n+ > \nPrompt \n品 Agent simulations 53 \n/_ LangChain Hub Agents 507 \nAutonomous agents 93 \nExplore and contribute prompts to the community hub \nChatbots 304 \nClassification 75 \nSearch prompts, use cases, models... \nCode understandi... 63 \nCode writing 88 \nEvaluation 106 \nTop Favorited Top Viewed Top Downloaded Recently Updated \nExtraction 171 \nInteracting with A... 93 \nMulti-modal 20 \nChatPromptTemplate Summarization English openai:gpt-3.5-turbo \nQA over docume... 326 \nhardkothari/prompt-maker \nSelf-checking 52 \nConvert your small and lazy prompt into a detailed and better prompts with this template. \nSQL 25 \n{x} Prompt · Updated a year ago · 182 59.2k · 出 19.9k · � 1 \nSummarization 250 \nTagging 30 \nChatPromptTemplate QA over documents English <> Type V \nrlm/rag-prompt ChatPromptTe... 3796 \nThis is a prompt for retrieval-augmented-generation. It is useful for chat, QA, or other applications that StringPromptTe... 1265 \nrely on passing context to an LLM. \nStructuredPrompt 188 \n(x) Prompt · Updated 4 months ago · 155 · 210k · 出 16.7M · � 3 \nLanguage V \nChinese 94 \nAgents Interacting with APIs ChatPromptTemplate meta:ilama-2-70b-chat \nEnglish 1058 \nhomanp/superagent French 39 \nThis prompt ads sequential function calling to models other than GPT-0613 German 31 \n: \n{x} Prompt · Updated a year ago · 149 · 73k · 业 36.3k · -○- 11 Russian 18 \nSpanish 52 \nFast campus",
+      "char_count": 1440,
+      "word_count": 224,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter 03.프롬프트기록과버전관리\n• 프롬프트 버전 관리: 원칙과 모범 사례: Notion\n프롬프트 데이터베이스의 칼럼 설정\nProperty Type Description\nName Tittle 프롬프트 이름\nStatus Select 상태 (cid:13273)Draft, In Progress, In Review,\nDone(cid:13274)\nVersion Number 버전 번호\nAuthor Person 작성자\nCreated at Created Time 생성 날짜\nUpdated at Last Edited Time 마지막 수정 날짜\nProject Multi(cid:13247)Select 관련 프로젝트\nChange Log Relation Change Log 데이터베이스와의 관계 설정",
+      "char_count": 386,
+      "word_count": 63,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 03.프롬프트기록과버전관리\n• 프롬프트 수정 로그\nProperty Type Description\nName Tittle 변경 로그 이름\nPrompt Relation Prompts 데이터베이스와의 관계 설정\nVersion Number 버전 번호\nChange Summary Text 변경 내용 요약\nChange By Person 생성 날짜\nChanged at Created Time 변경 날짜",
+      "char_count": 224,
+      "word_count": 41,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 12,
+      "text": "Chapter 03. 프롬프트 기록과 버전 관리 \nExample \nPrompt Fortpolio \nAa 프롬프트 제목 Status Version Created At Upda1 \nsample_prompt In progress V1.0 2024년 8월 16일 오후 11:07 2024년 1 \nPrompt Template Not started 2024년 8월 16일 오후 11:48 2024년 1 \n+ 새로 만들기 \nFast campus",
+      "char_count": 241,
+      "word_count": 44,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 03.프롬프트기록과버전관리\n프롬프트 버전 관리 규칙\n● 규칙 1: 주요 기능 변경 시\n- 초기 버전은 1.0.\n- 1.0에서 프롬프트의 기능이나 목적에 변화가 발생할 경우 주요 버전에 앞 번호를 올린다. (예:\n1.0, 2.0, 3.0)\n(예시) 새로운 기능 원본에 추가, 프롬프트 메인 구조 변경, 프롬프트 토큰 수 변경\n● 규칙 2: 마이너 업데이트 시\n- 프롬프트 내용의 일부 수정, 성능 개선, 오류 수정 등 사소한 변경이 있을 때는 뒷 번호를 올린다.\n(예: 1.1, 2.1, 3.2)\n(예시) 문법 오류 수정, 일부 문장 수정, 기존 기능에서 일부 기능 추가",
+      "char_count": 326,
+      "word_count": 86,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 03.프롬프트기록과버전관리\n프롬프트 버전 관리 규칙\n● 규칙 3: 버그 수정 시\n프롬프트의 버그를 수정하거나 긴급한 문제를 해결한 경우 패치 버전 번호를 올린다. (예: 1.0.1,\n1.0.2)\n(예시) 오타 수정, 출력 깨짐 수정\n● 규칙 4: 피드백 반영 시\n사용자나 팀의 피드백을 반영하여 프롬프트를 업데이트할 때는 마이너 버전\n또는 패치 버전 번호를 올린다.\n(예시)\n- 사용자 피드백을 반영한 작은 내용 수정, 기능 개선 등\n-아랍어가 결과물에 나오지 않게 하기\n- 사칙연산 기호 -, +, /, *가 나오는 이슈 수정",
+      "char_count": 303,
+      "word_count": 78,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 03.프롬프트기록과버전관리\n프롬프트 버전 관리 규칙\n규칙 5: 주기적 검토 및 업데이트 시\n- 정기적으로 프롬프트를 검토하고 최신 상태로 업데이트할 때는 적절한 번호\n(주요, 마이너, 패치)를 올린다.\n- 판단은 기능의 크기로 결정한다.\n(예시) 시스템 프롬프트 개선 작업은 주요 기능을 업데이트하는 것이므로 버전의\n앞 번호를 증가시킨다. (예: 1.0 2.0)",
+      "char_count": 210,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter 03.프롬프트기록과버전관리\nPractice : 프롬프트 템플릿에 프롬프트를 기록해보세요.\n이때 앞에서 다룬 버전 관리와 규칙을 적용하세요.",
+      "char_count": 85,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}

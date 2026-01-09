@@ -1,0 +1,208 @@
+{
+  "source": "Part 7. 프롬프트 성능 평가 - 정량적·정성적 접근.pdf",
+  "parsed_at": "2026-01-09T17:59:24.264804",
+  "total_pages": 24,
+  "pages_with_text": 19,
+  "pages_needing_ocr": 5,
+  "ocr_page_numbers": [
+    8,
+    9,
+    10,
+    11,
+    18
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering\nChapter 03.\nPart 07. 프롬프트 성능 평가: 정량적·정성적 접근",
+      "char_count": 103,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Prompt EngineeringA to Z\n프롬프트 평가의 역할과 중요성\n프롬프트 엔지니어링 A to Z\n프롬프트 평가 방법론\nChapter 03\n정성적 프롬프트 평가 방법: 심층 분석 방법\nPart 07. 프롬프트 성능 평가:\n정량적·정성적 접근\n정량적 프롬프트 평가 전략(cid:13205) 성능 지표 설정 및 측정\n파일럿 평가를 통한 프롬프트 최적화",
+      "char_count": 199,
+      "word_count": 46,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n• 프롬프트 평가의 역할과 중요성\n- 정답이없는프롬프트의경우, 어떤기준을사용할것인가?\n- 프롬프트를과연평가할수있을까?\n- 답변이텍스트형태이므로텍스트를기준으로평가를해야할까?”\n- 답변이질문에얼마나정확하게답했는지를기준으로평가해야할까?”\nPerformance\nQuality Assurance\nOptimization\nCost Efficiency User Experience",
+      "char_count": 235,
+      "word_count": 25,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 4,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nLLM(cid:13247)as(cid:13247)a(cid:13247)judge\nwhere an LLM is used for evaluating the prompts based on the answers it produced\nwith a certain model, according to predefined criteria.\nImage source: https://aws.amazon.com/blogs/machine(cid:13247)learning/evaluating(cid:13247)prompts(cid:13247)at(cid:13247)scale(cid:13247)with(cid:13247)prompt(cid:13247)management(cid:13247)and(cid:13247)prompt(cid:13247)flows(cid:13247)for(cid:13247)amazon(cid:13247)bedrock/",
+      "char_count": 490,
+      "word_count": 30,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 5,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nJudging LLM-as-a-Judge with MT-Bench and\nResearch Paper:\nChatbot Arena (2023)\n• “LLM as a judge” for automated evaluation\n• explores the feasibility and pros/cons of using various LLMs (GPT-4, ClaudeV1, GPT-3.5) as the judge\nfor tasks in writing, math, and world knowledge.\no 문제점: 기존 평가 기준이 대형 언어 모델의 성능을 충분히 반영하지 못하고 있으며, 특히\n인간 선호와의 불일치가 발생함.\no 해결 방안: 인간의 선호에 맞춘 평가를 위해 LLM을 판사로 활용하는 LLM-as-a-Judge 방식을\n도입. GPT-4와 같은 모델이 인간 평가와 높은 일치도를 보여줌.\no 평가 방법: 두 가지 새로운 벤치마크, 즉 MT-Bench와 Chatbot Arena를 도입하여 다중 회차\n대화 및 지시 수행 능력을 평가하고, 이를 통해 인간 선호에 얼마나 잘 맞추는지 확인.\no 결과: GPT-4 등 강력한 LLM들이 인간 평가와 80% 이상의 일치도를 보이며, 인간 평가자\n간의 일치도와 유사함.\no 한계점: 평가 과정에서의 한계점. 안정성, 정확성, 창의성 보완\nReference: Zheng, L., Chiang, W.L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. and Zhang, H., 2023. Judging llm(cid:13247)as(cid:13247)a(cid:13247)judge with mt(cid:13247)bench and\nchatbot arena.Advances in Neural Information Processing Systems,36, pp.46595(cid:13258)46623.",
+      "char_count": 999,
+      "word_count": 177,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\no 성능 차이가 클수록 (즉, 한 모델이 더 우수할수록),\nGPT-4와 인간 평가자의 일치율이 높아지는 경향\no 성능 차이가 작을 때는 일치율이 약 70%로 나타나지만,\n성능 차이가 커질수록 100%에 가까워짐\no GPT-4가 모델 간 큰 성능 차이가 있을 때, 인간 평가자와\n매우 유사한 평가를 내린다는 것을 시사\nX축: 두 모델 간의 승률 차이.\nY축: GPT-4와 인간 평가자 간의 일치율.\nReference: Zheng, L., Chiang, W.L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. and Zhang, H., 2023. Judging llm(cid:13247)as(cid:13247)a(cid:13247)judge with mt(cid:13247)bench\nand chatbot arena.Advances in Neural Information Processing Systems,36, pp.46595(cid:13247)46623.",
+      "char_count": 561,
+      "word_count": 99,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\no 다양한 모델들의 승률을 GPT-4와 인간 평가자가 평가한 데이터를 비교\no GPT-4의 판정이 인간 판정과 유사하게 유지\nReference: Zheng, L., Chiang, W.L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. and Zhang, H., 2023. Judging llm(cid:13247)as(cid:13247)a(cid:13247)judge with mt(cid:13247)bench\nand chatbot arena.Advances in Neural Information Processing Systems,36, pp.46595(cid:13247)46623.",
+      "char_count": 409,
+      "word_count": 58,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 03. 프롬프트 성능 평가: 정량적·정성적 접근 \nChatbot Arena \nArena (battle) ☆ Arena (side-by-side) Direct Chat Leaderboard About Us \nChatbot Arena (formerly LMSYS): Free AI Chat to Compare & Test Best AI Chatbots \nBlog I GitHub I Paper I Dataset I Twitter I Discord I Kaggle Competition \nNew Launch! Jailbreak models at RedTeam Arena. \nHow It Works \n。 Blind Test: Ask any question to two anonymous AI chatbots (ChatGPT, Gemini, Claude, Llama, and more). \n。 Vote for the Best: Choose the best response. You can keep chatting until you find a winner. \n。 Play Fair: If AI identity reveals, your vote won't count. \nNEW Image Support: Upload an image to unlock the multimodal arena! \nChatbot Arena LLM Leaderboard \n。 Backed by over 1,000,000+ community votes, our platform ranks the best LLM and AI chatbots. Explore the top AI models on our LLM leaderboard! \nChat now! \nExpand to see the descriptions of 75 models \nModelA Model B \nFast campus",
+      "char_count": 928,
+      "word_count": 158,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter 03. 프롬프트 성능 평가: 정량적·정성적 접근 \nRank* Arena Knowledge \nModel ▲ ▲ 95% CI ▲ Votes ▲ Organization ▲ License ▲ \n(UB) Score Cutoff \n1 01-preview 1339 +6/-7 9169 OpenAI Proprietary 2023/10 \n1 ChatGPT-4o-latest. (2024-09-03) 1337 +4/-4 16685 OpenAI Proprietary 2023/10 \n3 o1-mini 1314 +6/-5 9136 OpenAI Proprietary 2023/10 \n4 Gemini-1.5-Pro-Exp-0827 1299 +4/-3 31928 Google Proprietary 2023/11 \n4 Grok-2-08-13 1293 +4/-3 27731 xAI Proprietary 2024/3 \n6 GPT-4o-2024-05-13 1285 +3/-3 93428 OpenAI Proprietary 2023/10 \n7 GPT-4o-mini-2024-07-18 1272 +3/-3 33166 OpenAI Proprietary 2023/10 \n7 Claude..3..5..Sonnet 1269 +3/-3 67165 Anthropic Proprietary 2024/4 \n7 Gemini-1.5-Flash-Exp-0827 1269 +3/ -4 25027 Google Proprietary 2023/ 11 \n7 Grok-2-Mini-08-13 1268 +4/-4 24956 xAI Proprietary 2024/3 \nGemini.. Advanced..App.. (2024-05- \n7 1266 +3/-3 52218 Google Proprietary Online \n14). \nMetaiLlama-3.1-495b-Instruct: \n7 1266 +6/-7 8787 Meta Llama 3.1 Community 2023/12 \nb.f1.6. \nMeta-Llama-3.1-405b-Instruct: \n7 1266 +4/-4 33654 Meta Llama 3.1 Community 2023/12 \nfp8 \n8 GPT-4o-2024-08-06 1264 +4/ -3 25215 OpenAI Proprietary 2023/10 \nFast campus",
+      "char_count": 1135,
+      "word_count": 152,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter 03. 프롬프트 성능 평가: 정량적·정성적 접근 \nMore Statistics for Chatbot Arena (Overall) \nFigure 2: Average Win Rate Against All Other Models (Assuming Uniform Sampling and No \nFigure 1: Confidence Intervals on Model Strength (via Bootstrapping) \nTies) \n1340 0.64 \n0.64 \n0.6 0.60 \n0.59 \n0.58 \n0.56 \n1320 0.55 \n0.53 \n0.52 \n0.5 \n0.52 \nRate \n0.49 \n0.49 \n0.48 \n0.48 \n0.47 \n0.47 \n0.47 \n0.46 \n0.46 \n0.45 \nRating \n1300 호 + uiM 0.4 0.41 \n0.42 \n0.40 \n호 \n호 0.33 \nAverage \n0.3 0.31 \n1280 \n호 \n王 호 호 호 0.2 \n호 \n1260 호 · 호 \n호 王 호 0.1 \n1240 \nllama-3.1-405b-instruct-bf16 \nllama-3.1-405b-instruct-fp8 \nllama-3.1-70b-instruct \ngrok-2-2024-08-13 \ngpt-4o-2024-08-06 \ngpt-4-turbo-2024-04-09 \ngpt-4o-mini-2024-07-18 \ngpt-4o-2024-05-13 \ngrok-2-mini-2024-08-13 \ngemini-advanced-0514 \nqwen2.5-72b-instruct \ngemini-1.5-flash-exp-0827 \nchatgpt-4o-latest-20240808 \ngpt-4-1106-preview \ngemini-1.5-pro-api-0514 \ngemini-1.5-pro-exp-0801 \nchatgpt-4o-latest-20240903 \ngemini-1.5-pro-api-0409-preview \n01-preview \no1-mini \ngemini-1.5-pro-exp-0827 \nclaude-3-5-sonnet-20240620 \ndeepseek-v2.5 \nmistral-large-2407 \nathene-70b-0725 \n0 llama-3.1-405b-instruct-fp8 \ngpt-3.5-turbo-0314 \ngpt-4o-2024-05-13 \ngpt-4-0314 \ngrok-2-2024-08-13 \ngpt-4o-mini-2024-07-18 \ngpt-4-turbo-2024-04-09 \ngpt-4-1106-preview \nchatgpt-4o-latest-20240808 \ngemini-advanced-0514 \nclaude-3-opus-20240229 \ngemini-1.5-pro-exp-0801 \ngemini-1.5-pro-api-0409-preview \nclaude-3-5-sonnet-20240620 \nchatgpt-4o-latest-20240903 \no1-mini \nyi-large-preview \ngpt-4-0125-preview \nclaude-1 \nclaude-3-sonnet-20240229 \nbard-jan-24-gemini-pro \n01-preview \ngemini-1.5-pro-exp-0827 \ngemini-1.5-pro-api-0514 \nclaude-2.0 \nModel \nModel \nFast campus",
+      "char_count": 1648,
+      "word_count": 149,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 03. 프롬프트 성능 평가: 정량적·정성적 접근 \nMore Statistics for Chatbot Arena (Overall) \nFigure 3: Fraction of Model A Wins for All Non-tied A vs. B Battles Figure 4: Battle Count for Each Combination of Models (without Ties) \nModel B Model B \ngemini-1.5-pro-api-0409-preview qwen2.5-72b-instruct gpt-4-turbo-2024-04-09 deepseek-v2.5 mistral-large-2407 \n1mm-55mm:5mm \nchatgpt-4o-latest-20240808 gemini-1.5-pro-exp-0827 gemini-1.5-pro-exp-0801 grok-2-2024-08-13 gpt-4o-2024-05-13 gpt-4o-mini-2024-07-18 claude-3-5-sonnet-20240620 gemini-1.5-flash-exp-0827 grok-2-mini-2024-08-13 llama-3.1-405b-instruct-bf16 llama-3.1-405b-instruct-fp8 gemini-1.5-pro-api-0514 \nchatgpt-4o-latest-20240903 \nchatgpt-4o-latest-20240903 chatgpt-4o-latest-20240808 gemini-1.5-pro-exp-0827 gemini-1.5-pro-exp-0801 grok-2-2024-08-13 gpt-4o-2024-05-13 gpt-4o-mini-2024-07-18 claude-3-5-sonnet-20240620 gemini-1.5-flash-exp-0827 grok-2-mini-2024-08-13 gemini-1.5-pro-api-0514 gemini-1.5-pro-api-0409-preview qwen2.5-72b-instruct gpt-4-turbo-2024-04-09 deepseek-v2.5 mistral-large-2407 gpt-4-1106-preview athene-70b-0725 o1-preview o1-mini \n1mm-150mm \ngemina-canca-153016 \ngemina-cancai@-036.g \nlame-13-1507-1001-11 \nIlama-3.1-70b-instruct \ngpt-1-p-90-1-1-46 \ngpt-4o-2024-08-06 \ngpt-4o-2024-08-06 \nathen-10---20-0 \no1-preview o1-mini \n01-preview 1.달 0.52 0.56 0.62 0.63 0.60 0.62 0.66 0.59 0.70 0.65 0.71 4.3% 1.66 0.75 8.70 0.69 4.72 0.76 0.71 01-preview · 242 · 175 160 I 213 136 140 23승 066 15) 8 164 113 139 136 a 188 59 172 134 60 39 122 \nchatgpt-4o-latest-20240903 0.48 0.55 0.56 0.5을 0.60  0.30 0:65 0.60 0.69 0.69 146 0.70 0.66 4.33 0.09 0.71 0.74 4,00 0.75 10 chatgpt-4o-latest-20240903 242 a 135 343 343 I 399 251 360 417 343 300 I 10승 365 247 2개 153 167 20kg 363 L34 160 369 \nchatgpt-4o-latest-20240808 0.45 0.49 0.54 0.53 0.61 0.65 0.51 0.61 0.61 0.62 0.61 0.71 0.63 161 0.67 0.64 0.55 0.62 chatgpt-4o-latest-20240808 · 126 가입도 623 733 H 936 617 620 LOS 201 663 Hi 3500 \no1-mini 0.47 0.44 0.53 0.61 0.64 0.59 0.5k 0.61 0.63 0.5일 0.61 0.56 0.54 0.64 0.70 1.63 0.54 0.53 DLES 1.63 o1-mini 135 241 177 1.96 127 효과 210 133 153 116 150 60 37 121 \ngemini-1.5-pro-exp-0827 168 347 177 애로도 344 614 일에줄 202 270 61 157 201 ssa BOO \ngemini-1.5-pro-exp-0827 0.44 0.41 0.55 0:47 0.56 0.51 0.52 0.62 6.57 0.51 0.56 a 5등 0.55 0.57 0.60 161 ☆ 验 65 0.62 0.5도 0.60 0.7 \ngemini-1.5-pro-exp-0801 0.46 용사 0 52 0.53 0.56 0.57 0 54 0.59 0.55 263 0.61 0.61 0.62 0.59 1.62 gemini-1.5-pro-exp-0801 · a 766 415 285 715 SHG 입술 204 294 300 239 233 424 3000 \ngrok-2-2024-08-13 213 200 그들도 a 도움을 459 653 650 271 LIV 344 497 \ngrok-2-2024-08-13 0.38 0.40 0.4을 0.39 0.48 0.53 0.55 0.55 a 55 0.53 0.52 0.58 도움 0.57 0.63 \ngpt-4o-2024-05-13 136 251 - 625 456 456 156 144 536 620 \ngpt-4o-2024-05-13 0.32 6.23 0.39 0.36 a ◀을 6:47 · 도도 0.54 · 요 6.50 0.51 0.47 0.53 0.59 a 54 0.61 0.56 0.60 2.60 \ngpt-4o-mini-2024-07-18 140 360 131 L14 635 150 367 274 JN 121 송크림 412 - 419 609 \n2500 \ngpt-4o-mini-2024-07-18 0.35 0.30 0.35 0.41 0.28 0 제도 Q 51 0.51 0.54 0.50 I 53 0.54 0.52 0.55 0.53 0.56 0.58 0.6 238 417 量59 105 F18 - G48 676 \nclaude-3-5-sonnet-20240620 \nclaude-3-5-sonnet-20240620 0.38 0.25 0.39 0:42 0.43 (AI 0 45 50 0. 50 0.51 0 53 0.51 0.54 도둑 a 51 : 세 0.57 4.57 0.51 1.54 gemini-1.5-flash-exp-0827 166 HI 456 367 LLS 그들에 426 \ngrok-2-mini-2024-08-13 153 309 371 406 374 625 2월3 477 \nA gemini-1.5-flash-exp-0827 내 0.21 0.39 0.39 0.48 6.39 · 서도 0.49 · 세종 S4 51 0.49 151 4.51 a 55 2 44 ☆ 도도 16 0.52 4.50 タ \n2000 \ngrok-2-mini-2024-08-13 0.45 0.31 0.39 0.37 0.44 0.44 0.39 0.50 · 내용 6.50 Q 46 50 1 속도 0.47 0.55 2 52 a 되 a S a 도둑 3.45 0.62 1.51 gemini-advanced-0514 · 300 a 200 796 160 171 \nModel \ngemini-advanced-0514 0.45  0.49 a 44 0.51 43 3.제동 0.52 1.53 0.53 4.5) 0.5 Ilama-3.1-405b-instruct-bf16 164 509 167 229 156 121 196 177 ELS \nllama-3.1-405b-instruct-bf16 0.38 0.31 0.28 0.41 0.45 0.42 0.53 a 45 0.세요 a 54 C. 50 52 0.47 5 제5 0.55 ☆ 16 : S& 스터 0.60 0.49 1.49 Model \nllama-3.1-405b-instruct-fp8 113 SOS \nllama-3.1-405b-instruct-fp8 35 0.32 0.39 0.39 0.43 0.AL 0.47 0.47 · 46 0.47 a 4등 0.52 0 53 0.세요 0.50 을 54 0.54 0.52 4.54 0.54 1.46 0.55 1.54 gpt-4o-2024-08-06 139 247 465 322 506 세12 663 443 261 412 699 1500 \ngpt-4o-2024-08-06 0.39 0.30 0.39 0.46 0.40 BAG a 서울 도와 0.세요 Q 51 a S4 0.4) 0.52 0.60 0.53 0.56 0.51 1.53 gemini-1.5-pro-api-0514 136 491 670 고도술 473 Sine \ngemini-1.5-pro-api-0514 0.30 0.34 0.38  0.38 42 0.45 4등  0.53 0.52 I 46 0.52 1.54 0.52 0.54 0.4 gemini-1.5-pro-api-0409-preview a E a a a \ngemini-1.5-pro-api-0409-preview 0.51 0.53 qwen2.5-72b-instruct 효율 103 70 150 R3 1000 \nqwen2.5-72b-instruct 0.29 4가 소세도 a 46 회계를 46 45 0 46 0.53 그 4) 0.58 0.52 0.43 4의 gpt-4-turbo-2024-04-09 59 15 464 ist 319 251 233 412 \ngpt-4-turbo-2024-04-09 0.35 0.31 0.10 6.20 0.42 0.39 0.40 0.40 a 세을 6세일 45 0.49 46 0.44 : 서울 0.49 8 48 0.49 a 43 a 요 0.53 소의 0.52 4.50 deepseek-v2.5 133 309 153 67 152 106 101 편집 503 \ndeepseek-v2.5 0.30 0.29 0.39  0.45 0.39 0.35 0.40 0.51 0.56 0.45 041 141 0.40 0.54 1 세울 a 세요 0.57 0.50 0.42 4.52 0.3 mistral-large-2407 134 363 소도의 \" 346 601 534 516 121 173 336 540 500 \nmistral-large-2407 0.35 0.26 0.33 0.36 0.35 0.39 0.42 0.39 0.45 0.43 a 45 0.45 。 서울 0.45 a 46 0.4? 소개를 0.57 0.47 0.43 0.50 0.세요 4.5) gpt-4-1106-preview 60 124 201 仙 201 230 177 606 251 4.19 业 16 451 60 037 44 173 · 158 210 \ngpt-4-1106-preview 0.38 0.20 0.35 0.40 0.38 6.27 0.35 0.44 0.43 0.43 0.17 6.51 0.47 0.40 0.51 0.41 1.46 0.47 0.49 4.56 0.50 0.59 4.57 athene-70b-0725 28 261 603 27 SS6 233 344 536 419 546 234 290 160 80 431 322 336 1.58 · 120 \nathene-70b-0725 0.34 0.25 0.35 6.35 0.25 EAL 0.43 0.40 0.44 6.49 0.48 0.47 0.51 0.45 0.49 조세를 0.49 2,60 0.52 0.41 4.9 Ilama-3.1-70b-instruct 132 2·6승 943 121 100 434 497 630 609 675 426 477 171 LIS 506 659 되셔 a 13 482 103 도4점 210 338 0 \n0 \nllama-3.1-70b-instruct 0.39 0.38 0.37 0.40 0.39 0.38 6.40 0.42 0:46 0.43 0.49 0.43 0.51 0.46 0.47 0.46 조제를 0.50 1.43 0.47 1.43 0.47 \nFast campus",
+      "char_count": 5876,
+      "word_count": 983,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 12,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nThe original prompt used in the lmsys paper:\nPlease act as an impartial judge and evaluate the quality of the response provided by\nan AI assistant to the user question displayed below. Your evaluation should consider\nfactors such as the helpfulness, relevance, accuracy, depth, creativity, and level of\ndetail of the response. Begin your evaluation by providing a short explanation. Be as\nobjective as possible. After providing your explanation, you must rate the response\non a scale of 1 to 10 by strictly following this format.",
+      "char_count": 560,
+      "word_count": 89,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nPrompt Evaluation Template\nYou're an evaluator for the prompts and answers provided by a generative AI model.\nConsider the input prompt in the <input> tags, the output answer in the <output>\ntags, the prompt evaluation criteria in the <prompt_criteria> tags, and the answer\nevaluation criteria in the <answer_criteria> tags.\n<input>\n{{input}}\n</input>\n<output>\n{{output}}\n</output>\n<prompt_criteria> - The prompt should be clear, direct, and detailed. - The question,\ntask, or goal should be well explained and be grammatically correct. - The prompt is\nbetter if containing examples. - The prompt is better if specifies a role or sets a\ncontext. - The prompt is better if provides details about the format and tone of the\nexpected answer.\n</prompt_criteria>",
+      "char_count": 788,
+      "word_count": 121,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n<answer_criteria>\n- The answers should be correct, well structured, and technically complete.\n- The answers should not have any hallucinations, made up content, or toxic\ncontent.\n- The answer should be grammatically correct.\n- The answer should be fully aligned with the question or instruction in the\nprompt. </answer_criteria>\nEvaluate the answer the generative AI model provided in the <output> with a score from 0 to 100 according to\nthe <answer_criteria> provided; any hallucinations, even if small, should dramatically impact the evaluation\nscore. Also evaluate the prompt passed to that generative AI model provided in the <input> with a score from 0\nto 100 according to the <prompt_criteria> provided. Respond only with a JSON having:\n- An 'answer-score' key with the score number you evaluated the answer with.\n- A 'prompt-score' key with the score number you evaluated the prompt with.\n- - A 'justification' key with a justification for the two evaluations you provided to the answer and the prompt;\nmake sure to explicitely include any errors or hallucinations in this part.\n- An 'input' key with the content of the <input> tags.\n- An 'output' key with the content of the <output> tags.\n- A 'prompt-recommendations' key with recommendations for improving the prompt based on the\nevaluations performed. Skip any preamble or any other text apart from the JSON in your answer.",
+      "char_count": 1415,
+      "word_count": 227,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nPrompt Evaluation Template_2\nJUDGE_PROMPT = \"\"\" You will be given a user_question and system_answer couple. Your task is to provide\na 'total rating' scoring how well the system_answer answers the user concerns expressed in the\nuser_question.\nGive your answer as a float on a scale of 0 to 10, where 0 means that the system_answer is not helpful at\nall, and 10 means that the answer completely and helpfully addresses the question.\nProvide your feedback as follows: Feedback::: Total rating: (your rating, as a float between 0 and 10) Now\nhere are the question and answer.\nQuestion: {question}\nAnswer: {answer}\nFeedback:::\nTotal rating:\n\"\"\"\nReference:https://huggingface.co/learn/cookbook/en/llm_judge",
+      "char_count": 731,
+      "word_count": 108,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nUnanswered Questions\n1. Alignment w/h human grading : 문서 Q(cid:13704)A 챗봇\n2. Accuracy through Examples\n3. Appropriate Grade Scales : 서로 다른 프레임워크 Azure (cid:13273)0 to 100 scale(cid:13274),\nlangchain binary scale (cid:13273)0(cid:13247)1(cid:13274)\n4. Applicability Across Use Cases: 동일한 평가 기준 다양한 사용 사례 재사용 가능성",
+      "char_count": 341,
+      "word_count": 48,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 17,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n• 프롬프트 평가 방법론 : 질적 및 양적 접근의 이해\nMutually\nComplementary\nMethodology\nQualiatiative\nQuantitative\nInteractional Linguistics\nLLM & Prompt Engineering\nConversation Analysis\n17",
+      "char_count": 199,
+      "word_count": 27,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 18,
+      "text": "Chapter 03. 프롬프트 성능 평가: 정량적·정성적 접근 \nQualitative Analysis Quantitative Analysis \n(1) Linguistic (2) Human (3) LLM Response (4) Satisfaction \nAnalysis Evaluation scoring Response \nto establish criteria for Scoring to assess the responses Evaluation \nassessing user to check whether there using the established to determine the most \nsatisfaction with is some correlation 12 criteria. preferred response \nresponses between LLM scores across five different \nand human judgment. LLMs. \nFast campus",
+      "char_count": 492,
+      "word_count": 69,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 19,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n• 벤치마크 평가 방법과 사용자 중심 평가 방법\n카테고리 벤치마크 평가 방법 사용자 중심 평가\n데이터 소스 합성된 데이터 실제 사용자 데이터\n데이터 셋 단일 문장 단일 및 다중 턴을 포함한 연속 턴 사용\n인위적 문장\n분석 초점 LLM 응답 효율성/추론 • 다양한 사용자 입력값에 대한 LLM응답의\n적합성\n• 사용자(cid:13247)AI 상호작용의 역동성\n평가 방법 • 자동화된 메트릭스(cid:13273)ROUGE, • 대화 분석과 상호작용 분석 프레임\nBLUE, METEOR(cid:13274) 워크LLM에 대한 사용자 만족/ 불만족\n• 선호도 기반 점수 시스템 환경과 조건\n• LLM 평가와 사람 평가의 응답 비교 분석",
+      "char_count": 380,
+      "word_count": 88,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 20,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n• 정성적 프롬프트 평가 기법: 심층 분석 방법\nLinguistic Analysis\nIdentification of Common Linguistic Features\n1.\nAnalysis of Discourse Contexts\n2.\nCategorization\n3.\nText\nDiscourse\nCulture",
+      "char_count": 200,
+      "word_count": 29,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 21,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nFindings. 12 Criteria, including 10 Sub-criteria\nText(cid:13247)Level Presentation(cid:13247)Level\nInteraction Level\nClarity Natural Language Acknowledgement of\nunderstanding\nPoliteness\nEmpathy\nCompleteness\nConfirmation and\nClarification Politeness\nCoherence\nAdaptability",
+      "char_count": 302,
+      "word_count": 28,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 22,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n• 정량적 프롬프트 평가 전략: 심층 분석 방법\nEnhanced by Prompting\nLLM 모델",
+      "char_count": 86,
+      "word_count": 16,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 23,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\nPrompt 예시\nCriteria: Acknowledgement\ndescription = \"A satisfying response might begin with acknowledging user’s question or input,\nshowing that the companion understood their request.\"\nquestions = [\n{\n\"name\": \"paraphrasing\",\n\"description\": \"Does the companion’s response begin by paraphrasing or summarizing the user’s\nquery to demonstrate understanding?\",\n},\n{\n\"name\": \"overlook\",\n\"description\": \"In cases of complex or multi-part questions, does the companion acknowledge each\ncomponent to ensure nothing is overlooked?\",\n},\n{\n\"name\": \"clarification\",\n\"description\": \"If the user’s input is ambiguous, does the companion seek clarification or\nprovide responses that cover potential interpretations, showing an effort to fully understand?\",\n},",
+      "char_count": 774,
+      "word_count": 102,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 24,
+      "text": "Chapter 03.프롬프트성능평가: 정량적·정성적접근\n파일럿 평가를 통한 프롬프트 최적화\n(cid:13715) 결과 예시\n• 결론 도출\n(cid:13247) 한 턴에 대한 LLM의 평가 점수를 도출할 수 있다.\n(cid:13247) 언어 모델의 답변에 대한 사용자의 만족도를 파악할 수 있다.\n(cid:13247) 여러 언어 모델의 장단점 파악 할 수 있다.\n(cid:13247) LLM별 프롬프트 제작 전략을 연구 할 수 있다.\n• 결과 활용\n- 프롬프트 정밀 분석을 통한 프롬프트 자동 생성기\n- LLM모델 큐레이션 연구",
+      "char_count": 294,
+      "word_count": 67,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}

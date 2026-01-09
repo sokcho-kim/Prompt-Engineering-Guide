@@ -1,0 +1,259 @@
+{
+  "source": "Intro. 프롬프트 엔지니어의 역할과 실무 이해.pdf",
+  "parsed_at": "2026-01-09T17:57:01.586348",
+  "total_pages": 30,
+  "pages_with_text": 22,
+  "pages_needing_ocr": 8,
+  "ocr_page_numbers": [
+    6,
+    10,
+    12,
+    13,
+    16,
+    17,
+    18,
+    21
+  ],
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "국내 공채1호 프롬프트 엔지니어 강수진의\n프롬프트 엔지니어링 A to Z\nPrompt Engineering",
+      "char_count": 59,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 2,
+      "text": "Prompt Engineering A to Z\nØ Introduction. LLM 차별화의 열쇠\n01. 프롬프트 엔지니어 핵심 능력 및 주요 업무\n02.프롬프트 엔지니어링 학습해야 하는 이유\nChapter 01. 프롬프트의 이해\n1. 프롬프트 구조와 기능 탐구\n2. 효과적인 프롬프트 분석 기법\nChapter 03. 실무 프롬프트 엔지니어링 A to Z\n1. 목적 중심의 프롬프트 기획 전략\n2. 프롬프트 제작의 기초(cid:13205) 핵심 원리와 방법론\nChapter 04. 프롬프트 엔지니어링 파이널 프로젝트\n3. 프롬프트 품질 관리(cid:13205) 테스트 방법론\n(cid:13258) 생성형 AI 프롬프트 프로젝트\n4. 프롬프트 성능 평가\n5. 프롬프트 기록과 버전 관리\nChapter 05. 프롬프트 엔지니어링 현재와 미래",
+      "char_count": 411,
+      "word_count": 90,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 3,
+      "text": "Prompt Engineering A to Z\nIntroduction\n01. 프롬프트 엔지니어 핵심 능력 및 주요 업무\nØ 02. 프롬프트 엔지니어링 학습해야 하는 이유",
+      "char_count": 94,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 4,
+      "text": "Course Objectives & Learning Outcomes\n학습 목표\n01\nü 프롬프트와 프롬프트 엔지니어링 학습의 필요성을 이해한다.\n02\n프롬프트 엔지니어링을 학습해야 하는 세 가지 이유를 이해한다.",
+      "char_count": 118,
+      "word_count": 24,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 5,
+      "text": "Chapter 1\n(cid:13364)프롬프트(cid:13364)와 (cid:13363)프롬프트 엔지니어링(cid:13364) 을\n배워야 하는 세 가지 이유\n1⃣ AI 시대 LLM과 소통 도구\n2⃣ LLM이 못하는 영역 해결\n3⃣ 경쟁력(cid:13205) 경제적 가치 창출와 생산성 향상",
+      "char_count": 161,
+      "word_count": 29,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 6,
+      "text": "Chapter1 \n1 AI 시대 LLM과 소통 도구 \nFast campus",
+      "char_count": 41,
+      "word_count": 9,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 7,
+      "text": "Chapter 1\n프롬프트 (cid:13996) 새로운 대화 도구\n프롬프트 엔지니어링 (cid:13996) 자연어로 컴퓨터와 상호작용 하는 법",
+      "char_count": 79,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 8,
+      "text": "Chapter 1\nAI 시대 (cid:13205) 변곡점\n*곡선이 오목에서 볼록으로 변하는 지점\n변곡점",
+      "char_count": 57,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 9,
+      "text": "Chapter 1\nAI 시대 (cid:13205) 특이점\n20년 전 AGI 예고, 미래학자 (cid:13704) 컴퓨터 과학자 (cid:13715) 레이 커즈와일\no 기술의 진화 속도가 무한대에 이르는 특이점이 올 것\n인간의 능력이 근본적으로 바뀌는 수준의 현상\no 2045년 인간 지능은 BCI 기술로 기계와 결합할 것\n(cid:13273)*BCI 두뇌 컴퓨터 인터페이스(cid:13274)\no 인간 대 AI 대결 (cid:13273)X(cid:13274) (cid:13258) 불가능했던 새로운 것 창조할 수 있는 시대",
+      "char_count": 292,
+      "word_count": 59,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 10,
+      "text": "Chapter1 \n디지털 격차 프롬프트 \nDigital Divide 사용 능력에 따른 격차 \n160 160 \n120 120 \n80 80 \n40 40 \n0 0 \n2000 2005 2010 2015 2020 2025 2023 2024 2025 2026 2027 2028 2029 203( \n기술 발달 인간 적응 프롬프트 사용자 · 프롬프트 비사용자 \nFast campus",
+      "char_count": 205,
+      "word_count": 45,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 11,
+      "text": "Chapter 1\n2⃣ LLM이 못하는 것 해결\nPragmatics (cid:13704) Contextual Meaning",
+      "char_count": 68,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 12,
+      "text": "Chapter1 \nTHIN K I N G, \nF A ST AND SLOW 빠른 사고- 시스템1 느린 사고- 시스템 2 \n· 직관적이고 자동적인 사고 과정 · 의식적이고 논리적인 사고 과정 \n· 감정적, 무의식적, 그리고 노력이 거의 들지 않음 · 분석적, 계산적, 그리고 상당한 정신적 \nD A N I E L · 경험과 습관에 기반한 빠른 판단과 결정 노력이 필요함 \n· 복잡한 문제 해결과 깊은 사고에 사용됨 \nK A H N E M A N \nWINNER OF THE NOBEL PRIZE IN ECONOM ICS \n다니엘 카너먼 I 노벨 경제학상 수상 I 2011년 \nFast campus",
+      "char_count": 330,
+      "word_count": 90,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 13,
+      "text": "Chapter 1 \n언어학자 Noam Chomsky의 Hierarchy Levels(1956) \ngrammars (generators) automata (acceptors) Production rules \n(constraints)[a] \nrecursively Turing * more complex A → a \n* more powerful \nenumerable machine less restricted \nA → aB (right regular) \nor \ncontext- linear bounded \nA → a \nsensitive automaton \nA → Ba (left regular) \ncontext- push-down \nA → a \nfree automaton \nregular finite \n�A� → ��� \ngrammar automaton \n� → � (� non-empty) \nChomsky Hierarchy Levels. Source: Fitch. 2014. \nFast campus",
+      "char_count": 500,
+      "word_count": 75,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 14,
+      "text": "Chapter 1\nSemantics vs. Pragmatics\n1⃣ mono(cid:13247)semanticity (cid:13273)단일성(cid:13274) 는 잘하지만\n2⃣ multi(cid:13247)semanticity (cid:13273)다의성(cid:13274) 잘 못함",
+      "char_count": 159,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 15,
+      "text": "Chapter 1\n문화(cid:13205) 고맥락 vs 저맥락 언어\n영어에는 없는 말 “눈치\"\n한국어에는 없는 말 “Asser%ve”",
+      "char_count": 74,
+      "word_count": 15,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 16,
+      "text": "Chapter1 \n\" 너 밖에 없다\" \n내일 봉사 활동 \n같이 너밖에 \n가는 사람 있어? \n들어줄게. 없다. 너밖에 \n없다. \n출처: 네이버 백과사전 \nFast campus",
+      "char_count": 96,
+      "word_count": 22,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 17,
+      "text": "Chapter1 \n3 경쟁력: 경제적 가치 창출와 생산성 향상 \nFast campus",
+      "char_count": 47,
+      "word_count": 10,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 18,
+      "text": "Chapter 1 \nLarge Language Models: Size Matters \nAmazon-owned Chinese Google Meta / Facebook Microsoft OpenAl Other \nBOTS \nBlenderBot1 PLATO-XL ChatGFBard* BingChat* \nBlenderBot3 \nbillion parameters \n2018 (left) through 2019 (right) 2020 onwards 175B \nGPT-4* \nWu Dao 2.0 \nGLaM \nPanGu-Sigma \nTitan \nMinerva \nPaLM Exacne PaLM2 \nGopher \nSenseChat \nEmie-3.0 Titan \n175 Billon \nPanGu-Alpha \n17B OPT-IML WebGPT \n8.3B 11B 9.4B \n2.6B GPT-3 \n1.5B 355M 1.5B 1.5B \n66M GLM-130B \n94M 110M 340M 465M 665M 330M 340M \nGalactica \nGPT-2 LaMDA FLAN \nGPT-3 \nRoBERTa \nT5-11B \nTuring-NLG \nGPT \nDistilBERT \nTransformer \nMegatronLM \nELMo \nMT-DNN \nXLM \nCTRL \nGrover-Mega \nBERT-Large \nMeena \nXLNET \nYaLM 100B \nBST 9.4B \nStableLM \nChinchila RL-CAI \nxlarge BookergGPT \nGPT-NeoX AlexaTM \nFrom State of AI Report 2020 mGPT Dolly 2.0 \nGPT-2 Codex MT5 \nGPT-J Alpaca \nGPT Neo \nBERT T5 Megatron-11B WeLM Atlas \npre-2020 2020 21 22 23 \nDavid McCandless, Tom Evans, Paul Barton source: news reports, LifeArchitect.ai \nInformation is Beautiful IlMay 2023 par ameters undisclosed \" see thedata \nMADE WITH VIZsweet \nFast campus",
+      "char_count": 1088,
+      "word_count": 154,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 19,
+      "text": "Chapter 1\nScaling Laws for Neural Language Models\nOpen AI Research, Scaling Laws for Neural Language Models (Kaplan, McCandish, 2020)",
+      "char_count": 133,
+      "word_count": 20,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 20,
+      "text": "Chapter 1\nØ 프롬프트 고도화 (cid:13704) 최적화\nScaling Laws for Neural Language Models\n(Kaplan, McCandish, 2020)",
+      "char_count": 102,
+      "word_count": 16,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 21,
+      "text": "Chapter1 \n1 프롬프팅: 창작물 \n2 프롬프트 엔지니어링: 지름길 \nFast campus",
+      "char_count": 53,
+      "word_count": 10,
+      "needs_ocr": true,
+      "ocr_status": "success"
+    },
+    {
+      "page_num": 22,
+      "text": "Chapter 1\n💡 창의력과 상상력: 창발성 >>>>>>> 코딩\nWith emergence described as\n(cid:13361)when quantitative changes in a\nsystem result in\nqualitative changes in behavior(cid:13362)\n양적 변화가 질적 변화를 불러옴\n(cid:13361)많아지면 달라진다(cid:13362)\nMore is different (1972) | 노벨 물리학상 수상 필립 앤더슨 논문",
+      "char_count": 264,
+      "word_count": 42,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 23,
+      "text": "Chapter 1\n1⃣ 프롬프팅(cid:13205) (cid:13361)실패(cid:13362)를 통한 창작물\n끈끈이 캡슐\n1973년 화학자 스펜서 실버 박사는\n(cid:13363)실수(cid:13364)로 접착력이 약하고 끈적이지 않는 물질 개발",
+      "char_count": 138,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 24,
+      "text": "Chapter 1\n1⃣ 프롬프팅(cid:13205) 창작물\n화학 물질 없는 접착제를 만들 수 있을까?\nBiomimicry 도꼬마리 열매(cid:13205) 벨크로\nWhiteway/ Ge:y Images Photo: cpreiser000,Stocksnapper/Shu:erstock",
+      "char_count": 156,
+      "word_count": 21,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 25,
+      "text": "Chapter 1\nü 프롬프트 예시 ✅ LLM이 이해하기 쉽도록 공간 구조화\n(cid:13379)(cid:13379)(cid:13379)\n주제(cid:13205) 미래 도시에 대한 에세이 작성 2150년 미래 도시에 대한 에세이를 작성하는 함수야.\n각 섹션과 하위 항목에 대한 설명을 제공해.\n오케이 AI야, 이거 좀 해줘. 그러니까 말이야, 미래 도시??\n(cid:13379)(cid:13379)(cid:13379)\n천천히 생각해봐. 환경은 어떻고 사람들은 뭐하고 살지\n알려줘. 기술은 발전했을 테니까, 그 사람들이 어떻게\n# 데이터 구조\n일하는지도 상상해서 알려주고. 아마 음식도 좀 궁금해서\ndata (cid:13965) (cid:13275)\n음식은 무엇을 먹고 사는지도 기술해줘. 미래도시는 우주\n(cid:13379)도시개요(cid:13379): (cid:13275)\n여행이 가능할테니 우주 여행에 대해서도 써주고 말이야. (cid:13379)인구(cid:13379): (cid:13379)설명.(cid:13379),\n교통 수단은 어떨까? 순간이동이 가능해지는 걸까?그리고 (cid:13379)위치(cid:13379): (cid:13379)설명.(cid:13379),\n(cid:13379)주요특징(cid:13379): (cid:13277)(cid:13379)특징1(cid:13379), (cid:13379)특징2(cid:13379), (cid:13379)특징3(cid:13379)(cid:13278)\n환경은 어떨까? 다 망가졌을까 아님 엄청 좋아졌을까?\n(cid:13276),\n사람들이 열심히 지켰겠지? 아님 인공지능이 알아서\n(cid:13379)기술인프라(cid:13379): (cid:13275)\n다해주려나? 아무튼 이런식으로 생각의 나래를 펼처서 너가\n(cid:13379)교통시스템(cid:13379): (cid:13275)(cid:13379)주요교통수단(cid:13379): (cid:13277)(cid:13379)수단1(cid:13379), (cid:13379)수단2(cid:13379), (cid:13379)수단3(cid:13379)(cid:13278)(cid:13276),\n굉장히 괜찮은 답변을 만들어 줘.\n(cid:13379)에너지(cid:13379): (cid:13275)(cid:13379)주에너지원(cid:13379): (cid:13379)설명...(cid:13379), (cid:13379)에너지효율(cid:13379): (cid:13277)(cid:13379)방법1(cid:13379), (cid:13379)방법2(cid:13379)(cid:13278)(cid:13276),\n(cid:13379)주거(cid:13379): (cid:13275)(cid:13379)주거형태(cid:13379): (cid:13379)설명...(cid:13379), (cid:13379)스마트홈(cid:13379): (cid:13277)(cid:13379)기술1(cid:13379), (cid:13379)기술2(cid:13379)(cid:13278)(cid:13276)\n(cid:13276),\n(cid:13379)작성지침(cid:13379): (cid:13275)\n(cid:13379)구조(cid:13379): (cid:13379)체계적 구조(cid:13379),\n(cid:13379)예시(cid:13379): (cid:13379)구체적 예시(cid:13379),\n(cid:13379)균형(cid:13379): (cid:13379)기술과 사회의 균형(cid:13379),\n💡 프롬프트 띄어쓰기만 잘해도,\n(cid:13379)창의적(cid:13379): (cid:13379)현실과 상상의 균형(cid:13379),\n결과물이 달라진다.\n(cid:13379)상세함(cid:13379): (cid:13379)충분한 설명(cid:13379)\n(cid:13276)",
+      "char_count": 1881,
+      "word_count": 171,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 26,
+      "text": "Chapter 1\nü 프롬프트 예시\n(cid:13379)(cid:13379)(cid:13379)\n2150년 미래 도시에 대한 에세이를 작성하는 함수야.\n각 섹션과 하위 항목에 대한 설명을 제공해.\n(cid:13379)(cid:13379)(cid:13379)\n# 데이터 구조\ndata (cid:13965) (cid:13275)\n(cid:13379)도시개요(cid:13379): (cid:13275)\n(cid:13379)인구(cid:13379): (cid:13379)설명.(cid:13379),\n(cid:13379)위치(cid:13379): (cid:13379)설명.(cid:13379),\n(cid:13379)주요특징(cid:13379): (cid:13277)(cid:13379)특징1(cid:13379), (cid:13379)특징2(cid:13379), (cid:13379)특징3(cid:13379)(cid:13278)\n(cid:13276),\n(cid:13379)기술인프라(cid:13379): (cid:13275)\n(cid:13379)교통시스템(cid:13379): (cid:13275)(cid:13379)주요교통수단(cid:13379): (cid:13277)(cid:13379)수단1(cid:13379), (cid:13379)수단2(cid:13379), (cid:13379)수단3(cid:13379)(cid:13278)(cid:13276),\n(cid:13379)에너지(cid:13379): (cid:13275)(cid:13379)주에너지원(cid:13379): (cid:13379)설명...(cid:13379), (cid:13379)에너지효율(cid:13379): (cid:13277)(cid:13379)방법1(cid:13379), (cid:13379)방법2(cid:13379)(cid:13278)(cid:13276),\n(cid:13379)주거(cid:13379): (cid:13275)(cid:13379)주거형태(cid:13379): (cid:13379)설명...(cid:13379), (cid:13379)스마트홈(cid:13379): (cid:13277)(cid:13379)기술1(cid:13379), (cid:13379)기술2(cid:13379)(cid:13278)(cid:13276)\n(cid:13276),\n(cid:13379)작성지침(cid:13379): (cid:13275)\n(cid:13379)구조(cid:13379): (cid:13379)체계적 구조(cid:13379),\n(cid:13379)예시(cid:13379): (cid:13379)구체적 예시(cid:13379),\n(cid:13379)균형(cid:13379): (cid:13379)기술과 사회의 균형(cid:13379),\n(cid:13379)창의적(cid:13379): (cid:13379)현실과 상상의 균형(cid:13379),\n(cid:13379)상세함(cid:13379): (cid:13379)충분한 설명(cid:13379)\n(cid:13276)",
+      "char_count": 1469,
+      "word_count": 78,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 27,
+      "text": "Chapter 1\n2⃣ 프롬프트 엔지니어링(cid:13205) 지름길\nPhoto by Ma: Foxx on Unsplash",
+      "char_count": 68,
+      "word_count": 12,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 28,
+      "text": "Chapter 1\n다른 방법\n(cid:13273)하드코드(cid:13274)\nA\nB\n프롬프트\n엔지니어링\nA\nB",
+      "char_count": 61,
+      "word_count": 11,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 29,
+      "text": "Chapter 1\n호기심의 철학\n프롬프트팅 (cid:13704) 프롬프트 엔지니어링\n(cid:13996) 가능성 세계에 대한 시도",
+      "char_count": 72,
+      "word_count": 13,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    },
+    {
+      "page_num": 30,
+      "text": "Reference\nRay Kurzweil (2006). The Singularity Is Near: When Humans Transcend Biology.\nDaniel Kahneman (2011). Thinking, Fast and Slow.\nKaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., ... & Amodei, D. (2020). Scaling laws\nfor neural language models. arXiv preprint arXiv:2001.08361.\nImage Source\nChomsky Hierarchy Levels, Source: Fitch 2014.\n네이버 백과사전:\nhttps://terms.naver.com/imageDetail.naver?docId=3559691&imageUrl=http%3A%2F%2Fdbscthumb.phinf.naver.\nnet%2F4751_000_5%2F20170329195545489_Y5OON1D39.jpg%2FC-A-A2y-E0-0706-\n.jpg%3Ftype%3Dm4500_4500_fst&categoryId=58729&mode=simple%7C&query=&authorId=",
+      "char_count": 630,
+      "word_count": 59,
+      "needs_ocr": false,
+      "ocr_status": "not_needed"
+    }
+  ]
+}
