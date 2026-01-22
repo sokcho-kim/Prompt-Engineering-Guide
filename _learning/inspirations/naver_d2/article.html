@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>LLMOps를 위한 프롬프트 엔지니어링 도구 개발 경험기</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/XEIcon/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/katex/katex.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/naver_d2.from_server.css?1731560560741">
+<link href="/static/css/app.css?f9db2bc4622003faf475" rel="stylesheet"><script src="https://connect.facebook.net/ko_KR/sdk.js?hash=5d2930d76ff23201bcaaeafb05ec6124" async="" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" src="https://ssl.pstatic.net/static.cbox/js/cbox.core.js?v=1474201"></script><script type="text/javascript" async="" src="https://ssl.pstatic.net/melona/libs/gfp-nac-module/synchronizer.js"></script><style type="text/css" id="_cbox_default_style_"></style><script type="text/javascript" src="https://ssl.pstatic.net/static.cbox/20260114111344/js/cbox.all.js" charset="utf-8"></script><link type="text/css" rel="stylesheet" href="https://static-feedback.pstatic.net/css/cbox/cbox/ebb46c9a-246d-48cd-acc6-cf3892caf38d/61d7694e-2aa2-478d-a0d9-da39ed3d3332/css/comment_default.css" charset="utf-8"><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style></head>
+
+<body>
+<div id="wrap" class="main"><div><div id="header"><div class="main_lnb"><div class="progress_bar" style="height: 2px; background-color: rgb(50, 205, 160); width: 0px;"></div><div class="header_sec"><div class="inner_sec"><div class="lnb" id="lnb"><h1><a class="lnb_top_logo" href="/home"><span class="blind">naver D2</span></a></h1><div class="menu_sec"><div class="btn_lnb_menu"><a href="#"><span class="blind">메뉴</span></a></div><div style="height: 0px; transition: 0.5s;"><ul><li class="on"><a href="/helloworld">Hello world</a></li><li class=""><a href="/news">D2 News</a></li><li class=""><a href="/about">About D2</a></li></ul></div></div><div><div class="m_search_sec"><div class="btn_lnb_search"><a href="#"><span class="blind">검색</span></a></div><form action="/" style="height: 0px; transition: 0.5s;"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="blind"><i class="xi-search"></i></button></form></div><div class="pc_search_input"><fieldset><legend>검색</legend><form action="/"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="btn_search"><i class="xi-search"></i></button></form></fieldset></div></div></div></div></div></div></div><div id="container"><div class="con_area"><div class="contents detail_view"><div class="post_article"><div class="cont_post"><h1 class="posting_tit">LLMOps를 위한 프롬프트 엔지니어링 도구 개발 경험기</h1><dl class="post_info"><dt><i class="xi-time-o"><span class="blind">등록일</span></i></dt><dd>2024.08.12</dd><dt><span class="blind">|</span></dt><dd><span class="line_bar">|</span></dd><dt><i class="xi-eye"><span class="blind">코멘트</span></i></dt><dd>11205</dd></dl><div class="con_view"><p>LLM  애플리케이션을 개발할 때 필요한 기본적인 구성 요소는 다음과 같습니다.</p>
+
+<ul>
+<li>모델 또는 파인튜닝(fine-tuning) 체크포인트</li>
+<li>온도(temperature), 반복 페널티(repetition penalty) 등의 하이퍼 파라미터</li>
+<li>프롬프트(prompt)</li>
+</ul>
+
+<p>이 글에서는 최적의 애플리케이션을 생성하기 위해 <strong>구성 요소를 변경하고 평가하는 과정을 반복하는 경험</strong>을 해보신 분들께 도움이 되고자, 네이버 Business Analytics 팀에서 프롬프트 엔지니어링 도구(prompt engineering tool)를 개발한 경험을 공유합니다.</p>
+
+<h2 id="">개발 배경</h2>
+
+<p>올해 초부터 Business Analytics 팀은 LLM을 활용한 스펙을 개발하고 있는데 이 과정에서 <strong>프롬프트 히스토리 관리에 어려움이 있었습니다.</strong></p>
+
+<p>팀 내에서 3가지 스펙의 LLM 애플리케이션을 개발하면서 하나의 스펙에 적게는 1개에서 많게는 N개의 프롬프트를 사용했습니다. 프롬프트를 개발하고 최적화하면서 많은 수정이 발생해 프로젝트 저장소에 프롬프트가 버전별로 존재했고, 프롬프트를 변경하거나 추가할 때마다 새로 배포해야 했습니다.</p>
+
+<p>또한 다양한 모델(오픈 소스 LLM, sLLM 등)과 파인튜닝 체크포인트를 고려해야 했고, 필요에 따라 온도 등의 파라미터 조절도 필요했습니다.</p>
+
+<p><img src="/content/images/2024/08/04.png" alt=""></p>
+
+<p>그러다 보니 하나의 LLM 애플리케이션을 개발하기 위해 다음과 같은 <strong>반복적인 업무</strong>를 진행해야 했습니다.</p>
+
+<ol>
+<li>LLM 선택  </li>
+<li>프롬프트 개발  </li>
+<li>하이퍼 파라미터 수정  </li>
+<li>평가를 위한 테스트 데이터 셋 생성  </li>
+<li>평가 방식 선택  </li>
+<li>(1)~(3)으로 이루어진 결과물을 (4) 테스트 데이터 셋을 통해 (5) 방식으로 최종 평가</li>
+</ol>
+
+<p>처음에는 다음과 같이 이슈에 프롬프트 수정 사항을 업데이트하면서 개발을 진행했습니다.</p>
+
+<p><img src="/content/images/2024/08/05.png" alt=""></p>
+
+<p>그런데 이 방법에는 다음과 같은 단점이 있었습니다.</p>
+
+<ul>
+<li>이슈가 길어져 히스토리 파악이 힘들고, 테스트 데이터 셋과 평가 결과를 명확하게 한눈에 파악하기 힘들다.</li>
+<li>평가 수치가 한눈에 보이지 않아 <strong>의사 결정이 늦어지고 생산성이 떨어진다</strong>는 느낌을 받는다.</li>
+</ul>
+
+<p>그러다 보니 '<strong>이런 고민을 해결해줄 수 있는 도구가 있을까?</strong>'라는 생각이 들었습니다.</p>
+
+<h2 id="">프롬프트 엔지니어링 도구란</h2>
+
+<p>이런 고민을 해결해주는 도구를 <strong>프롬프트 엔지니어링 도구</strong>라고 한다는 것을 알게 되어 다양한 오픈 소스를 검토해 보았습니다.</p>
+
+<p>저희에게 필요한 기능은 다음과 같았습니다.</p>
+
+<ul>
+<li>프롬프트 테스트</li>
+<li>프롬프트 버저닝 및 배포</li>
+<li>테스트 데이터 셋 관리 및 합성 테스트 데이터(synthetic test data) 생성 기능</li>
+<li>평가</li>
+</ul>
+
+<blockquote>
+  <p><strong>합성 테스트 데이터</strong></p>
+  
+  <p>초기에는 테스트 데이터 셋을 구축하기 힘들기 때문에 시드 문서를 기반으로 가상 데이터를 생성해 사용합니다(참고: <a href="https://python.langchain.com/v0.1/docs/use_cases/data_generation/">LangChain 문서</a>, <a href="https://docs.ragas.io/en/latest/concepts/testset_generation.html">Ragas 문서</a>). 저희는 Q/A 쌍 생성에 사용했습니다.</p>
+</blockquote>
+
+<p>검토한 오픈 소스는 다음과 같았습니다.</p>
+
+<ul>
+<li><a href="https://github.com/Agenta-AI/agenta">Agenta</a></li>
+<li><a href="https://github.com/hegelai/prompttools">PromptTools</a></li>
+</ul>
+
+<p>검토 당시(2024년 2월)에는 각 도구에 미흡한 부분이 있어, 필요한 기능이 포함된 도구를 직접 개발하기로 결정했습니다(현재는 미흡했던 부분이 일부 개선된 것을 확인했으니 직접 개발하기 전에 오픈 소스를 검토하는 것을 권장합니다).</p>
+
+<h2 id="">개발한 도구 소개</h2>
+
+<p>지금부터는 저희가 개발한 프롬프트 엔지니어링 도구의 기본 개념과 아키텍처를 소개합니다.</p>
+
+<h3 id="">기본 개념</h3>
+
+<p>기본 개념은 다음과 같이 구상했습니다.</p>
+
+<p><img src="/content/images/2024/08/07.png" alt=""></p>
+
+<p>다음과 같이 나눠 하나씩 살펴보겠습니다.</p>
+
+<ul>
+<li>프롬프트 버저닝 및 배포</li>
+<li>LLM 애플리케이션</li>
+<li>테스트 데이터 셋</li>
+<li>평가</li>
+</ul>
+
+<h4 id="llm">프롬프트 버저닝 및 배포, LLM 애플리케이션</h4>
+
+<p><img src="/content/images/2024/08/08.png" alt=""></p>
+
+<p><strong>프롬프트 버전</strong>은  다음과 같이 정의했습니다.</p>
+
+<ul>
+<li>하나의 프롬프트에는 <strong>여러 개의 버전</strong>이 있을 수 있다.</li>
+<li>하나의 프롬프트에 <strong>active 버전은 오직 1개</strong>이다.</li>
+</ul>
+
+<p><strong>애플리케이션</strong>은 다음과 같이 정의했습니다.</p>
+
+<ul>
+<li><strong>애플리케이션</strong>은 실제 LLM 애플리케이션의 단위이다.</li>
+<li><strong>애플리케이션 = 모델 + 프롬프트(active 버전) + LLM 옵션</strong></li>
+</ul>
+
+<h4 id="">테스트 데이터 셋</h4>
+
+<p><img src="/content/images/2024/08/09.png" alt=""></p>
+
+<p><strong>합성 테스트 데이터</strong>는 다음과 같이 정의했습니다.</p>
+
+<ul>
+<li>시드 문서를 기반으로 Q/A 쌍을 가상으로 생성한다.</li>
+<li>현재 Milvus Collection, 텍스트 파일, CSV 파일을 기반으로 생성이 가능하다.</li>
+<li>생성된 가상 데이터 세트를 검토 및 수정하여 테스트 데이터 셋으로 업로드한다.</li>
+</ul>
+
+<p><strong>테스트 데이터 셋 관리</strong>는 다음과 같이 정의했습니다.</p>
+
+<ul>
+<li>테스트 데이터 셋을 수정/삭제/추가한다.</li>
+</ul>
+
+<h4 id="">평가</h4>
+
+<p><img src="/content/images/2024/08/10.png" alt=""></p>
+
+<p><strong>평가</strong>는 다음과 같이 정의했습니다.</p>
+
+<ul>
+<li>동작할 애플리케이션(모델 + 프롬프트 + LLM 옵션)을 평가한다.</li>
+<li>선택한 테스트 데이터 셋(Q/A) 기반으로 평가 지표를 생성한다.</li>
+</ul>
+
+<p>현재 지원하는 <strong>평가 유형</strong>은 다음과 같으며 필요에 따라 계속 추가하고 있습니다.</p>
+
+<ul>
+<li>Exact Match String</li>
+<li>Embedding Distance</li>
+<li><a href="https://docs.ragas.io/en/latest/references/metrics.html">Ragas</a>에서 지원하는 일부 metric 포함
+<ul><li>RAGAS_FAITHFULNESS</li>
+<li>RAGAS_CONTEXT_PRECISION</li>
+<li>RAGAS_ANSWER_SEMANTIC_SIMILARITY</li></ul></li>
+<li><a href="https://github.com/stanford-futuredata/ARES">ARES</a>에서 지원하는 일부 metric 포함(평가용 파인튜닝 LLM 생성)
+<ul><li>ARES_CONTEXT_RELEVANCE</li>
+<li>ARES_ANSWER_RELEVANCE</li>
+<li>ARES_ANSWER_FAITHFULNESS</li></ul></li>
+</ul>
+
+<h3 id="">아키텍처</h3>
+
+<p><img src="/content/images/2024/08/11.png" alt=""></p>
+
+<ul>
+<li>Streamlit: 간편한 웹앱 생성</li>
+<li>Custom Python Library
+<ul><li>해당 도구를 위한 다양한 기능 개발</li>
+<li>LangChain, Ragas 사용</li></ul></li>
+<li>Vitess(MySQL): 전반적인 데이터 저장/관리
+<ul><li>프롬프트</li>
+<li>애플리케이션</li>
+<li>테스트 데이터 셋</li>
+<li>평가</li></ul></li>
+</ul>
+
+<h2 id="llm">LLM 애플리케이션 개발 및 평가 과정</h2>
+
+<p>입력된 문장을 <strong>긍정</strong> 또는 <strong>부정</strong>으로 분류하는 애플리케이션을 예시로, LLM 애플리케이션을 개발하고 평가하는 과정을 살펴보겠습니다.</p>
+
+<h3 id="1">1. 프롬프트 생성</h3>
+
+<p>입력된 문장을 <strong>긍정</strong> 또는 <strong>부정</strong>으로 분류하는 프롬프트를 생성합니다.</p>
+
+<p><img src="/content/images/2024/08/12.png" alt=""></p>
+
+<h3 id="2">2. 테스트 및 적용</h3>
+
+<p>생성한 프롬프트를 선택하고, LLM 옵션이나 모델을 변경하면서 테스트합니다.</p>
+
+<p><img src="/content/images/2024/08/13.png" alt=""></p>
+
+<p>원하는 결과가 나왔다면 <code>save</code>를 클릭해 애플리케이션을 정의합니다.</p>
+
+<p><img src="/content/images/2024/08/14.png" alt=""></p>
+
+<h3 id="3">3. 프롬프트 버전 추가</h3>
+
+<p>기존에 입력된 프롬프트의 퓨샷(few-shot)을 제외하고, output indicator를 추가하여 조금 더 답변을 명시적으로 선언하고 싶습니다. text-classification을 선택하고, 새로운 버전의 프롬프트를 생성합니다.</p>
+
+<p><img src="/content/images/2024/08/15.png" alt=""></p>
+
+<p>만약 처음 버전으로 돌아가고 싶다면, 원하는 버전의 <code>is_active</code> 칼럼을 활성화합니다.</p>
+
+<p><img src="/content/images/2024/08/16.png" alt=""></p>
+
+<h3 id="4">4. 테스트 데이터 셋 생성</h3>
+
+<p>LLM 애플리케이션 평가를 위해 5건의 문장을 분류하는 테스트 데이터 셋을 생성합니다.</p>
+
+<p><img src="/content/images/2024/08/17.png" alt=""></p>
+
+<h3 id="5">5. 평가</h3>
+
+<p>평가를 위해 다음과 같이 선택합니다.</p>
+
+<ul>
+<li>chain: 추가 데이터 전처리나 문서 검색 등이 필요 없으므로 (default)</li>
+<li>application: text-classification</li>
+<li>test_data_set: text_classification_data_set</li>
+<li>evaluator: EXACT_MATCH_STRING</li>
+</ul>
+
+<p><img src="/content/images/2024/08/18.png" alt=""></p>
+
+<p>최종 평가 결과는 <code>0.8</code>이며, 개별 결과도 확인할 수 있습니다. 해당 애플리케이션에서는 출력이 원하는 형식을 간혹 따르지 않는다는 것을 확인할 수 있습니다.</p>
+
+<p><img src="/content/images/2024/08/19.png" alt=""></p>
+
+<p>다음과 같이 과거 평가 이력을 확인할 수 있어, 프롬프트 변경 후 수치 비교가 가능합니다.</p>
+
+<p><img src="/content/images/2024/08/20.png" alt=""></p>
+
+<h2 id="">코드</h2>
+
+<p>프롬프트 엔지니어링 도구를 사용함으로써 프로젝트 내부의 LLM 애플리케이션 개발 코드가 훨씬 간단해졌습니다.</p>
+
+<p>기존에는 다음과 같이 프로젝트에 여러 개의 프롬프트를 명시하는 코드를 포함해야 했습니다.</p>
+
+<pre><code class="language-python hljs"><span class="hljs-keyword">from</span> langchain_core.prompts <span class="hljs-keyword">import</span> (  
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate
+)
+
+<span class="hljs-comment"># OLD VERSION PROMPT</span>
+OLD_SYSTEM_PROMPT = <span class="hljs-string">"""- 아래 예시와 같이 답변합니다.
+
+###
+멋지다! // 긍정
+나빠! // 부정
+그 영화는 굉장했어! // 긍정
+###
+"""</span>
+OLD_USER_PROMPT = <span class="hljs-string">"""{{question}} //"""</span>
+
+<span class="hljs-comment"># NEW VERSION PROMPT</span>
+SYSTEM_PROMPT = <span class="hljs-string">"""- 주어진 문장을 긍정 또는 부정으로 분류합니다."""</span>  
+USER_PROMPT = <span class="hljs-string">"""문장 : {{question}}  
+분류 :"""</span>
+
+prompt = ChatPromptTemplate.from_messages(  
+    [
+        SystemMessagePromptTemplate.from_template(SYSTEM_PROMPT, template_format=<span class="hljs-string">"jinja2"</span>),
+        HumanMessagePromptTemplate.from_template(USER_PROMPT, template_format=<span class="hljs-string">"jinja2"</span>)
+    ]
+)
+
+chain = chat_prompt_template | model | StrOutputParser()  
+chain.invoke({<span class="hljs-string">"question"</span>: <span class="hljs-string">"오늘 날씨 참 별로네"</span>})
+
+<span class="hljs-comment"># '부정'</span>
+</code></pre>
+
+<p>저희가 개발한 프롬프트 엔지니어링 도구의 Python 라이브러리를 사용하면 다음과 같이 코드가 훨씬 간단하고 파악하기 쉬워집니다.</p>
+
+<pre><code class="language-python hljs"><span class="hljs-keyword">from</span> llm_lib.prompttools.prompt <span class="hljs-keyword">import</span> PromptToolsChatTemplate <span class="hljs-comment"># custom library  </span>
+<span class="hljs-keyword">from</span> langchain_core.output_parsers <span class="hljs-keyword">import</span> StrOutputParser
+
+prompt = PromptToolsChatTemplate(<span class="hljs-string">"text-classification"</span>)  
+chat_prompt_template = prompt.get_chat_template() <span class="hljs-comment"># return ChatPromptTemplate</span>
+
+chain = chat_prompt_template | model | StrOutputParser()
+
+<span class="hljs-comment"># '부정'</span>
+</code></pre>
+
+<p>또한 다음과 같은 이점이 있습니다.</p>
+
+<ul>
+<li>하나의 프로젝트에서 여러 개의 프롬프트를 관리하기 용이함</li>
+<li>프로젝트 내부에 프롬프트를 버전별로 생성할 필요가 없음</li>
+<li>프로젝트 배포 없이 프롬프트 변경 가능</li>
+</ul>
+
+<h2 id="">마치며</h2>
+
+<p>직접 개발한 프롬프트 엔지니어링 도구를 사용해본 결과 다음과 같은 장점이 있었습니다.</p>
+
+<ul>
+<li>UI 기반의 편리한 사용성으로 개발자뿐만 아니라 기획자도 사용 가능</li>
+<li>프롬프트 버전별로 평가 지표 결과가 나아짐을 한눈에 확인할 수 있어 의사 결정이 빨라짐</li>
+<li>테스트 환경이 Jupyter Notebook, Python 스크립트 등 분산된 환경에서 일원화
+<ul><li>팀원들끼리 공유하기 위해 이슈 등을 따로 작성할 필요 없이 프롬프트나 평가 결과를 한눈에 파악 가능</li></ul></li>
+</ul>
+
+<p>향후 예정된 개선 사항은 다음과 같습니다.</p>
+
+<ul>
+<li>테스트 데이터 셋을 유연하게 확장할 수 있도록 수정</li>
+<li>프롬프트 버전별로 평가 결과를 피벗 테이블로 확인</li>
+<li>다중 Chaining 지원</li>
+</ul>
+
+<p>비슷한 고민을 하고 계신 분들께 도움이 되었길 바라며 글을 마무리합니다.</p>
+
+<p><em>개발에 도움을 주신 Business Analytics 성준혁 님, 조유정 님 감사합니다!</em></p></div><div class="post_writer_info"><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20231116/608425735872.jpeg" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">박슬기<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Business Analytics</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">데이터 분석, 데이터 품질 및 다양한 데이터 관련 기술에 대한 관심이 많으며 최근 LLM 기반 다양한 기술에 관심이 많습니다.</dd></dl></div></div></div><div class="sns_position"><div class="sns_sec"><button type="button" class="sns_naver"><span class="sns_icon">NAVER</span></button><button type="button" class="sns_facebook"><span class="sns_icon">facebook</span></button><div class="fb-like fb_iframe_widget" data-href="http://d2.naver.com/helloworld/3344073" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=816454888441763&amp;container_width=834&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F3344073&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large"><span style="vertical-align: bottom; width: 108px; height: 28px;"><iframe name="f685138cd8441d8c5" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.11/plugins/like.php?action=like&amp;app_id=816454888441763&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df854f8dc067e71a41%26domain%3Dd2.naver.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fd2.naver.com%252Ff72f3a2c5e412d987%26relation%3Dparent.parent&amp;container_width=834&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F3344073&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large" style="border: none; visibility: visible; width: 108px; height: 28px;" class=""></iframe></span></div><button type="button" class="sns_url"><span class="sns_icon">URL</span></button></div></div></div></div><div id="cbox_module" class="u_cbox" style="max-width: 840px; margin: 0px auto; padding-bottom: 35px;"><div class="u_cbox_wrap u_cbox_ko"><div class="u_cbox_head">  <h5 class="u_cbox_title">댓글</h5> <span class="u_cbox_count">3</span>  <button type="button" class="u_cbox_btn_refresh" data-action="count#refresh" data-log="RPO.refresh"><span class="u_cbox_ico_refresh"></span><span class="u_cbox_txt_refresh">새로고침</span></button>  <div class="u_cbox_head_tools">     </div></div><div class="u_cbox_write_wrap __uis_cbox_module_writeWrap" data-ui-selector="writeWrap"><div class="u_cbox_write_box u_cbox_type_logged_out"><form><fieldset><legend class="u_vc">댓글 쓰기</legend><div class="u_cbox_write" data-focus="write#beforeClickWriteBox"><div class="u_cbox_write_inner"><div class="u_cbox_write_area"><strong class="u_vc">댓글 입력</strong><div class="u_cbox_inbox"><div title="댓글" id="cbox_module__write_textarea" class="u_cbox_text u_cbox_text_mention" contenteditable="true" data-log="RPC.input"></div><div class="u_cbox_guide" data-action="write#placeholder" data-param="@event">댓글을 작성하려면 <a href="#" class="u_cbox_link">로그인</a> 해주세요</div></div></div><div class="u_cbox_upload_sticker " style="display:none"></div><div class="u_cbox_write_count __uis_cbox_module_writeTextLengthBox" data-ui-selector="writeTextLengthBox"><span class="u_vc">현재 입력한 글자수</span><strong class="u_cbox_count_num">0</strong>/<span class="u_vc">전체 입력 가능한 글자수</span><span class="u_cbox_write_total">400</span></div><div class="u_cbox_upload"><div class="u_cbox_addition"></div><button type="button" class="u_cbox_btn_upload __uis_cbox_module_writeButton" data-action="write#request" data-log="RPC.write" data-ui-selector="writeButton"><span class="u_cbox_ico_upload"></span><span class="u_cbox_txt_upload">등록</span></button></div></div></div></fieldset></form></div></div><div class="u_cbox_notice u_cbox_notice_none " style="display: none"><strong class="u_vc">공지사항</strong>  <a href="#" data-action="notice#toggle" data-log="RPO.notopen" class="u_cbox_notice_tit noticeTitleArea"><span class="u_cbox_ico_notice"></span><span class="u_cbox_txt_notice noticeTitleText"></span></a>   <div class="u_cbox_box_notice noticeContentArea"><p class="u_cbox_con_notice noticeContentText"></p><span class="u_cbox_notice_date noticeDate">null</span><a href="#" data-action="notice#close" data-log="RPO.notclose" class="u_cbox_btn_notice_close">공지사항 닫기</a></div>  </div><div tabindex="0" class="u_cbox_content_wrap" style="outline: 0"><ul class="u_cbox_list"><li class="u_cbox_comment cbox_module__comment_851207367616888961 _user_id_no_129Yr" data-info="commentNo:'851207367616888961',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectStatus:'SHOW',objectId:'3344073',replyLevel:1,parentCommentNo:'851207367616888961',pick:false,regTime:'2025-02-13T16:57:17+0900'"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">김영동</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">안녕하세요! 정말 도움되는 글이였습니다. 잘봤습니다! 혹시 개발하신 코드는 내부용이실까요??</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2025-02-13T16:57:17+0900">2025-02-13 16:57</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply " data-action="reply#toggle" data-param="851207367616888961" data-log="RPC.replyopen" data-reference=""><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'851207367616888961',voteStatus:'SYMPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.sym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">0</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'851207367616888961',voteStatus:'ANTIPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.dis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_846727046208946380 _user_id_no_4qxee" data-info="commentNo:'846727046208946380',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectStatus:'SHOW',objectId:'3344073',replyLevel:1,parentCommentNo:'846727046208946380',pick:false,regTime:'2024-12-27T09:53:32+0900'"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">재차니</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">잘 봤습니다</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2024-12-27T09:53:32+0900">2024-12-27 09:53</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply " data-action="reply#toggle" data-param="846727046208946380" data-log="RPC.replyopen" data-reference=""><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'846727046208946380',voteStatus:'SYMPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.sym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">0</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'846727046208946380',voteStatus:'ANTIPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.dis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_838490082531868685 _user_id_no_3S9er" data-info="commentNo:'838490082531868685',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectStatus:'SHOW',objectId:'3344073',replyLevel:1,parentCommentNo:'838490082531868685',pick:false,regTime:'2024-09-29T14:59:02+0900'"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">bsy3****</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">매번 프롬프트를 코드에서 수정하다 보니까, 버전관리나 성능에 대한 관리 안되서 아쉬웠습니다. 좋은 어플리케이션 같네요.</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2024-09-29T14:59:02+0900">2024-09-29 14:59</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply " data-action="reply#toggle" data-param="838490082531868685" data-log="RPC.replyopen" data-reference=""><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'838490082531868685',voteStatus:'SYMPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.sym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">2</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'838490082531868685',voteStatus:'ANTIPATHY',objectId:'3344073',ticket:'d2',manager:'USER'" data-log="RPC.dis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li></ul></div><div class="u_cbox_paginate" style="display: none;"><a href="#" class="u_cbox_btn_more" data-action="page#more" data-log="RPC.more"><span class="u_cbox_more_wrap"><span class="u_cbox_box_more"><span class="u_cbox_page_more">더보기</span><span class="u_cbox_ico_more"></span></span></span></a></div></div></div></div></div></div><div id="footer"><div class="inner_sec"><div class="footer_sec"><ul class="other_site"><li><a href="https://developers.naver.com/" target="_blank" class="developers">NAVER Developers</a></li><li><a href="https://deview.kr/" target="_blank" class="deview">DEVIEW</a></li><li><a href="https://naver.github.io/" target="_blank" class="opensource">OpenSource</a></li><li><a href="https://d2startup.com/ko" target="_blank" class="startup">D2 STARTUP FACTORY</a></li></ul><div class="sns_share"><ul><li class="email"><a href="mailto:d2@navercorp.com"><i class="xi-mail"></i></a></li><li class="facebook"><a href="https://facebook.com/naverd2" target="_blank"><i class="xi-facebook"></i></a></li><li class="linkedin"><a href="https://www.linkedin.com/showcase/naver-d2" target="_blank"><i class="xi-linkedin"></i></a></li><li class="rss"><a href="https://d2.naver.com/d2.atom" target="_blank"><i class="xi-social-rssfeed"></i></a></li></ul></div></div><div class="footer_sec"><div class="copyright"><p><span>Copyright</span> © <a href="https://www.navercorp.com/" target="_blank">NAVER Corp.</a> <span>All Rights Reserved.</span></p></div><a href="#" class="btn_go_top" style="bottom: 20px; right: 50px;"></a></div></div></div></div></div><i classname="xi-search">
+<script id="facebook-jssdk" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&amp;version=v2.11&amp;appId=816454888441763"></script><script async="" src="//www.google-analytics.com/analytics.js" id="google-analytics"></script><script async="" src="https://wcs.naver.net/wcslog.js" id="naver-analytics"></script><script type="text/javascript" src="/static/js/app.js?f9db2bc4622003faf475"></script>
+
+</i><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>
